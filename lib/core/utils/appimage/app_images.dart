@@ -11,4 +11,5 @@ class Appimage {
   static String glass5 = 'assets/images/5.png';
   static String cardglass = 'assets/images/glass.png';
     static String home ='assets/images/Home.png';
+      static String closeCircle ='assets/images/close-circle.svg';
 }

@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   _navigateToNextScreen() async {
     await Future.delayed(
-      const Duration(seconds: 1),
+      const Duration(seconds: 2),
     ); 
 
     if (mounted) {

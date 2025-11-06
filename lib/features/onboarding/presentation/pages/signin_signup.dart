@@ -161,7 +161,7 @@ class _Signin_SignupState extends State<Signin_Signup> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 70.h),
+                
                 ],
               ),
             ),

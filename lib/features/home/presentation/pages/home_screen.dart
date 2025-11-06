@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBar(elevation: 0, backgroundColor: appcolors.transcolor),
+      
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -43,6 +43,7 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
+                 SizedBox(height: 20.h),
                 const HomeHeader(), // space for search bar overlay
                 SizedBox(height: 20.h),
                 const SearchBarWidget(),
