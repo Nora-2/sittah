@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
+import 'package:glasses/core/utils/appstring/app_string.dart';
 import 'package:glasses/features/authantication/presentation/widgets/auth_button.dart';
 
 class PasswordSuccessDialog extends StatelessWidget {
@@ -45,7 +46,7 @@ class PasswordSuccessDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Dialog(
       backgroundColor: appcolors.transcolor,
-      insetPadding: EdgeInsets.symmetric(horizontal: 20.w),
+      insetPadding: EdgeInsets.symmetric(horizontal: 10.w),
       child: Container(
         padding: EdgeInsets.all(24.w),
         decoration: BoxDecoration(
@@ -56,16 +57,9 @@ class PasswordSuccessDialog extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             // Top Indicator
-            Container(
-              width: 50.w,
-              height: 4.h,
-              decoration: BoxDecoration(
-                color: Colors.grey.shade300,
-                borderRadius: BorderRadius.circular(2.r),
-              ),
-            ),
+        
 
-            SizedBox(height: 30.h),
+           
 
             // Success Icon
             Container(
@@ -76,7 +70,7 @@ class PasswordSuccessDialog extends StatelessWidget {
                 shape: BoxShape.circle,
               ),
               child: Icon(
-                icon,
+                Icons.check_circle,
                 color: appcolors.green,
                 size: 40.sp,
               ),
@@ -91,6 +85,7 @@ class PasswordSuccessDialog extends StatelessWidget {
                 fontSize: 22.sp,
                 fontWeight: FontWeight.bold,
                 color: appcolors.black,
+                fontFamily: Appstring.fontfamily
               ),
               textAlign: TextAlign.center,
             ),
@@ -102,6 +97,7 @@ class PasswordSuccessDialog extends StatelessWidget {
               dialogSubtitle,
               style: TextStyle(
                 fontSize: 14.sp,
+                 fontFamily: Appstring.fontfamily,
                 color: Colors.grey.shade600,
               ),
               textAlign: TextAlign.center,

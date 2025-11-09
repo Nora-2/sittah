@@ -136,7 +136,7 @@ class _SignupFormState extends State<SignupForm> {
 
                   Navigator.pushReplacementNamed(context, Routes.auth);
                 },
-                dialogTitle: Appstring.signupconfirmatbuttontitle,
+                dialogTitle: Appstring.signupconfirmationtitle,
                 dialogSubtitle: Appstring.signupconfirmationsubtitle,
                 icon: MyFlutterApp.shopping_cart_check_02,
               );
