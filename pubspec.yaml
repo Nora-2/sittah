@@ -22,9 +22,11 @@ dependencies:
   smooth_page_indicator: ^1.2.1
   shared_preferences: ^2.5.3
   get_it: ^9.0.5
+  country_flags: ^3.0.0
   equatable: ^2.0.7
   carousel_slider: ^5.1.1
-  persistent_bottom_nav_bar: ^6.2.1
+  pin_code_fields: ^8.0.1
+
 
 dev_dependencies:
   flutter_test:
@@ -54,4 +56,8 @@ flutter:
     - family: MyFlutterApp
       fonts:
         - asset: assets/fonts/MyFlutterApp.ttf   
+
+    - family: Appicons
+      fonts:
+        - asset: assets/fonts/Appicons.ttf   
         

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glasses/core/routing/routes.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
-import 'package:glasses/core/utils/appicons/app_icons.dart';
 import 'package:glasses/core/utils/appimage/app_images.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
 import 'package:glasses/core/utils/widgets/my_flutter_app_icons.dart';
@@ -48,12 +47,11 @@ class _Signin_SignupState extends State<Signin_Signup> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(height: 280.h), // Responsive spacer
-                  Image.asset(
-                    Appicons.logo,
-                    width: 40.h,
-                    height: 40.h,
-                    color: appcolors.primarycolor
-                  ),
+                  Icon( MyFlutterApp.logo,
+                    size: 40.sp,
+                    
+                    color: appcolors.primarycolor),
+                 
                   Text(
                     Appstring.splashTitle,
                     textAlign: TextAlign.right,
@@ -89,7 +87,10 @@ class _Signin_SignupState extends State<Signin_Signup> {
 
                   SizedBox(height: 14.h),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {  Navigator.pushNamed(
+                        context,
+                       Routes.auth
+                      );},
                     child: Container(
                       decoration: BoxDecoration(
                         color: appcolors.whicolor,
