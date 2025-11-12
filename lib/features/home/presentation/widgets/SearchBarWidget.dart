@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
+import 'package:glasses/core/utils/appicons/app_icons.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
 import 'package:glasses/core/utils/widgets/my_flutter_app_icons.dart';
+import 'package:glasses/features/home/presentation/widgets/filter.dart';
 
 class SearchBarWidget extends StatelessWidget {
   const SearchBarWidget({super.key});
@@ -28,7 +31,7 @@ class SearchBarWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(Icons.search, color: Color(0xffB3B3B3).withOpacity(.6)),
+          SvgPicture.asset( AppIcons.search,),
           SizedBox(width: 4.w),
 
           Text(
@@ -36,7 +39,10 @@ class SearchBarWidget extends StatelessWidget {
             style: TextStyle(color: Color(0xffB3B3B3).withOpacity(.6), fontSize: 13.sp,fontFamily:'Montserrat' ),
           ),
           Spacer(),
-           Icon(MyFlutterApp.filter_horizontal__3_, color: appcolors.black),
+           GestureDetector( onTap: () async{
+             // ignore: unused_local_variable
+             final result = await GlassesFilterSheet.show(context);
+           }, child: Icon(MyFlutterApp.filter_horizontal__3_, color: appcolors.black)),
         ],
       ),
     );

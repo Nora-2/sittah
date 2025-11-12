@@ -30,7 +30,7 @@ class Skipbutton extends StatelessWidget {
             ),
           ),
           SizedBox(width: 5.w),
-          SvgPicture.asset(Appicons.close),
+          SvgPicture.asset(AppIcons.close),
         ],
       ),
     );

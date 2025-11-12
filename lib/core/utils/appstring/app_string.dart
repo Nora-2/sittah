@@ -42,8 +42,12 @@ class Appstring {
   static const String category2 = 'رياضي';
   static const String category3 = 'عدسات';
   static const String category4 = 'شمسية';
+    static const String category5 = 'قيادة';
   static const String homeheader = 'مرحباً بك';
   static const String homeheaderdesc = 'أنشئ حسابك للحصول على مكافأة';
+  static const String homemainheader = 'مرحباً بك يا';
+
+  static const String homemainheaderdesc = 'الزمالك , القاهرة الجديدة';
   static const String viewall = 'عرض الكل';
   static const String searchtext = 'دور على نظارة تناسب ستايلك';
   static const String newone = ' 👋 جديـــــد ';
@@ -112,13 +116,15 @@ class Appstring {
   static const String forgetpasssubtitel =
       'لا بأس عن ذلك تابع الخطوات وادخل رقم هاتفك';
   static const String otptitle = 'من فضلك ادخل الارقام المرسلة';
-  static const String otpsubTitel = 'أرسلنا لك رمز مكون من 6 أرقام على رقم هاتفك';
-  static const String incorrectcode =  'الكود غير صحيح، حاول مرة أخرى';
+  static const String otpsubTitel =
+      'أرسلنا لك رمز مكون من 6 أرقام على رقم هاتفك';
+  static const String incorrectcode = 'الكود غير صحيح، حاول مرة أخرى';
   static const String didntrecivecode = 'لم يرسل الكود ؟ ';
-    static const String sendcodeagain = ' اعادة الارسال';
-    ///////////////////////////////
+  static const String sendcodeagain = ' اعادة الارسال';
+  ///////////////////////////////
   static const String enterNewPasswordTitle = 'ادخل رمز المرور الجديد';
-  static const String createEasyPasswordSubtitle = 'حاول تنشئ رمز مرور يمكنك تذكره بسهولة';
+  static const String createEasyPasswordSubtitle =
+      'حاول تنشئ رمز مرور يمكنك تذكره بسهولة';
 
   static const String newPasswordLabel = 'كلمة المرور الجديدة';
   static const String newPasswordHint = 'ادخل كلمة المرور الجديدة';
@@ -128,7 +134,40 @@ class Appstring {
 
   static const String saveButton = 'حفظ';
 
-  static const String passwordSavedSuccessfullyTitle = 'تم حفظ كلمة المرور بنجاح';
-  static const String passwordSavedSuccessfullySubtitle = 'اعد تسجيل الدخول برمز المرور الجديد';
-}
+  static const String passwordSavedSuccessfullyTitle =
+      'تم حفظ كلمة المرور بنجاح';
+  static const String passwordSavedSuccessfullySubtitle =
+      'اعد تسجيل الدخول برمز المرور الجديد';
+  static const String today = 'اليوم';
 
+  static const String notifications = 'الإشعارات';
+
+  static const String yesterday = 'الأمس';
+
+  static const String type = 'النوع';
+
+  static const String size = 'المقاس';
+  static const String material = 'الخامات';
+
+  static const String frame = 'إطارات';
+  static const String medicaldrug = 'وصفة طبية';
+
+  static const String customization = 'تخصيص';
+  static const String ignore = 'تجاهل';
+
+  static const String price = 'السعر';
+
+  static const String colors = 'الألوان';
+  static const String filter = 'فيلتر';
+  static const String ahmed = 'احمد';
+  static const String notifiemptybutton = 'تسوق المنتجات';
+  static const String notifiemptytitle = 'رؤية هادئة بلا إشعارات';
+  static const String notifiemptysubtitle =
+      'استمتع بالهدوء مؤقتًا… إشعاراتنا دايمًا بتيجي \nومعاها الجديد والمميز';
+
+  static const String searchfornotifi = 'ابحث عن أي إشعار';
+   static const String medicalglasses = 'نظارات طبية';
+    static const String allcategories =  'جميع الفئات';
+     static const String products =   'المنتجات' ;
+      static const String item =   'عنصر' ;
+}

@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
 
@@ -11,7 +12,7 @@ class GenderRadioOption extends StatelessWidget {
   final Gender value;
   final Gender? groupValue;
   final String label;
-  final IconData icon; // Placeholder for custom image
+  final String icon; // Placeholder for custom image
   final ValueChanged<Gender?> onChanged;
 
   const GenderRadioOption({
@@ -61,7 +62,7 @@ class GenderRadioOption extends StatelessWidget {
             ),
             SizedBox(width: 10.w),
             // Placeholder for the image. Replace with Image.asset if needed.
-            Icon(icon, size: 25.sp, color: appcolors.black),
+           SvgPicture.asset(icon)
           ],
         ),
       ),

@@ -4,11 +4,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glasses/core/routing/routes.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
+import 'package:glasses/core/utils/appicons/app_icons.dart';
 import 'package:glasses/core/utils/appimage/app_images.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
-import 'package:glasses/core/utils/widgets/my_flutter_app_icons.dart';
+import 'package:glasses/core/utils/widgets/custom_button.dart';
+
 import 'package:glasses/features/authantication/presentation/cubit/authantication_cubit.dart';
-import 'package:glasses/features/authantication/presentation/widgets/auth_button.dart';
 import 'package:glasses/features/authantication/presentation/widgets/passwordback.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
@@ -224,8 +225,7 @@ class _OtpPasswordScreenState extends State<OtpPasswordScreen> {
                         ),
 
                         SizedBox(height: 200.h),
-                        AuthButton(
-                          text: 'ارسال',
+                       Custombutton( text: 'ارسال',
                           onPressed: currentText.length == 6
                               ? () {
                                   cubit.verifyOtp(currentText);
@@ -234,13 +234,7 @@ class _OtpPasswordScreenState extends State<OtpPasswordScreen> {
                                     Routes.newpassword,
                                   );
                                 }
-                              : null,
-                          icon: MyFlutterApp.arrow_left,
-                          color: appcolors.primarycolor,
-                          backgroundColor: currentText.length == 6
-                              ? appcolors.buttoncoloronboarding
-                              : appcolors.buttoncoloronboarding,
-                        ),
+                              : null, icon:  AppIcons.educare),
 
                         SizedBox(height: 20.h),
                       ],

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
+import 'package:glasses/core/utils/appicons/app_icons.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
 import 'package:glasses/features/home/presentation/widgets/Imagecontainer.dart';
 
@@ -95,13 +97,7 @@ class ProductCard extends StatelessWidget {
               CircleAvatar(
                 backgroundColor: appcolors.buttoncoloronboarding,
                 radius: 20.r,
-                child: IconButton(
-                  onPressed: () {},
-                  icon:  Icon(
-                    Icons.shopping_cart_outlined,
-                    color: appcolors.primarycolor
-                  ),
-                ),
+                child: SvgPicture.asset( AppIcons.cart,width: 15.w,height: 15.h,)
               ),
             ],
           ),

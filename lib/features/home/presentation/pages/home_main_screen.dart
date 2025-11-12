@@ -9,9 +9,10 @@ import 'package:glasses/features/home/presentation/widgets/SectionHeader.dart';
 import 'package:glasses/features/home/presentation/widgets/home_header.dart';
 import 'package:glasses/features/home/presentation/widgets/product_card.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class HomeMainScreen extends StatelessWidget {
+   final VoidCallback onCategoryTap;
 
+  const HomeMainScreen({super.key, required this.onCategoryTap});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,14 +56,7 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(height: 8.h),
                 const OfferSlider(),
                 SizedBox(height: 20.h),
-                Text(
-                  Appstring.sectionheadercategory,
-                  style: TextStyle(
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: Appstring.fontfamily,
-                  ),
-                ),
+               SectionHeader(title:  Appstring.sectionheadercategory,onTap:onCategoryTap,),
                 SizedBox(height: 8.h),
                 const CategoryList(),
                 SizedBox(height: 20.h),

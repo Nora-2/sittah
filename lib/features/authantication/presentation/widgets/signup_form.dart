@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glasses/core/routing/routes.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
+import 'package:glasses/core/utils/appicons/app_icons.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
 import 'package:glasses/core/utils/widgets/appicons_icons.dart';
+import 'package:glasses/core/utils/widgets/custom_button.dart';
 import 'package:glasses/core/utils/widgets/my_flutter_app_icons.dart';
 import 'package:glasses/core/utils/widgets/sizedbox/sizedbox.dart';
 import 'package:glasses/features/authantication/presentation/cubit/authantication_cubit.dart';
@@ -32,7 +34,6 @@ class _SignupFormState extends State<SignupForm> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          
           Textheaderformfiled(titel: Appstring.signupEmailTitle),
           sized.s10,
           AuthTextField(
@@ -41,8 +42,9 @@ class _SignupFormState extends State<SignupForm> {
             iconsuffix: Appicons.sms_tracking,
             type: TextInputType.emailAddress,
             validator: (v) {
-              if (v == null || v.isEmpty)
+              if (v == null || v.isEmpty) {
                 return Appstring.signupEmailEmptyError;
+              }
               if (!v.contains('@')) return Appstring.signupEmailInvalidError;
               return null;
             },
@@ -98,7 +100,7 @@ class _SignupFormState extends State<SignupForm> {
                 value: Gender.female,
                 groupValue: _selectedGender,
                 label: Appstring.genderFemale,
-                icon: Appicons.semi_solid_x5f_transparent,
+                icon: AppIcons.women,
                 onChanged: (Gender? value) {
                   setState(() {
                     _selectedGender = value;
@@ -110,7 +112,7 @@ class _SignupFormState extends State<SignupForm> {
                 value: Gender.male,
                 groupValue: _selectedGender,
                 label: Appstring.genderMale,
-                icon: Appicons.people_15675806_1,
+                icon: AppIcons.man,
                 onChanged: (Gender? value) {
                   setState(() {
                     _selectedGender = value;
@@ -138,7 +140,17 @@ class _SignupFormState extends State<SignupForm> {
                 },
                 dialogTitle: Appstring.signupconfirmationtitle,
                 dialogSubtitle: Appstring.signupconfirmationsubtitle,
-                icon: MyFlutterApp.shopping_cart_check_02,
+                button: Custombutton(
+                  color: appcolors.primarycolor,
+                  backgroundColor: appcolors.buttoncoloronboarding,
+                  text: Appstring.signupconfirmatbuttontitle,
+                  onPressed: () {
+                    Navigator.of(context).pop();
+
+                    Navigator.pushReplacementNamed(context, Routes.layout);
+                  },
+                  icon: AppIcons.shoppingcart,
+                ),
               );
             },
             icon: MyFlutterApp.user_add,

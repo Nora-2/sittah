@@ -3,10 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glasses/core/routing/routes.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
+import 'package:glasses/core/utils/appicons/app_icons.dart';
 import 'package:glasses/core/utils/appimage/app_images.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
 import 'package:glasses/core/utils/widgets/appicons_icons.dart';
-import 'package:glasses/core/utils/widgets/my_flutter_app_icons.dart';
+import 'package:glasses/core/utils/widgets/custom_button.dart';
 import 'package:glasses/core/utils/widgets/sizedbox/sizedbox.dart';
 import 'package:glasses/features/authantication/presentation/cubit/authantication_cubit.dart';
 import 'package:glasses/features/authantication/presentation/widgets/auth_button.dart';
@@ -68,9 +69,7 @@ class NewPasswordScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Center(
-                          child: Image.asset(Appimage.resetpassword),
-                        ),
+                        Center(child: Image.asset(Appimage.resetpassword)),
                         SizedBox(height: 10.h),
                         Textheaderformfiled(titel: Appstring.newPasswordLabel),
                         sized.s10,
@@ -85,7 +84,9 @@ class NewPasswordScreen extends StatelessWidget {
                               : null,
                         ),
                         SizedBox(height: 20.h),
-                        Textheaderformfiled(titel:Appstring.confirmPasswordLabel),
+                        Textheaderformfiled(
+                          titel: Appstring.confirmPasswordLabel,
+                        ),
                         sized.s10,
                         AuthTextField(
                           controller: cubit.newpasswordController,
@@ -98,7 +99,9 @@ class NewPasswordScreen extends StatelessWidget {
                               : null,
                         ),
                         SizedBox(height: 20.h),
-                        AuthButton(
+                        Custombutton(
+                          color: appcolors.primarycolor,
+                  backgroundColor: appcolors.buttoncoloronboarding,
                           text: Appstring.saveButton,
                           onPressed: () {
                             PasswordSuccessDialog.show(
@@ -112,15 +115,28 @@ class NewPasswordScreen extends StatelessWidget {
                                   Routes.auth,
                                 );
                               },
-                              dialogTitle: Appstring.passwordSavedSuccessfullyTitle,
+                              dialogTitle:
+                                  Appstring.passwordSavedSuccessfullyTitle,
                               dialogSubtitle:
                                   Appstring.passwordSavedSuccessfullySubtitle,
-                              icon: Appicons.user,
+                              button: AuthButton(
+                                icon: Appicons.user,
+                                text: Appstring.login,
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+
+                                  Navigator.pushReplacementNamed(
+                                    context,
+                                    Routes.auth,
+                                  );
+                                },
+                                color: appcolors.primarycolor,
+                                backgroundColor:
+                                    appcolors.buttoncoloronboarding,
+                              ),
                             );
                           },
-                          icon: MyFlutterApp.arrow_left,
-                          color: appcolors.primarycolor,
-                          backgroundColor: appcolors.buttoncoloronboarding,
+                          icon: AppIcons.archivetick,
                         ),
                       ],
                     ),

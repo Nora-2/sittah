@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
-import 'package:glasses/features/authantication/presentation/widgets/auth_button.dart';
 
 class PasswordSuccessDialog extends StatelessWidget {
   const PasswordSuccessDialog({
@@ -11,15 +10,16 @@ class PasswordSuccessDialog extends StatelessWidget {
     required this.onPressed,
     required this.dialogSubtitle,
     required this.dialogTitle,
-    required this.icon,
+
+    required this.button,
   });
 
   final VoidCallback onPressed;
   final String text;
-  final IconData icon;
+
   final String dialogTitle;
   final String dialogSubtitle;
-
+  final Widget button;
 
   static Future<void> show({
     required BuildContext context,
@@ -27,7 +27,8 @@ class PasswordSuccessDialog extends StatelessWidget {
     required VoidCallback onPressed,
     required String dialogTitle,
     required String dialogSubtitle,
-    required IconData icon,
+
+    required Widget button
   }) {
     return showDialog(
       context: context,
@@ -37,7 +38,8 @@ class PasswordSuccessDialog extends StatelessWidget {
         onPressed: onPressed,
         dialogTitle: dialogTitle,
         dialogSubtitle: dialogSubtitle,
-        icon: icon,
+        
+        button: button,
       ),
     );
   }
@@ -56,12 +58,6 @@ class PasswordSuccessDialog extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // Top Indicator
-        
-
-           
-
-            // Success Icon
             Container(
               width: 60.w,
               height: 60.h,
@@ -85,7 +81,7 @@ class PasswordSuccessDialog extends StatelessWidget {
                 fontSize: 22.sp,
                 fontWeight: FontWeight.bold,
                 color: appcolors.black,
-                fontFamily: Appstring.fontfamily
+                fontFamily: Appstring.fontfamily,
               ),
               textAlign: TextAlign.center,
             ),
@@ -97,7 +93,7 @@ class PasswordSuccessDialog extends StatelessWidget {
               dialogSubtitle,
               style: TextStyle(
                 fontSize: 14.sp,
-                 fontFamily: Appstring.fontfamily,
+                fontFamily: Appstring.fontfamily,
                 color: Colors.grey.shade600,
               ),
               textAlign: TextAlign.center,
@@ -106,13 +102,7 @@ class PasswordSuccessDialog extends StatelessWidget {
             SizedBox(height: 32.h),
 
             // Button
-            AuthButton(
-              text: text,
-              onPressed: onPressed,
-              backgroundColor: appcolors.buttoncoloronboarding,
-              color: appcolors.primarycolor,
-              icon: icon,
-            ),
+            button,
           ],
         ),
       ),
