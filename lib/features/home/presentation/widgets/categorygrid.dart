@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glasses/core/constants.dart';
+import 'package:glasses/core/routing/routes.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
-import 'package:glasses/features/home/presentation/widgets/one_category_view.dart';
 
 class CategoryGrid extends StatelessWidget {
   const CategoryGrid({super.key});
@@ -30,12 +30,9 @@ class CategoryGrid extends StatelessWidget {
           final item = Constants.categories[index];
           return GestureDetector(
             onTap: () {
-              Navigator.push(
+              Navigator.pushNamed(
                 context,
-                MaterialPageRoute<void>(
-                  builder: (BuildContext context) =>
-                      const CustomCategoryScreen(),
-                ),
+               Routes.category
               );
             },
             child: Column(

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
 import 'package:glasses/features/onboarding/presentation/cubit/onboarding_cubit.dart';
-import 'package:glasses/features/onboarding/presentation/widgets/onboarding_item.dart' show onboardingPages;
+import 'package:glasses/features/onboarding/presentation/widgets/onboarding_item.dart'
+    show onboardingPages;
 import 'package:glasses/features/onboarding/presentation/widgets/onboarding_widget.dart';
 
 class OnboardingScreen extends StatefulWidget {

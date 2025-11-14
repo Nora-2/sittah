@@ -21,4 +21,22 @@ class AppIcons {
   static String store = 'assets/images/store-01.svg';
   static String trash = 'assets/images/trash.svg';
   static String glasses = 'assets/images/vr-glasses.svg';
+  static const String backArrow = 'assets/icons/back_arrow.png';
+  static const String heart = 'assets/icons/heart.png';
+  static const String glassframe = 'assets/images/glass.svg';
+  static const String shipping = 'assets/icons/shipping.png';
+  static const String returns = 'assets/icons/returns.png';
+  static const String photochromic = 'assets/icons/photochromic.png';
+  static const String driving = 'assets/icons/driving.png';
+  static const String colored = 'assets/icons/colored.png';
+  static const String blueLight = 'assets/icons/blue_light.png';
+  static const String polarized = 'assets/icons/polarized.png';
+  static const String check = 'assets/icons/check.png';
+  static const String klarnaLogo = 'assets/icons/klarna_logo.png';
+  static const String warrantyIcon = 'assets/icons/warranty_icon.png';
+  static const String shippingIcon = 'assets/icons/shipping_icon.png';
+  static const String returnsIcon = 'assets/icons/returns_icon.png';
+  static const String freeShippingIcon = 'assets/icons/free_shipping_icon.png';
+  static const String frameonly = 'assets/images/frameonly.svg';
+  static const String questionmark = 'assets/images/Question_Mark_Icon_UIA.svg';
 }

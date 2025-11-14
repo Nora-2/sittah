@@ -20,13 +20,13 @@ class AuthScreen extends StatelessWidget {
       body: BlocConsumer<AuthanticationCubit, AuthanticationState>(
         listener: (context, state) {
           if (state is AuthSuccess) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text(state.message)),
-            );
+            ScaffoldMessenger.of(
+              context,
+            ).showSnackBar(SnackBar(content: Text(state.message)));
           } else if (state is AuthError) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text(state.error)),
-            );
+            ScaffoldMessenger.of(
+              context,
+            ).showSnackBar(SnackBar(content: Text(state.error)));
           }
         },
         builder: (context, state) {
@@ -35,7 +35,7 @@ class AuthScreen extends StatelessWidget {
           return Stack(
             children: [
               // Background
-               AuthBackground(islogin: cubit.isLogin,),
+              AuthBackground(islogin: cubit.isLogin),
 
               // Scrollable form container
               SingleChildScrollView(
@@ -43,11 +43,14 @@ class AuthScreen extends StatelessWidget {
                   padding: EdgeInsets.only(top: height * 0.23),
                   child: Container(
                     width: double.infinity,
-                    height: height*1.08,
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+                    height: height * 1.08,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 25,
+                    ),
                     decoration: BoxDecoration(
                       color: appcolors.whicolor,
-                      borderRadius:  BorderRadius.only(
+                      borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(35.r),
                         topRight: Radius.circular(35.r),
                       ),

@@ -15,7 +15,7 @@ class AllCtegoriesScreen extends StatefulWidget {
 class _AllCtegoriesScreenState extends State<AllCtegoriesScreen> {
   @override
   Widget build(BuildContext context) {
-        final height = MediaQuery.of(context).size.height;
+    final height = MediaQuery.of(context).size.height;
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -37,9 +37,6 @@ class _AllCtegoriesScreenState extends State<AllCtegoriesScreen> {
           child: SafeArea(
             child: Stack(
               children: [
-
-              
-
                 Container(
                   height: 100.h,
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -54,7 +51,7 @@ class _AllCtegoriesScreenState extends State<AllCtegoriesScreen> {
                       ),
                       Expanded(
                         child: Text(
-                         Appstring.allcategories,
+                          Appstring.allcategories,
                           style: TextStyle(
                             fontFamily: Appstring.fontfamily,
                             fontSize: 17.sp,
@@ -67,31 +64,29 @@ class _AllCtegoriesScreenState extends State<AllCtegoriesScreen> {
                     ],
                   ),
                 ),
-                 SingleChildScrollView(
-                child: Padding(
-                  padding: EdgeInsets.only(top: height * 0.1),
-                  child: Container(
-                    width: double.infinity,
-                    height: height * 1.08,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 5,
-                      vertical: 25,
-                    ),
-                    decoration: BoxDecoration(
-                      color: appcolors.whicolor,
-                     
-                      
-                    ),
-                    child:
-                 Column(
-                      children: [
-                        SizedBox(height: 10.h),
-                        const SearchBarWidget(),
+                SingleChildScrollView(
+                  child: Padding(
+                    padding: EdgeInsets.only(top: height * 0.1),
+                    child: Container(
+                      width: double.infinity,
+                      height: height * 1.08,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 5,
+                        vertical: 25,
+                      ),
+                      decoration: BoxDecoration(color: appcolors.whicolor),
+                      child: Column(
+                        children: [
+                          SizedBox(height: 10.h),
+                          const SearchBarWidget(),
 
-                        SizedBox(height: 10.h),
-                        CategoryGrid(),
-                      ],
-                    ),),),)
+                          SizedBox(height: 10.h),
+                          CategoryGrid(),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

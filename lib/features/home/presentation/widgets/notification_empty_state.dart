@@ -19,28 +19,34 @@ class NotificationEmptyState extends StatelessWidget {
           children: [
             Image.asset(Appimage.bell),
             const SizedBox(height: 24),
-             Text(
-            Appstring.notifiemptytitle ,
+            Text(
+              Appstring.notifiemptytitle,
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: appcolors.black,
-                fontFamily: Appstring.fontfamily
+                fontFamily: Appstring.fontfamily,
               ),
             ),
             const SizedBox(height: 10),
             Text(
-            Appstring.notifiemptysubtitle ,
+              Appstring.notifiemptysubtitle,
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 14.sp,
                 color: Colors.grey[600],
                 height: 1.5,
-                fontFamily: Appstring.fontfamily
+                fontFamily: Appstring.fontfamily,
               ),
             ),
             const SizedBox(height: 30),
-            Custombutton(text: Appstring.notifiemptybutton, onPressed: (){},color: appcolors.primarycolor,backgroundColor: appcolors.buttoncoloronboarding,icon: AppIcons.shoppingbag,)
+            Custombutton(
+              text: Appstring.notifiemptybutton,
+              onPressed: () {},
+              color: appcolors.primarycolor,
+              backgroundColor: appcolors.buttoncoloronboarding,
+              icon: AppIcons.shoppingbag,
+            ),
           ],
         ),
       ),

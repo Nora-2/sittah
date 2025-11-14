@@ -57,12 +57,16 @@ class GenderRadioOption extends StatelessWidget {
             SizedBox(width: 5.w), // Smaller gap between radio and text
             Text(
               label,
-              style: TextStyle(fontSize: 16.sp, color: Colors.grey[500],fontFamily: Appstring.fontfamily),
+              style: TextStyle(
+                fontSize: 16.sp,
+                color: Colors.grey[500],
+                fontFamily: Appstring.fontfamily,
+              ),
               textDirection: TextDirection.rtl, // For Arabic text
             ),
             SizedBox(width: 10.w),
             // Placeholder for the image. Replace with Image.asset if needed.
-           SvgPicture.asset(icon)
+            SvgPicture.asset(icon),
           ],
         ),
       ),

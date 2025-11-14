@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -14,8 +13,7 @@ class Skipbutton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-               Navigator.pushReplacementNamed(context, Routes.login
-    );
+        Navigator.pushReplacementNamed(context, Routes.login);
       },
       child: Row(
         children: [
@@ -25,7 +23,7 @@ class Skipbutton extends StatelessWidget {
               color: appcolors.whicolor.withOpacity(.9),
               fontSize: 14.sp,
               height: 1.25,
-              fontFamily:Appstring.fontfamily,
+              fontFamily: Appstring.fontfamily,
               fontWeight: FontWeight.w500,
             ),
           ),

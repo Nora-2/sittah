@@ -30,12 +30,11 @@ class AuthTextField extends StatelessWidget {
       textAlignVertical: TextAlignVertical.center,
       controller: controller,
       obscureText: isPassword,
-      
+
       keyboardType: type,
       validator: validator,
       cursorColor: appcolors.buttoncoloronboarding,
       decoration: InputDecoration(
-        
         prefixIcon: icon != null
             ? Icon(icon, color: appcolors.graylinethrough)
             : null,

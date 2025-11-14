@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:glasses/core/routing/routes.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
 import 'package:glasses/core/utils/appimage/app_images.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
 import 'package:glasses/core/utils/widgets/my_flutter_app_icons.dart';
-import 'package:glasses/features/home/presentation/pages/notification_list_screen.dart';
-
 class HomeHeader extends StatelessWidget {
   const HomeHeader({super.key});
 
@@ -27,9 +26,9 @@ class HomeHeader extends StatelessWidget {
           CircleAvatar(
             radius: 22.r,
             backgroundColor: appcolors.transcolor,
-            child:Image.asset(Appimage.homemain,fit: BoxFit.fill,)
+            child: Image.asset(Appimage.homemain, fit: BoxFit.fill),
           ),
-          SizedBox(width: 10.w,),
+          SizedBox(width: 10.w),
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -40,7 +39,7 @@ class HomeHeader extends StatelessWidget {
                 textDirection: TextDirection.rtl,
                 children: [
                   Text(
-                '${Appstring.homemainheader}$name',
+                    '${Appstring.homemainheader}$name',
                     style: TextStyle(
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w600,
@@ -68,15 +67,15 @@ class HomeHeader extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 11.sp,
                       color: Colors.grey[500],
-                  
+
                       fontFamily: 'Montserratregular',
                     ),
                   ),
-                   SizedBox(width: 4.w),
+                  SizedBox(width: 4.w),
                   Center(
                     child: Icon(
-                     Icons.keyboard_arrow_down,
-                      color:Colors.grey[500],
+                      Icons.keyboard_arrow_down,
+                      color: Colors.grey[500],
                       size: 20,
                     ),
                   ),
@@ -84,7 +83,7 @@ class HomeHeader extends StatelessWidget {
               ),
             ],
           ),
-Spacer(),
+          Spacer(),
           Row(
             textDirection: TextDirection.rtl,
             children: [
@@ -96,12 +95,9 @@ Spacer(),
               SizedBox(width: 10.w),
               InkWell(
                 onTap: () {
-                  Navigator.push(
+                  Navigator.pushNamed(
                     context,
-                    MaterialPageRoute<void>(
-                      builder: (BuildContext context) =>
-                          const NotificationListScreen(),
-                    ),
+                    Routes.notification
                   );
                 },
                 child: CircleAvatar(

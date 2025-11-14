@@ -47,11 +47,13 @@ class _Signin_SignupState extends State<Signin_Signup> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(height: 280.h), // Responsive spacer
-                  Icon( MyFlutterApp.logo,
+                  Icon(
+                    MyFlutterApp.logo,
                     size: 40.sp,
-                    
-                    color: appcolors.primarycolor),
-                 
+
+                    color: appcolors.primarycolor,
+                  ),
+
                   Text(
                     Appstring.splashTitle,
                     textAlign: TextAlign.right,
@@ -59,7 +61,7 @@ class _Signin_SignupState extends State<Signin_Signup> {
                       color: appcolors.whicolor,
                       fontSize: 20.sp, // Responsive font size
                       fontWeight: FontWeight.w600,
-                      fontFamily: Appstring.fontfamily
+                      fontFamily: Appstring.fontfamily,
                     ),
                   ),
                   SizedBox(height: 2.h),
@@ -87,10 +89,9 @@ class _Signin_SignupState extends State<Signin_Signup> {
 
                   SizedBox(height: 14.h),
                   GestureDetector(
-                    onTap: () {  Navigator.pushNamed(
-                        context,
-                       Routes.auth
-                      );},
+                    onTap: () {
+                      Navigator.pushNamed(context, Routes.auth);
+                    },
                     child: Container(
                       decoration: BoxDecoration(
                         color: appcolors.whicolor,
@@ -113,7 +114,7 @@ class _Signin_SignupState extends State<Signin_Signup> {
                           Text(
                             Appstring.startNow,
                             style: TextStyle(
-                               color: appcolors.black,
+                              color: appcolors.black,
                               fontSize: 14.sp,
                               fontFamily: Appstring.fontfamily,
                             ),
@@ -125,10 +126,7 @@ class _Signin_SignupState extends State<Signin_Signup> {
                   SizedBox(height: 10.h),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushReplacementNamed(
-                        context,
-                       Routes.layout
-                      );
+                      Navigator.pushReplacementNamed(context, Routes.layoutgust);
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -162,7 +160,6 @@ class _Signin_SignupState extends State<Signin_Signup> {
                       ),
                     ),
                   ),
-                
                 ],
               ),
             ),

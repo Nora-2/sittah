@@ -50,7 +50,7 @@ class OnboardingbottomPart extends StatelessWidget {
         ),
 
         SizedBox(width: 10.w),
-       
+
         Expanded(
           child: ElevatedButton.icon(
             onPressed: () {
@@ -60,12 +60,11 @@ class OnboardingbottomPart extends StatelessWidget {
                   curve: Curves.easeInOut,
                 );
               } else {
-                
-            Navigator.pushReplacementNamed(context, Routes.login
-    ); }
+                Navigator.pushReplacementNamed(context, Routes.login);
+              }
             },
             icon: Icon(
-             MyFlutterApp.arrow_left,
+              MyFlutterApp.arrow_left,
               color: appcolors.primarycolor,
               size: 22.w,
             ),

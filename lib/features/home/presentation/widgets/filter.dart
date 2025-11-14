@@ -25,8 +25,6 @@ class GlassesFilterSheet extends StatefulWidget {
 }
 
 class _GlassesFilterSheetState extends State<GlassesFilterSheet> {
-
-
   void toggleFilter(String category, String item) {
     setState(() {
       if (Constants.selectedFilters[category]!.contains(item)) {
@@ -40,26 +38,26 @@ class _GlassesFilterSheetState extends State<GlassesFilterSheet> {
   void toggleColor(Color color) {
     setState(() {
       if (Constants.selectedColors.contains(color)) {
-       Constants. selectedColors.remove(color);
+        Constants.selectedColors.remove(color);
       } else {
-       Constants. selectedColors.add(color);
+        Constants.selectedColors.add(color);
       }
     });
   }
 
   void resetFilters() {
     setState(() {
-    Constants.  selectedFilters.forEach((key, value) => value.clear());
-     Constants. selectedColors.clear();
-     Constants. priceRange = const RangeValues(200, 2000);
+      Constants.selectedFilters.forEach((key, value) => value.clear());
+      Constants.selectedColors.clear();
+      Constants.priceRange = const RangeValues(200, 2000);
     });
   }
 
   void applyFilters() {
     Navigator.pop(context, {
-      'filters':Constants. selectedFilters,
+      'filters': Constants.selectedFilters,
       'colors': Constants.selectedColors,
-      'priceRange':Constants. priceRange,
+      'priceRange': Constants.priceRange,
     });
   }
 
@@ -74,7 +72,6 @@ class _GlassesFilterSheetState extends State<GlassesFilterSheet> {
         builder: (context, scrollController) {
           return SingleChildScrollView(
             child: Container(
-              
               decoration: BoxDecoration(
                 color: appcolors.whicolor,
                 borderRadius: BorderRadius.only(
@@ -88,7 +85,7 @@ class _GlassesFilterSheetState extends State<GlassesFilterSheet> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     _buildHeader(),
-                    
+
                     _buildCheckboxRowSection(Appstring.type, 'type'),
                     _divider(),
                     _buildCheckboxRowSection(Appstring.size, 'size'),
@@ -103,10 +100,10 @@ class _GlassesFilterSheetState extends State<GlassesFilterSheet> {
                     _divider(),
                     _buildCheckboxRowSection(Appstring.medicaldrug, 'features'),
                     SizedBox(height: 60.h),
-                    
+
                     // _buildActionButtons(),
                     AuthButton(
-                      text:Appstring.customization,
+                      text: Appstring.customization,
                       onPressed: applyFilters,
                       color: appcolors.primarycolor,
                       icon: MyFlutterApp.filter_horizontal__3_,
@@ -114,33 +111,43 @@ class _GlassesFilterSheetState extends State<GlassesFilterSheet> {
                     ),
                     SizedBox(height: 10.h),
                     GestureDetector(
-      onTap: resetFilters,
-      child: Container(
-        decoration: BoxDecoration(
-          color: appcolors.buttoncoloronboarding,
-          borderRadius: BorderRadius.circular(30.r),
-          border: Border.all(color: appcolors.whicolor, width: 1),
-        ),
-        padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-         SvgPicture.asset(AppIcons.close,height: 20.h,width: 20.w,color:appcolors.primarycolor,),
-            SizedBox(width: 7.w),
-            Text(
-             Appstring.ignore, 
-              style: TextStyle(
-                color: appcolors.primarycolor,
-                fontSize: 14.sp,
-                fontFamily: Appstring.fontfamily,
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
-                   
+                      onTap: resetFilters,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: appcolors.buttoncoloronboarding,
+                          borderRadius: BorderRadius.circular(30.r),
+                          border: Border.all(
+                            color: appcolors.whicolor,
+                            width: 1,
+                          ),
+                        ),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 15.w,
+                          vertical: 10.h,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            SvgPicture.asset(
+                              AppIcons.close,
+                              height: 20.h,
+                              width: 20.w,
+                              color: appcolors.primarycolor,
+                            ),
+                            SizedBox(width: 7.w),
+                            Text(
+                              Appstring.ignore,
+                              style: TextStyle(
+                                color: appcolors.primarycolor,
+                                fontSize: 14.sp,
+                                fontFamily: Appstring.fontfamily,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -174,9 +181,8 @@ class _GlassesFilterSheetState extends State<GlassesFilterSheet> {
     );
   }
 
-
   Widget _buildCheckboxRowSection(String title, String key) {
-    final items =Constants. filterCategories[key]!;
+    final items = Constants.filterCategories[key]!;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
@@ -198,7 +204,7 @@ class _GlassesFilterSheetState extends State<GlassesFilterSheet> {
           spacing: 10.w,
           runSpacing: 4.h,
           children: items.map((item) {
-            final isSelected =Constants. selectedFilters[key]!.contains(item);
+            final isSelected = Constants.selectedFilters[key]!.contains(item);
             return InkWell(
               onTap: () => toggleFilter(key, item),
               child: Row(
@@ -235,26 +241,41 @@ class _GlassesFilterSheetState extends State<GlassesFilterSheet> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-         Appstring.price,
+          Appstring.price,
           style: TextStyle(fontSize: 17.sp, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 10.h),
-        Center(
-          child: Text(
-            '${Constants.priceRange.start.toInt()} ج.م - ${Constants.priceRange.end.toInt()} ج.م',
-            style: TextStyle(
-              fontSize: 15.sp,
-              fontWeight: FontWeight.bold,
-              color: appcolors.buttoncoloronboarding,
+        Row(
+          children: [
+            Text(
+              'متوسط',
+
+              style: TextStyle(
+                fontSize: 15.sp,
+                fontWeight: FontWeight.w500,
+                color: appcolors.black,
+                fontFamily: Appstring.fontfamily,
+              ),
             ),
-          ),
+            Spacer(),
+            Text(
+              '${Constants.priceRange.end.toInt() - Constants.priceRange.start.toInt()} د.ع',
+
+              style: TextStyle(
+                fontSize: 15.sp,
+                fontWeight: FontWeight.w500,
+                color: appcolors.black,
+                fontFamily: Appstring.fontfamily,
+              ),
+            ),
+          ],
         ),
         RangeSlider(
           values: Constants.priceRange,
           min: 0,
           max: 3000,
-          divisions: 30,
-          activeColor:  appcolors.buttoncoloronboarding,
+
+          activeColor: appcolors.buttoncoloronboarding,
           inactiveColor: Colors.grey.shade300,
           onChanged: (values) => setState(() => Constants.priceRange = values),
         ),
@@ -275,8 +296,8 @@ class _GlassesFilterSheetState extends State<GlassesFilterSheet> {
           alignment: WrapAlignment.end,
           spacing: 10.w,
           runSpacing: 10.h,
-          children:Constants. colors.map((color) {
-            final isSelected =Constants. selectedColors.contains(color);
+          children: Constants.colors.map((color) {
+            final isSelected = Constants.selectedColors.contains(color);
             return GestureDetector(
               onTap: () => toggleColor(color),
               child: Container(
@@ -293,7 +314,7 @@ class _GlassesFilterSheetState extends State<GlassesFilterSheet> {
                   ),
                 ),
                 child: isSelected
-                    ?  Icon(Icons.check, color: appcolors.whicolor, size: 18)
+                    ? Icon(Icons.check, color: appcolors.whicolor, size: 18)
                     : null,
               ),
             );

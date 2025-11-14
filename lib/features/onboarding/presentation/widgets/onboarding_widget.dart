@@ -32,7 +32,7 @@ Widget buildOnboardingPage(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            Toppartonboparding(pageIndex: pageIndex,),
+            Toppartonboparding(pageIndex: pageIndex),
             SizedBox(height: 380.h), // Responsive spacer
             // Main text content
             Text(
@@ -42,7 +42,7 @@ Widget buildOnboardingPage(
                 color: Colors.white,
                 fontSize: 28.sp, // Responsive font size
                 fontWeight: FontWeight.w600,
-                fontFamily:  Appstring.fontfamily
+                fontFamily: Appstring.fontfamily,
               ),
             ),
             SizedBox(height: 10.h),
@@ -82,8 +82,11 @@ Widget buildOnboardingPage(
               ),
             ),
 
-            SizedBox(height: 10.h,),
-            OnboardingbottomPart(pageController: pageController,pageIndex: pageIndex,)
+            SizedBox(height: 10.h),
+            OnboardingbottomPart(
+              pageController: pageController,
+              pageIndex: pageIndex,
+            ),
           ],
         ),
       ),

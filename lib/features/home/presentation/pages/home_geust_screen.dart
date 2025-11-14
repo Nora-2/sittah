@@ -16,7 +16,7 @@ class HomeGeustScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      
+
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -43,7 +43,7 @@ class HomeGeustScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                 SizedBox(height: 20.h),
+                SizedBox(height: 20.h),
                 const HomeHeaderGeust(), // space for search bar overlay
                 SizedBox(height: 20.h),
                 const SearchBarWidget(),

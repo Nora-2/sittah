@@ -34,7 +34,7 @@ class ProductCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(16.r),
             ),
             padding: EdgeInsets.all(6),
-            width: 40.w,
+            width: 50.w,
             child: Text(
               Appstring.category1,
               style: TextStyle(
@@ -56,7 +56,7 @@ class ProductCard extends StatelessWidget {
           ),
           SizedBox(height: 4.h),
           Text(
-          Appstring.carddesc,
+            Appstring.carddesc,
             textDirection: TextDirection.rtl,
             style: TextStyle(
               fontSize: 10.sp,
@@ -73,23 +73,23 @@ class ProductCard extends StatelessWidget {
                 children: [
                   Text(
                     textDirection: TextDirection.rtl,
-               '500 ع.د',
+                    '500 ع.د',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: appcolors.buttoncoloronboarding,
-                      fontFamily:Appstring.fontfamily,
+                      fontFamily: Appstring.fontfamily,
                       fontSize: 14.sp,
                     ),
                   ),
                   Text(
                     '500 ع.د',
-                      textDirection: TextDirection.rtl,
+                    textDirection: TextDirection.rtl,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontFamily: Appstring.fontfamily,
                       decoration: TextDecoration.lineThrough,
                       fontSize: 12.sp,
-                      color: appcolors.graylinethrough
+                      color: appcolors.graylinethrough,
                     ),
                   ),
                 ],
@@ -97,7 +97,11 @@ class ProductCard extends StatelessWidget {
               CircleAvatar(
                 backgroundColor: appcolors.buttoncoloronboarding,
                 radius: 20.r,
-                child: SvgPicture.asset( AppIcons.cart,width: 15.w,height: 15.h,)
+                child: SvgPicture.asset(
+                  AppIcons.cart,
+                  width: 15.w,
+                  height: 15.h,
+                ),
               ),
             ],
           ),

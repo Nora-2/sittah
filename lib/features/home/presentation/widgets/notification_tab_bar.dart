@@ -27,11 +27,11 @@ class NotificationTabBar extends StatelessWidget {
               child: GestureDetector(
                 onTap: () => onTabSelected(index),
                 child: Container(
-                  padding:  EdgeInsets.symmetric(vertical: 10),
+                  padding: EdgeInsets.symmetric(vertical: 10),
                   decoration: BoxDecoration(
                     color: selectedIndex == index
                         ? appcolors.buttoncoloronboarding
-                        :  appcolors.graylinethrough.withOpacity(.01),
+                        : appcolors.graylinethrough.withOpacity(.01),
                     borderRadius: BorderRadius.circular(25),
                     border: Border.all(
                       color: selectedIndex == index
@@ -45,7 +45,7 @@ class NotificationTabBar extends StatelessWidget {
                     style: TextStyle(
                       color: selectedIndex == index
                           ? appcolors.whicolor
-                          :appcolors.gray700,
+                          : appcolors.gray700,
                       fontWeight: FontWeight.w600,
                       fontFamily: Appstring.fontfamily,
                       fontSize: 13,

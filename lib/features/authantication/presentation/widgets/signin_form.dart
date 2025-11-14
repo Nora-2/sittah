@@ -98,10 +98,7 @@ class _LoginFormState extends State<LoginForm> {
                 // "Forgot Password?" Link
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(
-                      context,Routes.passwordforget
-                    
-                    );
+                    Navigator.pushNamed(context, Routes.passwordforget);
                   },
                   child: Text(
                     Appstring.forgotPassword,
@@ -131,7 +128,7 @@ class _LoginFormState extends State<LoginForm> {
 
           GestureDetector(
             onTap: () {
-              Navigator.pushReplacementNamed(context, Routes.layout);
+              Navigator.pushReplacementNamed(context, Routes.layoutgust);
             },
             child: Container(
               decoration: BoxDecoration(

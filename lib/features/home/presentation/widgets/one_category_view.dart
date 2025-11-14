@@ -15,7 +15,7 @@ class CustomCategoryScreen extends StatefulWidget {
 }
 
 class _CustomCategoryScreenState extends State<CustomCategoryScreen> {
-   int selectedTab = 0;
+  int selectedTab = 0;
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -48,29 +48,34 @@ class _CustomCategoryScreenState extends State<CustomCategoryScreen> {
                         children: [
                           SizedBox(height: 10.h),
                           const SearchBarWidget(),
-                      
+
                           SizedBox(height: 10.h),
-                       CategoryTapBar( selectedIndex: selectedTab,
-                            onTabSelected: (i) => setState(() => selectedTab = i),),
-                            SizedBox(height: 10.h),
-                       SectionHeader(
-                                        title: Appstring.sectionheadertopsales,
-                                        onTap: () {},
-                                      ),
-                                      SizedBox(height: 10.h),
-                                      GridView.builder(
-                                        shrinkWrap: true,
-                                        physics: const NeverScrollableScrollPhysics(),
-                                        itemCount: 4,
-                                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 10.w,
-                      mainAxisSpacing: 10.h,
-                      childAspectRatio: 0.66,
-                                        ),
-                                        itemBuilder: (context, index) => const ProductCard(),
-                                      ),
-                                      SizedBox(height: 30.h),
+                          CategoryTapBar(
+                            selectedIndex: selectedTab,
+                            onTabSelected: (i) =>
+                                setState(() => selectedTab = i),
+                          ),
+                          SizedBox(height: 10.h),
+                          SectionHeader(
+                            title: Appstring.sectionheadertopsales,
+                            onTap: () {},
+                          ),
+                          SizedBox(height: 10.h),
+                          GridView.builder(
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            itemCount: 4,
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2,
+                                  crossAxisSpacing: 10.w,
+                                  mainAxisSpacing: 10.h,
+                                  childAspectRatio: 0.66,
+                                ),
+                            itemBuilder: (context, index) =>
+                                const ProductCard(),
+                          ),
+                          SizedBox(height: 30.h),
                         ],
                       ),
                     ),

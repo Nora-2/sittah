@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:glasses/core/utils/appicons/app_icons.dart';
 import 'package:glasses/core/utils/appimage/app_images.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
-import 'package:glasses/core/utils/widgets/appicons_icons.dart';
 import 'package:glasses/features/home/data/models/notificationmodel.dart';
 
 
@@ -116,8 +115,7 @@ abstract class Constants {
       'نظارات شمسية غير طبية',
     ],
   };
-
-  static final List<Color> colors = [
+ static final List<Color> colors = [
     Colors.black,
     Colors.brown,
     Colors.blue,
@@ -127,6 +125,15 @@ abstract class Constants {
     Colors.lightGreenAccent,
     Colors.yellow,
     Colors.orange,
+    Colors.red,
+    Colors.pinkAccent,
+    Colors.purple,
+    Colors.lime,
+    Colors.teal,
+  ];
+  static final List<Color> color = [
+    Colors.black,
+    Colors.brown,
     Colors.red,
     Colors.pinkAccent,
     Colors.purple,

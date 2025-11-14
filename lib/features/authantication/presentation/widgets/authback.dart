@@ -5,24 +5,21 @@ import 'package:glasses/features/authantication/presentation/widgets/auth_header
 
 // ignore: must_be_immutable
 class AuthBackground extends StatelessWidget {
-   AuthBackground({super.key,required this.islogin});
-bool islogin;
+  AuthBackground({super.key, required this.islogin});
+  bool islogin;
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
       height: 200.h,
       decoration: BoxDecoration(
-        gradient:    LinearGradient(
-            begin: Alignment.centerRight,
-            end: Alignment.centerLeft,
-            colors: [
-           appcolors.gradientauth1,
-           appcolors.gradientauth2
-       
-          ],)
+        gradient: LinearGradient(
+          begin: Alignment.centerRight,
+          end: Alignment.centerLeft,
+          colors: [appcolors.gradientauth1, appcolors.gradientauth2],
+        ),
       ),
-      child:  AuthHeader(islogin:islogin),
+      child: AuthHeader(islogin: islogin),
     );
   }
 }

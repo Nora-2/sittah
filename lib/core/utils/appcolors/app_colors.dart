@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class appcolors {
   static Color primarycolor = Color(0xffDFFF6D);
   static Color navbaractive = Color(0xFFC7FF00);
@@ -26,4 +27,26 @@ class appcolors {
   static Color carshilight = Color(0XFFF2F2F2);
   static Color green = Colors.green;
   static Color red = Colors.red;
+  static const Color primary = Color(
+    0xFF0D47A1,
+  ); // Example primary color (dark blue)
+  static const Color accent = Color(0xFF1E88E5); // Example accent color (blue)
+  static const Color background = Color(0xFFF5F5F5); // Light grey background
+  static const Color textBlack = Color(0xFF212121);
+  static const Color textGrey = Color(0xFF757575);
+  static const Color greenDiscount = Color(0xFFE8FAFC);
+  static const Color klarnaPink = Color(0xFFFC568D);
+  static const Color borderColor = Color(0xFFE0E0E0);
+  static const Color lightBlue = Color(0xFFE3F2FD);
+  static const Color darkGreen = Color(0xFF1B5E20);
+  static const Color cardBackground = Color(0xFFf2f2f2);
+  static const Color grey66 = Color(0xFF666666);
+
+  static const secondary = Color(0xFF00A896);
+  static const success = Color(0xFF4CAF50);
+
+  static const textPrimary = Color(0xFF1A1A1A);
+  static const textSecondary = Color(0xFF757575);
+  static const border = Color(0xFFE0E0E0);
+  static const discount = Color(0xFF4CAF50);
 }

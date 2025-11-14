@@ -18,9 +18,12 @@ class SectionHeader extends StatelessWidget {
       children: [
         Text(
           title,
-          style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold,   
-                 
-                  fontFamily: Appstring.fontfamily),
+          style: TextStyle(
+            fontSize: 16.sp,
+            fontWeight: FontWeight.bold,
+
+            fontFamily: Appstring.fontfamily,
+          ),
         ),
         GestureDetector(
           onTap: onTap,
@@ -31,13 +34,17 @@ class SectionHeader extends StatelessWidget {
                 Appstring.viewall,
                 style: TextStyle(
                   fontSize: 12.sp,
-                  color:appcolors.grayviewall,
+                  color: appcolors.grayviewall,
                   fontWeight: FontWeight.w200,
-                 fontFamily:  Appstring.fontfamily
+                  fontFamily: Appstring.fontfamily,
                 ),
               ),
-              SizedBox(width:  2.w),
-              Icon(MyFlutterApp.arrow_left, color:appcolors.grayviewall,size: 20,)
+              SizedBox(width: 2.w),
+              Icon(
+                MyFlutterApp.arrow_left,
+                color: appcolors.grayviewall,
+                size: 20,
+              ),
             ],
           ),
         ),

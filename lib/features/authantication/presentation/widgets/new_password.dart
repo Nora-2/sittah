@@ -101,11 +101,11 @@ class NewPasswordScreen extends StatelessWidget {
                         SizedBox(height: 20.h),
                         Custombutton(
                           color: appcolors.primarycolor,
-                  backgroundColor: appcolors.buttoncoloronboarding,
+                          backgroundColor: appcolors.buttoncoloronboarding,
                           text: Appstring.saveButton,
                           onPressed: () {
-                            PasswordSuccessDialog.show(
-                              context: context,
+                            showCustomDialogapprove(
+                               context,
                               text: Appstring.login,
                               onPressed: () {
                                 Navigator.of(context).pop();

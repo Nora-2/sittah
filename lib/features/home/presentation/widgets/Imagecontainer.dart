@@ -1,10 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
 import 'package:glasses/core/utils/appimage/app_images.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
 import 'package:glasses/core/utils/widgets/my_flutter_app_icons.dart';
+
 class Imagecontainer extends StatelessWidget {
   const Imagecontainer({super.key});
 
@@ -36,7 +36,11 @@ class Imagecontainer extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.all(2.r),
-                child: Icon(MyFlutterApp.heart, color: appcolors.black, size: 24),
+                child: Icon(
+                  MyFlutterApp.heart,
+                  color: appcolors.black,
+                  size: 24,
+                ),
               ),
             ],
           ),

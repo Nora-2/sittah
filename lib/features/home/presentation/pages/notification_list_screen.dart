@@ -66,7 +66,6 @@ class _NotificationListScreenState extends State<NotificationListScreen> {
                   ),
                 ),
 
-         
                 Container(
                   height: 100.h,
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -81,7 +80,7 @@ class _NotificationListScreenState extends State<NotificationListScreen> {
                       ),
                       Expanded(
                         child: Text(
-                        Appstring.notifications,
+                          Appstring.notifications,
                           style: TextStyle(
                             fontFamily: Appstring.fontfamily,
                             fontSize: 17.sp,
@@ -106,7 +105,7 @@ class _NotificationListScreenState extends State<NotificationListScreen> {
     return ListView(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       children: [
-        const NotificationSectionHeader(title:Appstring.today),
+        const NotificationSectionHeader(title: Appstring.today),
         ...Constants.notifications
             .take(2)
             .expand(
@@ -122,7 +121,7 @@ class _NotificationListScreenState extends State<NotificationListScreen> {
                       color: Colors.red.shade100,
                       borderRadius: BorderRadius.circular(12.r),
                     ),
-                    child:  Icon(
+                    child: Icon(
                       Icons.delete_outline,
                       color: appcolors.red,
                       size: 24.sp,
@@ -140,7 +139,7 @@ class _NotificationListScreenState extends State<NotificationListScreen> {
                 ),
               ],
             ),
-        const NotificationSectionHeader(title:Appstring.yesterday),
+        const NotificationSectionHeader(title: Appstring.yesterday),
         ...Constants.notifications
             .skip(2)
             .expand(
@@ -156,7 +155,7 @@ class _NotificationListScreenState extends State<NotificationListScreen> {
                       color: Colors.red.shade100,
                       borderRadius: BorderRadius.circular(12.r),
                     ),
-                    child:  Icon(
+                    child: Icon(
                       Icons.delete_outline,
                       color: appcolors.red,
                       size: 24,

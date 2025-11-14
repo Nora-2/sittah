@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:glasses/core/routing/routes.dart';
+import 'package:glasses/core/utils/widgets/geustlayout.dart';
 import 'package:glasses/core/utils/widgets/mainlayout.dart';
 import 'package:glasses/features/authantication/presentation/cubit/authantication_cubit.dart';
 import 'package:glasses/features/authantication/presentation/pages/auth_screen.dart';
@@ -8,27 +9,55 @@ import 'package:glasses/features/authantication/presentation/widgets/new_passwor
 
 import 'package:glasses/features/authantication/presentation/widgets/otp_password.dart';
 import 'package:glasses/features/authantication/presentation/widgets/password.dart';
+import 'package:glasses/features/home/presentation/pages/notification_list_screen.dart';
+import 'package:glasses/features/home/presentation/widgets/one_category_view.dart';
 import 'package:glasses/features/onboarding/presentation/cubit/onboarding_cubit.dart';
 import 'package:glasses/features/onboarding/presentation/pages/on_boarding_screen.dart';
 import 'package:glasses/features/onboarding/presentation/pages/signin_signup.dart';
-import 'package:glasses/features/spalsh/presentation/pages/spalshscreen.dart';
+import 'package:glasses/features/product/presentation/pages/frame_choose.dart';
+import 'package:glasses/features/product/presentation/pages/product_details_screen.dart';
+import 'package:glasses/features/product/presentation/widgets/tryit.dart';
 
 class AppRouter {
-  AppRouter() {}
+  
 
   Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.splash:
         return MaterialPageRoute(
-          builder: (_) => const SplashScreen(), 
+          builder: (_) => const ProductDetailsScreen(), 
         );
          case Routes.login:
         return MaterialPageRoute(
           builder: (_) => const Signin_Signup(), 
         );
+               case Routes.category:
+        return MaterialPageRoute(
+          builder: (_) => const CustomCategoryScreen(), 
+        );
+              case Routes.prescription:
+        return MaterialPageRoute(
+          builder: (_) => PrescriptionStepScreen(stepNumber: 1,), 
+        );
+                case Routes.framechoose:
+        return MaterialPageRoute(
+          builder: (_) => PrescriptionStepScreen(stepNumber: 2,), 
+        );
+               case Routes.glassesProductScreen:
+        return MaterialPageRoute(
+          builder: (_) => const GlassesProductScreen(), 
+        );
+               case Routes.notification:
+        return MaterialPageRoute(
+          builder: (_) => const NotificationListScreen(), 
+        );
       case Routes.layout:
         return MaterialPageRoute(
           builder: (_) => const MainLayout (), 
+        );
+        case Routes.layoutgust:
+        return MaterialPageRoute(
+          builder: (_) => const GuestLayout (), 
         );
       case Routes.onboarding:
         return MaterialPageRoute(

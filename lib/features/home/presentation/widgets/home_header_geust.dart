@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:glasses/core/routing/routes.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
 import 'package:glasses/core/utils/widgets/my_flutter_app_icons.dart';
-import 'package:glasses/features/home/presentation/pages/notification_list_screen.dart';
 
 class HomeHeaderGeust extends StatelessWidget {
   const HomeHeaderGeust({super.key});
@@ -79,17 +79,18 @@ class HomeHeaderGeust extends StatelessWidget {
               CircleAvatar(
                 radius: 20.r,
                 backgroundColor: appcolors.whicolor,
-                child: Icon(MyFlutterApp.heart, color: appcolors.black, size: 24),
+                child: Icon(
+                  MyFlutterApp.heart,
+                  color: appcolors.black,
+                  size: 24,
+                ),
               ),
               SizedBox(width: 10.w),
               InkWell(
                 onTap: () {
-                  Navigator.push(
+                  Navigator.pushNamed(
                     context,
-                    MaterialPageRoute<void>(
-                      builder: (BuildContext context) =>
-                          const NotificationListScreen(),
-                    ),
+                   Routes.notification
                   );
                 },
                 child: CircleAvatar(

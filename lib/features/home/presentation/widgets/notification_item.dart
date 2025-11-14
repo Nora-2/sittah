@@ -28,7 +28,7 @@ class NotificationItem extends StatelessWidget {
         ),
         alignment: Alignment.centerRight,
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child:  SvgPicture.asset( AppIcons.trash,)
+        child: SvgPicture.asset(AppIcons.trash),
       ),
       onDismissed: (_) {
         onDelete?.call();
@@ -47,10 +47,12 @@ class NotificationItem extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-             gradient: LinearGradient(colors: [appcolors.gradient1,appcolors.gradient3]),
+              gradient: LinearGradient(
+                colors: [appcolors.gradient1, appcolors.gradient3],
+              ),
               borderRadius: BorderRadius.circular(25),
             ),
-            child: SvgPicture.asset(notification.icon,   height: 24,width: 24,)
+            child: SvgPicture.asset(notification.icon, height: 24, width: 24),
           ),
           const SizedBox(width: 12),
           // 🔹 Notification content
@@ -64,7 +66,7 @@ class NotificationItem extends StatelessWidget {
                     Container(
                       width: 8,
                       height: 8,
-                      decoration:  BoxDecoration(
+                      decoration: BoxDecoration(
                         color: appcolors.buttoncoloronboarding,
                         shape: BoxShape.circle,
                       ),
@@ -73,7 +75,7 @@ class NotificationItem extends StatelessWidget {
                     Expanded(
                       child: Text(
                         notification.title,
-                        style:  TextStyle(
+                        style: TextStyle(
                           fontSize: 11.sp,
                           fontWeight: FontWeight.w500,
                           color: appcolors.black,
@@ -85,18 +87,13 @@ class NotificationItem extends StatelessWidget {
                 const SizedBox(height: 4),
                 Text(
                   notification.time,
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.grey[500],
-                  ),
+                  style: TextStyle(fontSize: 12, color: Colors.grey[500]),
                 ),
               ],
             ),
           ),
-          
         ],
       ),
     );
   }
-
 }

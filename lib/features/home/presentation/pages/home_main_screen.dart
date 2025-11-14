@@ -10,14 +10,14 @@ import 'package:glasses/features/home/presentation/widgets/home_header.dart';
 import 'package:glasses/features/home/presentation/widgets/product_card.dart';
 
 class HomeMainScreen extends StatelessWidget {
-   final VoidCallback onCategoryTap;
+  final VoidCallback onCategoryTap;
 
   const HomeMainScreen({super.key, required this.onCategoryTap});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      
+
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -44,7 +44,7 @@ class HomeMainScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                 SizedBox(height: 20.h),
+                SizedBox(height: 20.h),
                 const HomeHeader(), // space for search bar overlay
                 SizedBox(height: 20.h),
                 const SearchBarWidget(),
@@ -56,7 +56,10 @@ class HomeMainScreen extends StatelessWidget {
                 SizedBox(height: 8.h),
                 const OfferSlider(),
                 SizedBox(height: 20.h),
-               SectionHeader(title:  Appstring.sectionheadercategory,onTap:onCategoryTap,),
+                SectionHeader(
+                  title: Appstring.sectionheadercategory,
+                  onTap: onCategoryTap,
+                ),
                 SizedBox(height: 8.h),
                 const CategoryList(),
                 SizedBox(height: 20.h),

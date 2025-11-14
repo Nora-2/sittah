@@ -24,7 +24,10 @@ class AuthTabs extends StatelessWidget {
       decoration: BoxDecoration(
         color: appcolors.whicolor, // background for inactive tabs
         borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(width: 1,color: appcolors.grayviewall.withOpacity(.3))
+        border: Border.all(
+          width: 1,
+          color: appcolors.grayviewall.withOpacity(.3),
+        ),
       ),
       child: Row(
         children: [
@@ -34,7 +37,9 @@ class AuthTabs extends StatelessWidget {
               onTap: onTapLogin,
               child: Container(
                 decoration: BoxDecoration(
-                  color: isLogin ? appcolors.buttoncoloronboarding.withOpacity(.82) : Colors.transparent,
+                  color: isLogin
+                      ? appcolors.buttoncoloronboarding.withOpacity(.82)
+                      : Colors.transparent,
                   borderRadius: BorderRadius.circular(30.r),
                 ),
                 alignment: Alignment.center,
@@ -42,15 +47,18 @@ class AuthTabs extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     //change the icon
-                    Icon(Appicons.user, color: isLogin ? appcolors.whicolor : appcolors.black2,),
+                    Icon(
+                      Appicons.user,
+                      color: isLogin ? appcolors.whicolor : appcolors.black2,
+                    ),
                     SizedBox(width: 8.w),
                     Text(
-                       Appstring.login,
+                      Appstring.login,
                       style: TextStyle(
                         color: isLogin ? appcolors.whicolor : appcolors.black2,
                         fontWeight: FontWeight.w500,
                         fontSize: 14.sp,
-                        fontFamily: Appstring.fontfamily
+                        fontFamily: Appstring.fontfamily,
                       ),
                     ),
                   ],
@@ -65,15 +73,19 @@ class AuthTabs extends StatelessWidget {
               onTap: onTapSignup,
               child: Container(
                 decoration: BoxDecoration(
-                  color: !isLogin ? appcolors.buttoncoloronboarding.withOpacity(.82) : Colors.transparent,
+                  color: !isLogin
+                      ? appcolors.buttoncoloronboarding.withOpacity(.82)
+                      : Colors.transparent,
                   borderRadius: BorderRadius.circular(30.r),
-                  
                 ),
                 alignment: Alignment.center,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(MyFlutterApp.user_add, color: !isLogin ? appcolors.whicolor : appcolors.black2,),
+                    Icon(
+                      MyFlutterApp.user_add,
+                      color: !isLogin ? appcolors.whicolor : appcolors.black2,
+                    ),
                     SizedBox(width: 8.w),
                     Text(
                       Appstring.signUp,
@@ -81,7 +93,7 @@ class AuthTabs extends StatelessWidget {
                         color: !isLogin ? appcolors.whicolor : appcolors.black2,
                         fontWeight: FontWeight.w500,
                         fontSize: 14.sp,
-                              fontFamily: Appstring.fontfamily
+                        fontFamily: Appstring.fontfamily,
                       ),
                     ),
                   ],

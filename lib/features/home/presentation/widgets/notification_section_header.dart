@@ -12,7 +12,7 @@ class NotificationSectionHeader extends StatelessWidget {
       padding: const EdgeInsets.only(top: 20, bottom: 8),
       child: Text(
         title,
-        style:  TextStyle(
+        style: TextStyle(
           fontSize: 15,
           fontWeight: FontWeight.w600,
           color: appcolors.black2,

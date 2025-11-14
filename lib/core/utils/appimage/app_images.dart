@@ -17,4 +17,17 @@ class Appimage {
   static String otp = 'assets/images/otp.png';
   static String resetpassword = 'assets/images/resetpass.png';
     static String bell = 'assets/images/BELL.png';
+ 
+  static const String mainProduct = 'assets/images/glass.png';
+  static const String productBlack = 'assets/images/glass.png';
+  static const String productRed = 'assets/images/red.png';
+  static const String productBlue = 'assets/images/blue.png';
+  static const String productBeige = 'assets/images/orange.png';
+  static const String productBrown = 'assets/images/browen.png';
+  static const String dimensions = 'assets/images/dimensions.png';
+  static const String relatedProduct1 = 'assets/images/related_product1.png';
+  static const String relatedProduct2 = 'assets/images/related_product2.png';
+  static const String frame1 = 'assets/images/frame1.png';
+  static const String frame2 = 'assets/images/frame2.png';
+
 }

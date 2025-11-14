@@ -25,10 +25,9 @@ class Phoneauthwidget extends StatelessWidget {
         // Country Code Dropdown with Flag
         Container(
           height: 42.h,
-          
+
           padding: const EdgeInsets.symmetric(horizontal: 12),
           decoration: BoxDecoration(
-          
             color: Colors.grey.shade50,
             border: Border.all(color: Colors.grey.shade300),
             borderRadius: BorderRadius.only(

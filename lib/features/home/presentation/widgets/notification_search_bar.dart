@@ -13,41 +13,29 @@ class NotificationSearchBar extends StatelessWidget {
       child: TextField(
         textAlign: TextAlign.right,
         decoration: InputDecoration(
-         
-            hintStyle: TextStyle(color: appcolors.graylinethrough),
-      
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(
-              
-              25.r
-              ),
+          hintStyle: TextStyle(color: appcolors.graylinethrough),
+
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(25.r)),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(25.r),
+            borderSide: BorderSide(color: appcolors.textfieldborder, width: 1),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(25.r),
+            borderSide: BorderSide(
+              color: appcolors.buttoncoloronboarding,
+              width: 1,
             ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius:BorderRadius.circular(
-              
-              25.r
-              ),
-              borderSide: BorderSide(
-                color: appcolors.textfieldborder,
-                width: 1,
-              ),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius:BorderRadius.circular(
-              
-              25.r
-              ),
-              borderSide: BorderSide(
-                color: appcolors.buttoncoloronboarding,
-                width: 1,
-              ),
-            ),
-          
+          ),
+
           hintText: Appstring.searchfornotifi,
-      
+
           prefixIcon: Icon(Icons.search, color: Colors.grey[400]),
-       
-          contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: 20,
+            vertical: 15,
+          ),
         ),
       ),
     );

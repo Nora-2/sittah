@@ -170,4 +170,94 @@ class Appstring {
     static const String allcategories =  'جميع الفئات';
      static const String products =   'المنتجات' ;
       static const String item =   'عنصر' ;
+      
+  static const String glassesTitle = 'نظارات ويستلي';
+  static const String glassesDescription = 'نظارات كريستال مربعة من خشب الأبنوس تصميم أنيق يجمع بين الفخامة والطبيعة.إطار خشبي خفيف ومتين';
+  static const String discountText = 'خصم 7 د.ع على الطلب الذي يزيد عن 500 د.ع';
+  static const String installmentText = '4 أقساط بدون فوائد بقيمة 5.73 د.ع مع';
+  static const String colorSelectionTitle = 'لون الإطار: أسود';
+  static const String red = 'أحمر';
+  static const String blue = 'أزرق';
+  static const String beige = 'بيج';
+  static const String black = 'أسود';
+  static const String brown = 'برتقالي';
+  static const String sizeGuide = 'جدول المقاسات';
+  static const String medium = 'متوسط';
+  static const String medicalLenses = 'عدسات طبية';
+  static const String included = 'متضمن';
+  static const String productDetails = 'تفاصيل المنتج';
+  static const String lensDetails = 'تفاصيل العدسة';
+  static const String shippingAndReturns = 'الشحن والإرجاع';
+  static const String sku = 'رمز SKU:';
+  static const String frameShape = 'شكل:';
+  static const String typee = 'نوع:';
+  static const String materiale = 'مادة:';
+  static const String bridge = 'حافة:';
+  static const String nosePads = 'وسادات أنف قابلة للتعديل:';
+  static const String weight = 'الوزن:';
+  static const String frameWidth = 'عرض الإطار:';
+  static const String lensWidth = 'قياس العدسة:';
+  static const String lensHeight = 'ارتفاع العدسة:';
+  static const String armLength = 'طول الجذع:';
+  static const String pdRange = 'نطاق PD:';
+  static const String youMightLike = 'أنواع أخرى قد تثير اهتمامك';
+  static const String addLenses = 'اختار عدسات';
+  static const String totalAmount = 'اجمالي السعر';
+  static const String viewOnly = 'عرض فقط';
+  static const String warranty365Days = 'ضمان لمدة 365 يومًا';
+  static const String warrantyDescription = 'يغطي عيوب التصنيع، بإستثناء الأضرار الناتجة عن الحوادث أو الإهمال أو الرعاية';
+  static const String returns30Days = 'تبادلات وإرجاعات لمدة 30 يومًا';
+  static const String returnsDescription = 'يمكن إرجاع المنتجات أو استبدالها أو استردادها خلال 30 يومًا.';
+  static const String shippingInfo = 'نحن نقدم خدمة الشحن والإرجاع لجميع الطلبات على sittah.com. ستستمتع بالشحن القياسي المجاني على الطلبات التي تزيد عن 79 د.ع سيتم تضمين جميع التعبئة الأصلية (كتيب، علبة، قطعة قماش، بطاقة قسيمة، ملصق).';
+  static const String fullShippingPolicy = 'يرجى النقر على الشحن والإرجاع لعرض سياسة الشحن والإرجاع الكاملة.';
+  static const String photochromic = 'فوتوكروميك';
+  static const String photochromicDescription = 'تتكيف تلقائيًا مع الضوء، حيث يظلم في الهواء الطلق وينير في الداخل للراحة.';
+  static const String driving = 'القيادة';
+  static const String drivingDescription = 'يقلل من الوهج ويعزز التباين لرؤية أوضح وأكثر أمانًا على الطريق.';
+  static const String colored = 'ملون';
+  static const String coloredDescription = 'يحسن التباين ويقلل من الوهج، يوفر راحة ووضوح في ظروف الإضاءة المختلفة.';
+  static const String blueLightBlocking = 'حجب الضوء الأزرق';
+  static const String blueLightBlockingDescription = 'يقلل من إجهاد العين ويحمي من الضوء الأزرق الضار الناتج عن الشاشات والأجهزة.';
+  static const String polarized = 'مستقطب';
+  static const String polarizedDescription = 'يمنع الوهج من الأسطح العاكسة، مما يعزز الوضوح ويقلل من تعب العين.';
+  static const String coloredLenses = 'عدسات ملونة';
+  static const String progressiveLenses = 'عدسات تدريجية';
+  static const String readingGlasses = 'نظارات قراءة';
+  static const String drivingLenses = 'عدسات مخصصة للقيادة';
+    static const String prescriptionType = 'نوع الوصفة الطبية';
+  static const String lensType = 'نوع العدسة';
+
+  static const String nonMedicalSunglasses = 'نظارات شمسية غير طبية';
+  static const String nonMedicalSunglassesDesc = 'عدسة لحماية العين من أشعة الشمس';
+
+  static const String medicalSunglasses = 'نظارات شمسية طبية';
+  static const String medicalSunglassesDesc = 'عدسة لتصحيح البصر وحماية العين';
+
+  static const String gradientSunglasses = 'نظارات شمسية متدرج من الأعلى';
+  static const String gradientSunglassesDesc = 'عدسة لتصحيح البصر وحماية العين';
+
+  static const String coloredLens = 'ملون';
+  static const String coloredLensDesc = 'عدسة تستخدم للموضة أو حماية العين';
+
+  static const String polarizedSunglassesLens = 'عدسات نظارات شمسية قطبية';
+  static const String polarizedSunglassesLensDesc = 'عدسات ملونة تقلل من الوهج\nللنظارات الشمسية';
+
+  static const String frameonly =  'إطار فقط';
+
+  static const String big = 'كبير';
+
+  static const String small = 'صغير';
+    static const String worryFreeDelivery = 'توصيل بدون قلق';
+  static const String returnsAndExchange30Days = 'إرجاع واستبدال خلال 30 يومًا';
+  static const String freeShippingOver79 = 'شحن مجاني للطلبات التي تزيد عن 79 د.ع';
+  static const String phantomVariant = 'فانتوم';
+  static const String edgensVariant = 'إيدجنس';
+  static const String heritageVariant = 'هيرتيج';
+  static const String fusionVariant = 'فيوجن';
+  static const String whistleVariant = 'ويستل';
+  static const String price500 = '500 د.ع';
+  static const String threeThousandReviews = '(3 آلاف تقييم)';
+  static const String frameOnly = 'إطار فقط';
+
+
 }

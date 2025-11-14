@@ -8,47 +8,48 @@ import 'package:glasses/core/utils/appstring/app_string.dart';
 class Custombutton extends StatelessWidget {
   final String text;
   final dynamic onPressed;
-    Color ?backgroundColor=appcolors.buttoncoloronboarding;
+  Color? backgroundColor = appcolors.buttoncoloronboarding;
   final double? height;
   final String icon;
-   Color ?color=appcolors.primarycolor;
-   Custombutton({
+  Color? color = appcolors.primarycolor;
+  Custombutton({
     super.key,
     required this.text,
     required this.onPressed,
     this.backgroundColor,
     this.height,
-   required this.icon,
+    required this.icon,
     this.color,
-    
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onPressed,
-      child: Container(
-        decoration: BoxDecoration(
-          color: backgroundColor,
-          borderRadius: BorderRadius.circular(30.r),
-          border: Border.all(color: appcolors.whicolor, width: 1),
-        ),
-        padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-           SvgPicture.asset(icon),
-            SizedBox(width: 7.w),
-            Text(
-              text,
-              style: TextStyle(
-                color: color,
-                fontSize: 14.sp,
-                fontFamily: Appstring.fontfamily,
+      child: Expanded(
+        child: Container(
+          decoration: BoxDecoration(
+            color: backgroundColor,
+            borderRadius: BorderRadius.circular(30.r),
+            border: Border.all(color: backgroundColor!, width: 1),
+          ),
+          padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SvgPicture.asset(icon),
+              SizedBox(width: 7.w),
+              Text(
+                text,
+                style: TextStyle(
+                  color: color,
+                  fontSize: 14.sp,
+                  fontFamily: Appstring.fontfamily,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

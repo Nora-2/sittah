@@ -31,18 +31,28 @@ class SearchBarWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SvgPicture.asset( AppIcons.search,),
+          SvgPicture.asset(AppIcons.search),
           SizedBox(width: 4.w),
 
           Text(
             Appstring.searchtext,
-            style: TextStyle(color: Color(0xffB3B3B3).withOpacity(.6), fontSize: 13.sp,fontFamily:'Montserrat' ),
+            style: TextStyle(
+              color: Color(0xffB3B3B3).withOpacity(.6),
+              fontSize: 13.sp,
+              fontFamily: 'Montserrat',
+            ),
           ),
           Spacer(),
-           GestureDetector( onTap: () async{
-             // ignore: unused_local_variable
-             final result = await GlassesFilterSheet.show(context);
-           }, child: Icon(MyFlutterApp.filter_horizontal__3_, color: appcolors.black)),
+          GestureDetector(
+            onTap: () async {
+              // ignore: unused_local_variable
+              final result = await GlassesFilterSheet.show(context);
+            },
+            child: Icon(
+              MyFlutterApp.filter_horizontal__3_,
+              color: appcolors.black,
+            ),
+          ),
         ],
       ),
     );

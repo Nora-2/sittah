@@ -13,16 +13,10 @@ class Passback extends StatelessWidget {
       width: double.infinity,
       height: 200.h,
       decoration: BoxDecoration(
-        gradient:
-        LinearGradient(
-            begin: Alignment.centerRight,
-            end: Alignment.centerLeft,
-            colors: [
-           appcolors.gradientauth1,
-           appcolors.gradientauth2
-       
-          ],
-        
+        gradient: LinearGradient(
+          begin: Alignment.centerRight,
+          end: Alignment.centerLeft,
+          colors: [appcolors.gradientauth1, appcolors.gradientauth2],
         ),
       ),
       child: Padding(
@@ -36,7 +30,7 @@ class Passback extends StatelessWidget {
                 IconButton(
                   icon: Icon(Icons.arrow_forward_ios, size: 15.sp),
                   onPressed: () {
-                     Navigator.of(context).pop();
+                    Navigator.of(context).pop();
                   },
                 ),
                 SizedBox(width: 4.w),
@@ -90,5 +84,3 @@ class Passback extends StatelessWidget {
     );
   }
 }
-
-

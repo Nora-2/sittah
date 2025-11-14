@@ -61,7 +61,10 @@ class _OtpPasswordScreenState extends State<OtpPasswordScreen> {
             });
             errorController?.add(ErrorAnimationType.shake);
             ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text(state.error), backgroundColor: appcolors.red),
+              SnackBar(
+                content: Text(state.error),
+                backgroundColor: appcolors.red,
+              ),
             );
           }
         },
@@ -102,7 +105,6 @@ class _OtpPasswordScreenState extends State<OtpPasswordScreen> {
                           fit: BoxFit.fill,
                         ),
 
-               
                         Directionality(
                           textDirection: TextDirection.rtl,
                           child: PinCodeTextField(
@@ -137,7 +139,6 @@ class _OtpPasswordScreenState extends State<OtpPasswordScreen> {
                             ),
                             cursorColor: appcolors.black,
                             onCompleted: (value) {
-                             
                               cubit.verifyOtp(value);
                             },
                             onChanged: (value) {
@@ -158,7 +159,7 @@ class _OtpPasswordScreenState extends State<OtpPasswordScreen> {
                           Padding(
                             padding: EdgeInsets.only(top: 8.h),
                             child: Text(
-                             Appstring.incorrectcode,
+                              Appstring.incorrectcode,
                               style: TextStyle(
                                 color: appcolors.red,
                                 fontSize: 14.sp,
@@ -225,7 +226,8 @@ class _OtpPasswordScreenState extends State<OtpPasswordScreen> {
                         ),
 
                         SizedBox(height: 200.h),
-                       Custombutton( text: 'ارسال',
+                        Custombutton(
+                          text: 'ارسال',
                           onPressed: currentText.length == 6
                               ? () {
                                   cubit.verifyOtp(currentText);
@@ -234,7 +236,9 @@ class _OtpPasswordScreenState extends State<OtpPasswordScreen> {
                                     Routes.newpassword,
                                   );
                                 }
-                              : null, icon:  AppIcons.educare),
+                              : null,
+                          icon: AppIcons.educare,
+                        ),
 
                         SizedBox(height: 20.h),
                       ],

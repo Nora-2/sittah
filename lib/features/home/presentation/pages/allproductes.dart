@@ -46,12 +46,12 @@ class _AllproductsScreenState extends State<AllproductsScreen> {
                     color: appcolors.whicolor,
                     child: SingleChildScrollView(
                       child: Padding(
-                        padding:  EdgeInsets.symmetric(horizontal: 8.w),
+                        padding: EdgeInsets.symmetric(horizontal: 8.w),
                         child: Column(
                           children: [
                             SizedBox(height: 10.h),
                             const SearchBarWidget(),
-                        
+
                             SizedBox(height: 10.h),
                             CategoryTapBar(
                               selectedIndex: selectedTab,
@@ -86,7 +86,7 @@ class _AllproductsScreenState extends State<AllproductsScreen> {
                   ),
                 ),
 
-                Container(
+                SizedBox(
                   height: 100.h,
 
                   child: Row(

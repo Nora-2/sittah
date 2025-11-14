@@ -3,9 +3,126 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
 
-class PasswordSuccessDialog extends StatelessWidget {
-  const PasswordSuccessDialog({
-    super.key,
+// class PasswordSuccessDialog extends StatelessWidget {
+//   const PasswordSuccessDialog({
+//     super.key,
+//     required this.text,
+//     required this.onPressed,
+//     required this.dialogSubtitle,
+//     required this.dialogTitle,
+
+//     required this.button,
+//   });
+
+//   final VoidCallback onPressed;
+//   final String text;
+
+//   final String dialogTitle;
+//   final String dialogSubtitle;
+//   final Widget button;
+
+//   static Future<void> show({
+//     required BuildContext context,
+//     required String text,
+//     required VoidCallback onPressed,
+//     required String dialogTitle,
+//     required String dialogSubtitle,
+
+//     required Widget button,
+//   }) {
+//     return showDialog(
+//       context: context,
+//       barrierDismissible: false,
+//       builder: (context) => PasswordSuccessDialog(
+//         text: text,
+//         onPressed: onPressed,
+//         dialogTitle: dialogTitle,
+//         dialogSubtitle: dialogSubtitle,
+
+//         button: button,
+//       ),
+//     );
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Dialog(
+//       backgroundColor: appcolors.transcolor,
+//       insetPadding: EdgeInsets.symmetric(horizontal: 10.w),
+//       child: Container(
+//         padding: EdgeInsets.all(24.w),
+//         decoration: BoxDecoration(
+//           color: Colors.white,
+//           borderRadius: BorderRadius.circular(30.r),
+//         ),
+//         child: Column(
+//           mainAxisSize: MainAxisSize.min,
+//           children: [
+//             SizedBox(
+//               width: 60.w,
+//               height: 60.h,
+//               child: Image.asset('assets/images/aprove.gif'),
+//             ),
+
+//             SizedBox(height: 24.h),
+
+//             // Title
+//             Text(
+//               dialogTitle,
+//               style: TextStyle(
+//                 fontSize: 22.sp,
+//                 fontWeight: FontWeight.bold,
+//                 color: appcolors.black,
+//                 fontFamily: Appstring.fontfamily,
+//               ),
+//               textAlign: TextAlign.center,
+//             ),
+
+//             SizedBox(height: 12.h),
+
+//             // Subtitle
+//             Text(
+//               dialogSubtitle,
+//               style: TextStyle(
+//                 fontSize: 14.sp,
+//                 fontFamily: Appstring.fontfamily,
+//                 color: Colors.grey.shade600,
+//               ),
+//               textAlign: TextAlign.center,
+//             ),
+
+//             SizedBox(height: 32.h),
+
+//             // Button
+//             button,
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+void showCustomDialogapprove(BuildContext context, {
+   required String text,
+    required VoidCallback onPressed,
+    required String dialogTitle,
+    required String dialogSubtitle,
+
+    required Widget button,})
+    
+     {
+  showModalBottomSheet(
+    context: context,
+    isScrollControlled: true,
+    backgroundColor: Colors.transparent,
+    builder: (context) {
+      return  _SizeSelectorSheet(text: text, onPressed:onPressed, dialogSubtitle:dialogSubtitle, dialogTitle: dialogTitle, button: button,);
+    },
+  );
+}
+
+class _SizeSelectorSheet extends StatefulWidget {
+  const _SizeSelectorSheet({
     required this.text,
     required this.onPressed,
     required this.dialogSubtitle,
@@ -20,92 +137,85 @@ class PasswordSuccessDialog extends StatelessWidget {
   final String dialogTitle;
   final String dialogSubtitle;
   final Widget button;
+  @override
+  State<_SizeSelectorSheet> createState() => _SizeSelectorSheetState();
+}
 
-  static Future<void> show({
-    required BuildContext context,
-    required String text,
-    required VoidCallback onPressed,
-    required String dialogTitle,
-    required String dialogSubtitle,
-
-    required Widget button
-  }) {
-    return showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (context) => PasswordSuccessDialog(
-        text: text,
-        onPressed: onPressed,
-        dialogTitle: dialogTitle,
-        dialogSubtitle: dialogSubtitle,
-        
-        button: button,
-      ),
-    );
-  }
-
+class _SizeSelectorSheetState extends State<_SizeSelectorSheet> {
   @override
   Widget build(BuildContext context) {
-    return Dialog(
-      backgroundColor: appcolors.transcolor,
-      insetPadding: EdgeInsets.symmetric(horizontal: 10.w),
-      child: Container(
-        padding: EdgeInsets.all(24.w),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(30.r),
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-              width: 60.w,
-              height: 60.h,
-              decoration: BoxDecoration(
-                color: appcolors.green.withOpacity(0.1),
-                shape: BoxShape.circle,
+    return DraggableScrollableSheet(
+      initialChildSize: 0.35,
+      minChildSize: 0.3,
+      maxChildSize: 0.5,
+      expand: false,
+      builder: (BuildContext context, ScrollController scrollController) {
+        return Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(16.0),
+              topRight: Radius.circular(16.0),
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black12,
+                blurRadius: 6,
+                offset: const Offset(0, -3),
               ),
-              child: Icon(
-                Icons.check_circle,
-                color: appcolors.green,
-                size: 40.sp,
+            ],
+          ),
+          child: SafeArea(
+            top: false,
+            child: SingleChildScrollView(
+              controller: scrollController,
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SizedBox(
+                    width: 60.w,
+                    height: 60.h,
+                    child: Image.asset('assets/images/aprove.gif'),
+                  ),
+
+                  SizedBox(height: 24.h),
+
+                  // Title
+                  Text(
+                    widget.dialogTitle,
+                    style: TextStyle(
+                      fontSize: 22.sp,
+                      fontWeight: FontWeight.bold,
+                      color: appcolors.black,
+                      fontFamily: Appstring.fontfamily,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+
+                  SizedBox(height: 12.h),
+
+                  // Subtitle
+                  Text(
+                    widget.dialogSubtitle,
+                    style: TextStyle(
+                      fontSize: 14.sp,
+                      fontFamily: Appstring.fontfamily,
+                      color: Colors.grey.shade600,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+
+                  SizedBox(height: 32.h),
+
+                  // Button
+                  widget.button,
+                ],
               ),
             ),
-
-            SizedBox(height: 24.h),
-
-            // Title
-            Text(
-              dialogTitle,
-              style: TextStyle(
-                fontSize: 22.sp,
-                fontWeight: FontWeight.bold,
-                color: appcolors.black,
-                fontFamily: Appstring.fontfamily,
-              ),
-              textAlign: TextAlign.center,
-            ),
-
-            SizedBox(height: 12.h),
-
-            // Subtitle
-            Text(
-              dialogSubtitle,
-              style: TextStyle(
-                fontSize: 14.sp,
-                fontFamily: Appstring.fontfamily,
-                color: Colors.grey.shade600,
-              ),
-              textAlign: TextAlign.center,
-            ),
-
-            SizedBox(height: 32.h),
-
-            // Button
-            button,
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }

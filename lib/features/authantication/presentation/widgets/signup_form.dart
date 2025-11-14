@@ -130,8 +130,8 @@ class _SignupFormState extends State<SignupForm> {
             onPressed: () {
               widget.cubit.submitForm;
 
-              PasswordSuccessDialog.show(
-                context: context,
+              showCustomDialogapprove(
+                context,
                 text: Appstring.signupconfirmatbuttontitle,
                 onPressed: () {
                   Navigator.of(context).pop();
@@ -162,7 +162,7 @@ class _SignupFormState extends State<SignupForm> {
 
           GestureDetector(
             onTap: () {
-              Navigator.pushReplacementNamed(context, Routes.layout);
+              Navigator.pushReplacementNamed(context, Routes.layoutgust);
             },
             child: Container(
               decoration: BoxDecoration(
