@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:glasses/core/routing/routes.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
 import 'package:glasses/core/utils/appicons/app_icons.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
@@ -101,6 +102,9 @@ class _PrescriptionStepScreenState extends State<PrescriptionStepScreen> {
             ),
             // Price Summary
             PriceSummary(
+              onPressed:  () {
+                            Navigator.pushNamed(context, Routes.framechoose);
+                          },
               total: widget.stepNumber == 1 ? 500 : 540,currentstep:widget.stepNumber ,
               
             ),
@@ -113,6 +117,7 @@ class _PrescriptionStepScreenState extends State<PrescriptionStepScreen> {
   List<Widget> _buildStep1Options() {
     return [
       PrescriptionOptionCard(
+        iscolors: true,
         title: Appstring.nonMedicalSunglasses,
         subtitle:Appstring.nonMedicalSunglassesDesc,
         discount: 'ج.م 0',
@@ -120,6 +125,7 @@ class _PrescriptionStepScreenState extends State<PrescriptionStepScreen> {
         onTap: () => setState(() => selectedOption = 0),
       ),
       PrescriptionOptionCard(
+          iscolors: true,
         title: Appstring.medicalSunglasses,
         subtitle:Appstring.medicalSunglassesDesc,
         discount: 'ج.م 0',
@@ -127,6 +133,7 @@ class _PrescriptionStepScreenState extends State<PrescriptionStepScreen> {
         onTap: () => setState(() => selectedOption = 1),
       ),
       PrescriptionOptionCard(
+          iscolors: true,
        title: Appstring.gradientSunglasses,
         subtitle:Appstring.gradientSunglassesDesc,
         discount: 'ج.م 90',
@@ -139,6 +146,7 @@ class _PrescriptionStepScreenState extends State<PrescriptionStepScreen> {
   List<Widget> _buildStep2Options() {
     return [
       PrescriptionOptionCard(
+          iscolors: true,
         title: Appstring.coloredLens,
         subtitle:    Appstring.coloredLensDesc,
         discount: 'ج.م 40',
@@ -147,6 +155,7 @@ class _PrescriptionStepScreenState extends State<PrescriptionStepScreen> {
         onTap: () => setState(() => selectedOption = 0),
       ),
       PrescriptionOptionCard(
+          iscolors: true,
         title: Appstring.polarizedSunglassesLens,
         subtitle: Appstring.polarizedSunglassesLensDesc,
         discount: 'ج.م 40',

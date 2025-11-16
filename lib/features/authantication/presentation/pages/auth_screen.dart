@@ -36,8 +36,6 @@ class AuthScreen extends StatelessWidget {
             children: [
               // Background
               AuthBackground(islogin: cubit.isLogin),
-
-              // Scrollable form container
               SingleChildScrollView(
                 child: Padding(
                   padding: EdgeInsets.only(top: height * 0.23),
@@ -63,8 +61,6 @@ class AuthScreen extends StatelessWidget {
                           onTapSignup: cubit.toggleMode,
                         ),
                         SizedBox(height: height * 0.03),
-
-                        // Forms
                         cubit.isLogin
                             ? LoginForm(cubit: cubit)
                             : SignupForm(cubit: cubit),

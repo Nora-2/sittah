@@ -39,7 +39,7 @@ class StepIndicator extends StatelessWidget {
           StepProgressIndicator(
             progressDirection:TextDirection.rtl,
             currentStep: currentStep,
-            totalSteps: 2,
+            totalSteps: totalSteps,
            padding: 0,
            roundedEdges: Radius.circular(15.r),
            selectedSize: 8.h,

@@ -6,7 +6,6 @@ import 'package:glasses/core/utils/widgets/mainlayout.dart';
 import 'package:glasses/features/authantication/presentation/cubit/authantication_cubit.dart';
 import 'package:glasses/features/authantication/presentation/pages/auth_screen.dart';
 import 'package:glasses/features/authantication/presentation/widgets/new_password.dart';
-
 import 'package:glasses/features/authantication/presentation/widgets/otp_password.dart';
 import 'package:glasses/features/authantication/presentation/widgets/password.dart';
 import 'package:glasses/features/home/presentation/pages/notification_list_screen.dart';
@@ -14,8 +13,8 @@ import 'package:glasses/features/home/presentation/widgets/one_category_view.dar
 import 'package:glasses/features/onboarding/presentation/cubit/onboarding_cubit.dart';
 import 'package:glasses/features/onboarding/presentation/pages/on_boarding_screen.dart';
 import 'package:glasses/features/onboarding/presentation/pages/signin_signup.dart';
+import 'package:glasses/features/product/presentation/pages/Lens_Prescription_Order_Flow.dart';
 import 'package:glasses/features/product/presentation/pages/frame_choose.dart';
-import 'package:glasses/features/product/presentation/pages/product_details_screen.dart';
 import 'package:glasses/features/product/presentation/widgets/tryit.dart';
 
 class AppRouter {
@@ -25,7 +24,7 @@ class AppRouter {
     switch (settings.name) {
       case Routes.splash:
         return MaterialPageRoute(
-          builder: (_) => const ProductDetailsScreen(), 
+          builder: (_) => const LensTypeScreen(stepNumber: 1,), 
         );
          case Routes.login:
         return MaterialPageRoute(

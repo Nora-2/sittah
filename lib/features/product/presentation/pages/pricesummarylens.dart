@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:glasses/core/utils/appicons/app_icons.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
 import 'package:glasses/core/utils/widgets/appicons_icons.dart' show Appicons;
-import 'package:glasses/core/utils/widgets/custom_button.dart';
 import 'package:glasses/core/utils/widgets/my_flutter_app_icons.dart';
 import 'package:glasses/features/authantication/presentation/widgets/auth_button.dart';
-import 'package:glasses/features/product/presentation/widgets/view_product_after_adding.dart';
+import 'package:glasses/features/product/presentation/lens_prescriptionflow_widgets/showproduct.dart';
 
-class PriceSummary extends StatelessWidget {
+class PriceSummarylens extends StatelessWidget {
   final double total;
   final int currentstep;
  final dynamic onPressed;
 
-  const PriceSummary({
+  const PriceSummarylens({
     super.key,
     required this.total,
     required this.currentstep,
@@ -78,14 +76,14 @@ class PriceSummary extends StatelessWidget {
                   AuthButton(
                     text: 'مشاهدة المنتج',
                     onPressed: () {
-                      showCustomDialogproduct(context);
+                      showCustomDialogproductlens(context);
                     },
                     color: appcolors.black,
                     backgroundColor: appcolors.textGrey.withOpacity(.15),
                     icon: Appicons.input_prefix,
                   ),
                   Spacer(),
-                  currentstep ==1
+                  currentstep <=3
                       ? AuthButton(
                           text: Appstring.next,
                           onPressed: onPressed,
@@ -93,13 +91,14 @@ class PriceSummary extends StatelessWidget {
                           backgroundColor: appcolors.buttoncoloronboarding,
                           icon: MyFlutterApp.arrow_left,
                         )
-                      : Custombutton(
-                          text: 'عربة التسوق',
-                          onPressed:onPressed,
+                      : 
+                      AuthButton(
+                          text: Appstring.next,
+                          onPressed:(){},
                           color: appcolors.primarycolor,
                           backgroundColor: appcolors.buttoncoloronboarding,
-                          icon: AppIcons.shoppingcart,
-                        ),
+                          icon: MyFlutterApp.arrow_left,
+                        )
                   // Responsive width
                 ],
               ),

@@ -13,7 +13,7 @@ class PrescriptionOptionCard extends StatefulWidget {
   final String subtitle;
   final String? discount;
   final bool isSelected;
-  final List<Color>? colors;
+  final bool iscolors;
   final VoidCallback onTap;
 
   const PrescriptionOptionCard({
@@ -22,7 +22,7 @@ class PrescriptionOptionCard extends StatefulWidget {
     required this.subtitle,
     this.discount,
     required this.isSelected,
-    this.colors,
+required this.iscolors,
     required this.onTap,
   });
 
@@ -106,7 +106,9 @@ class _PrescriptionOptionCardState extends State<PrescriptionOptionCard> {
                         ),
                       ),
                       SizedBox(height: 5.h),
-                      SizedBox(width: 210.w, child: _buildColorSection()),
+                    widget.iscolors?
+                      SizedBox(width: 210.w, child: _buildColorSection()):
+                      SizedBox(height: 1,)
                     ],
                   ),
                   Spacer(),
@@ -138,8 +140,9 @@ class _PrescriptionOptionCardState extends State<PrescriptionOptionCard> {
             ),
             Positioned(
               left: 0,
-             top: 0,
-              child: DiscountBadge(discount: '40 د.ع')),
+              top: 0,
+              child: DiscountBadge(discount: '40 د.ع'),
+            ),
           ],
         ),
       ),

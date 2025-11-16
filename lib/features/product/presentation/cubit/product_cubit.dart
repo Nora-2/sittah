@@ -1,8 +1,20 @@
-import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
+class ProductState {
+  final Map<String, String> values;
+  final String? activePickerKey;
 
-part 'product_state.dart';
+  ProductState({
+    this.values = const {},
+    this.activePickerKey,
+  });
 
-class ProductCubit extends Cubit<ProductState> {
-  ProductCubit() : super(ProductInitial());
+  ProductState copyWith({
+    Map<String, String>? values,
+    String? activePickerKey,
+    bool clearPicker = false,
+  }) {
+    return ProductState(
+      values: values ?? this.values,
+      activePickerKey: clearPicker ? null : (activePickerKey ?? this.activePickerKey),
+    );
+  }
 }
