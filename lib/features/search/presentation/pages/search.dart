@@ -72,7 +72,7 @@ class _SearchScreenState extends State<SearchScreen> {
                       },
                     ),
                     Text(
-                      'البحث',
+                     Appstring.search,
                       style: TextStyle(
                         fontFamily: Appstring.fontfamily,
                         fontSize: 17.sp,
@@ -209,7 +209,7 @@ class _SearchScreenState extends State<SearchScreen> {
               children: [
                 SvgPicture.asset(AppIcons.trash),
                 Text(
-                  'البحث الاخير',
+                  Appstring.recentSearch,
                   style: TextStyle(
                     fontSize: 16.sp,
                     fontWeight: FontWeight.bold,
@@ -228,7 +228,7 @@ class _SearchScreenState extends State<SearchScreen> {
               border: Border.all(color: appcolors.buttoncoloronboarding),
             ),
             child: Text(
-              '🔥 نظارات أطفال ',
+             Appstring.kidsGlasses,
               style: TextStyle(
                 color: appcolors.buttoncoloronboarding,
                 fontFamily: Appstring.fontfamily,
@@ -242,7 +242,7 @@ class _SearchScreenState extends State<SearchScreen> {
             textDirection: TextDirection.rtl,
             children: [
               Text(
-                'المزيد',
+              Appstring.more ,
                 style: TextStyle(fontFamily: Appstring.fontfamily),
               ),
               Icon(MyFlutterApp.arrow_left),
@@ -252,7 +252,7 @@ class _SearchScreenState extends State<SearchScreen> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: Text(
-              'عمليات البحث الرائجة',
+             Appstring.trendingSearches,
               style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
             ),
           ),
@@ -322,9 +322,9 @@ class _SearchScreenState extends State<SearchScreen> {
       textDirection: TextDirection.rtl,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        _buildSearchItem('🔥 كات آي'),
-        _buildSearchItem('🔥 عدسات قيادة'),
-        _buildSearchItem('🔥 نظارات قراءة'),
+        _buildSearchItem(Appstring.catEye),
+        _buildSearchItem(Appstring.drivingLensesSearch),
+        _buildSearchItem(Appstring.readingGlassesSearch),
       ],
     );
   }
@@ -393,7 +393,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
             SizedBox(height: 24.h),
             Text(
-              'لم نجد نتائج مطابقة لبحثك',
+             Appstring.noResultsFound,
               style: TextStyle(
                 fontSize: 18.sp,
                 fontWeight: FontWeight.bold,
@@ -403,7 +403,7 @@ class _SearchScreenState extends State<SearchScreen> {
             ),
             SizedBox(height: 12.h),
             Text(
-              'جرّب كلمات مختلفة أو تصفّح الفئات لمعرفة أحدث الإطارات لدينا',
+            Appstring.noResultsDescription,
               style: TextStyle(
                 fontSize: 14.sp,
                 color: Colors.grey[400],
@@ -413,7 +413,7 @@ class _SearchScreenState extends State<SearchScreen> {
             ),
             SizedBox(height: 32.h),
             Custombutton(
-              text: 'البحث مجدداً',
+              text: Appstring.searchAgain,
               onPressed: () {
                 _searchController.clear();
                 context.read<SearchCubit>().loadInitialData();

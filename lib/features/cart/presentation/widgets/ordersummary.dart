@@ -25,7 +25,7 @@ class OrderSummaryWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'ملخص الطلب',
+              Appstring.orderSummary,
                 style: TextStyle(
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
@@ -34,7 +34,7 @@ class OrderSummaryWidget extends StatelessWidget {
               ),
               SizedBox(height: 6.h),
               Text(
-                'رمز الخصم',
+               Appstring.discountCode,
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
@@ -56,7 +56,7 @@ class OrderSummaryWidget extends StatelessWidget {
                       child: TextFormField(
                         textAlign: TextAlign.right,
                         decoration: InputDecoration(
-                          hintText: 'ادخل كود الخصم',
+                          hintText: Appstring.enterDiscountCode,
                           border: InputBorder.none,
                           contentPadding: EdgeInsets.symmetric(
                             horizontal: 12.w,
@@ -74,7 +74,7 @@ class OrderSummaryWidget extends StatelessWidget {
                       ),
                       child: Center(
                         child: Text(
-                          'تفعيل',
+                          Appstring.activate,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: appcolors.primarycolor,
@@ -95,7 +95,7 @@ class OrderSummaryWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'استخدام النقاط:',
+                        Appstring.usePoints,
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w500,
@@ -104,7 +104,7 @@ class OrderSummaryWidget extends StatelessWidget {
                       Spacer(),
                       SvgPicture.asset(AppIcons.blend),
                       Text(
-                        ' نقاطي: ',
+                        Appstring.myPoints,
                         style: TextStyle(fontSize: 14.sp, color: Colors.black),
                       ),
                       Text(
@@ -120,7 +120,7 @@ class OrderSummaryWidget extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('استخدام 0 نقطة',
+                      Text(Appstring.use0Points,
                         style: TextStyle(
                           fontSize: 12.sp,
                           color: Colors.grey[400],
@@ -160,7 +160,7 @@ class OrderSummaryWidget extends StatelessWidget {
                           Row(
                             children: [
                               Text(
-                                'توصيل بدون قلق',
+                               Appstring.worryFreeDeliveryTitle,
                                 style: TextStyle(
                                   fontSize: 12.sp,
                                   fontWeight: FontWeight.bold,
@@ -168,7 +168,7 @@ class OrderSummaryWidget extends StatelessWidget {
                               ),
                               SizedBox(width: 2.w),
                               Text(
-                                'مقابل ${state.deliveryFee.toStringAsFixed(0)} د.ج سنوياً',
+                                '${Appstring.forPrice} ${state.deliveryFee.toStringAsFixed(0)} د.ج سنوياً',
                                 style: TextStyle(
                                   fontSize: 10.sp,
                                   color: Colors.grey[600],
@@ -178,7 +178,7 @@ class OrderSummaryWidget extends StatelessWidget {
                           ),
                           SizedBox(height: 4.h),
                           Text(
-                            'احصل على استرداد كامل إذا لم يصل الطلب كما هو موصوف، بما في ذلك الفقدان والأضرار أثناء النقل',
+                           Appstring.worryFreeDeliveryDescription,
                             style: TextStyle(
                               fontSize: 10.sp,
                               color: Colors.grey[500],
@@ -204,7 +204,7 @@ class OrderSummaryWidget extends StatelessWidget {
               // Subtotal
               _buildSummaryRow(
                 '${state.subtotal.toStringAsFixed(0)} د.ج',
-                'المجموع الفرعي:',
+                Appstring.subtotal,
                 bold: true,
                 large: true,
               ),
@@ -219,7 +219,7 @@ class OrderSummaryWidget extends StatelessWidget {
               SizedBox(height: 6.h),
               _buildSummaryRow(
                 '${state.total.toStringAsFixed(0)} د.ج',
-                'الإجمالي:',
+               Appstring.total,
                 bold: true,
                 large: true,
               ),
@@ -232,7 +232,7 @@ class OrderSummaryWidget extends StatelessWidget {
                   ),
                   SizedBox(width: 8.w),
                   Text(
-                    'تحصيل على 6 نقاط من هذا الطلب',
+                   Appstring.earnPointsFromOrder,
                     style: TextStyle(
                       fontSize: 13.sp,
                       color: appcolors.buttoncoloronboarding,

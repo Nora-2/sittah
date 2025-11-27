@@ -219,4 +219,118 @@ class Appstring {
   static const String price500 = '500 د.ع';
   static const String threeThousandReviews = '(3 آلاف تقييم)';
   static const String frameOnly = 'إطار فقط';
+
+  static const String search = 'البحث';
+  static const String recentSearch = 'البحث الاخير';
+  static const String trendingSearches = 'عمليات البحث الرائجة';
+  static const String more = 'المزيد';
+  static const String noResultsFound = 'لم نجد نتائج مطابقة لبحثك';
+  static const String noResultsDescription = 'جرّب كلمات مختلفة أو تصفّح الفئات لمعرفة أحدث الإطارات لدينا';
+  static const String searchAgain = 'البحث مجدداً';
+  static const String kidsGlasses = '🔥 نظارات أطفال ';
+  static const String catEye = '🔥 كات آي';
+  static const String drivingLensesSearch = '🔥 عدسات قيادة';
+  static const String readingGlassesSearch = '🔥 نظارات قراءة';
+
+  static const String viewCart = 'مشاهدة السلة';
+  static const String payNow = 'ادفع الان';
+  static const String orderSuccessTitle = 'تمت عملية الشراء بنجاح 🎉';
+  static const String orderSuccessMessage = 'يسعدنا انضمامك لعملائنا المميزين راقب بريدك، \nفالهدايا والعروض الخاصة بانتظارك';
+  static const String shopMoreProducts = 'تسوق منتجات اخري';
+  static const String goToHome = 'الذهاب للرئيسية';
+  static const String westleyGlasses = 'نظارات ويستيل';
+  static const String blackColor = 'الأسود';
+  static const String blueLightBlocking2 = 'جاحب الضوء الأزرق';
+  static const String nonMedicalGlasses = 'نظارات غير طبية';
+  static const String emptyCartNow = 'سلتك فارغة حالياً :(';
+    static const String emptyCartAddProduct =  'ضف منتجاتك المفضلة الآن . واستمتع بالخصومات \nوالهدايا التي نقدمها لعملائنا الكرام';
+  // 🚚 Checkout Process Strings
+  static const String shippingAddress = 'عنوان الشحن';
+  static const String shippingMethod = 'طريقة الشحن';
+  static const String paymentMethod = 'طريقة الدفع';
+  static const String processingPayment = 'جاري معالجة الدفع...';
+  static const String pleaseCompleteAddress = 'يرجى إكمال بيانات العنوان';
+  static const String pleaseSelectShippingMethod = 'يرجى اختيار طريقة الشحن';
+  static const String pleaseSelectPaymentMethod = 'يرجى اختيار طريقة الدفع';
+  
+  // 📍 Address Step Strings
+  static const String requiredFields = 'الحقول المطلوبة';
+  static const String fullName = 'الاسم بالكامل';
+  static const String enterFullName = 'ادخل اسمك بالكامل';
+  static const String phoneNumber = 'رقم الهاتف';
+  static const String enterPhoneNumber = 'ادخل رقم الهاتف';
+  static const String city = 'المدينة';
+  static const String enterCity = 'ادخل مدينتك';
+  static const String fullAddress = 'العنوان بالكامل';
+  static const String enterFullAddress = 'ادخل العنوان بالكامل';
+  static const String apartmentOptional = 'شقة، جناح، إلخ (اختياري)';
+  static const String enterHouseNumber = 'ادخل رقم المنزل';
+  static const String setAsDefaultAddress = 'تعيين كعنوان أساسي';
+  static const String pleaseEnterFullName = 'يرجى إدخال الاسم بالكامل';
+  static const String pleaseEnterPhoneNumber = 'يرجى إدخال رقم الهاتف';
+  static const String pleaseSelectCity = 'يرجى اختيار المدينة';
+  static const String pleaseEnterFullAddress = 'يرجى إدخال العنوان بالكامل';
+  
+  // 🏙️ City Names
+  static const String cairo = 'القاهرة';
+  static const String alexandria = 'الإسكندرية';
+  static const String giza = 'الجيزة';
+  
+  // 🚚 Shipping Step Strings
+  static const String availableShippingMethods = 'طرق الشحن المتاحة';
+  static const String standardShipping = 'شحن المعتاد';
+  static const String advancedShipping = 'شحن متقدم';
+  static const String businessExpressMail = 'البريد السريع للأعمال';
+  static const String fourDaysFaster = '4 أيام أسرع';
+  static const String duration14to18Days = '14-18 يوم';
+  static const String duration7to14Days = '14-7 يوم';
+  static const String duration5to9Days = '9-5 يوم';
+  static const String poBoxWarning = 'يرجى كتابة عنوانك الفعلي، حيث لا يمكن تسليم الطُّرود إلى صناديق بريد';
+  static const String expressBusinessService = 'خدمة الأعمال السريعة';
+  static const String for29_80Annually = 'مقابل';
+  static const String price29_80 = '29.80 د.ع ';
+  static const String annually = 'سنويًا';
+  static const String expressServiceDescription = 'قبل تعبئتي قد تستمتع بسنة محاسبية عند الشراء بالنصر 29د.ج';
+  
+  // 💳 Payment Step Strings
+  static const String availablePaymentMethods = 'طرق الدفع المتاحة';
+  static const String creditDebitCard = 'بطاقة الائتمان / بطاقة الخصم';
+  static const String klarna = 'Klarna';
+  static const String afterpay = 'Afterpay';
+  static const String paypal = 'PayPal';
+  static const String fourFreePayments = '4 دفعات مجانية بقيمة 20.50 د.ج';
+  static const String addNewCard = 'أضف بطاقة جديدة';
+  static const String shoppingCart = 'سلة المشتريات';
+  static const String otherProductsYouMightLike = 'منتجات أخرى قد تثير اهتمامك';
+  static const String completeCheckout = 'إكمال عملية الشراء';
+  
+  // 📦 Order Summary Strings
+  static const String orderSummary = 'ملخص الطلب';
+  static const String discountCode = 'رمز الخصم';
+  static const String enterDiscountCode = 'ادخل كود الخصم';
+  static const String activate = 'تفعيل';
+  static const String usePoints = 'استخدام النقاط:';
+  static const String myPoints = ' نقاطي: ';
+  static const String use0Points = 'استخدام 0 نقطة';
+  static const String worryFreeDeliveryTitle = 'توصيل بدون قلق';
+  static const String forPrice = 'مقابل';
+  static const String annually2 = 'سنويًا';
+  static const String worryFreeDeliveryDescription = 'احصل على استرداد كامل إذا لم يصل الطلب كما هو موصوف، بما في ذلك الفقدان والأضرار أثناء النقل';
+  static const String subtotal = 'المجموع الفرعي:';
+  static const String total = 'الإجمالي:';
+  static const String earnPointsFromOrder = 'تحصيل على 6 نقاط من هذا الطلب';
+  
+  // 💳 Payment Options (Klarna Widget)
+  static const String fourInstallments = '4 أقساط بدون فوائد بقيمة 5.73 د.ج مع';
+  static const String afterpay2 = 'afterpay';
+  
+  // 🛍️ Suggested Product Card
+  static const String elegance = 'إليجانس';
+  static const String add = 'اضافة';
+  
+  // 📭 Empty Cart Strings
+  static const String emptyCartTitle = 'سلتك فارغة حالياً :(';
+  static const String emptyCartDescription = 'ضف منتجاتك المفضلة الآن . واستمتع بالخصومات \nوالهدايا التي نقدمها لعملائنا الكرام';
+  static const String shopProducts = 'تسوق المنتجات';
+  
 }

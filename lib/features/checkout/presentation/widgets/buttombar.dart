@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glasses/core/utils/appicons/app_icons.dart';
+import 'package:glasses/core/utils/appimage/app_images.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
 import 'package:glasses/core/utils/widgets/custom_button.dart';
 import 'package:glasses/core/utils/widgets/my_flutter_app_icons.dart';
@@ -52,7 +53,7 @@ class buttom extends StatelessWidget {
                   child: Directionality(
                     textDirection: TextDirection.ltr,
                     child: Custombutton(
-                      text: 'مشاهدة السلة',
+                      text: Appstring.viewCart,
                       onPressed: () {
                         showCustomDialogseecart(context);
                       },
@@ -70,7 +71,7 @@ class buttom extends StatelessWidget {
                     textDirection: TextDirection.ltr,
                     child: currentstep == 2
                         ? Custombutton(
-                            text: 'ادفع الان',
+                            text: Appstring.payNow,
                             onPressed: () {
                               showCustomDialogpay(context);
                             },
@@ -130,7 +131,7 @@ class _SizeSelectorSheetState extends State<_SizeSelectorSheet> {
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.fill,
-              image: AssetImage('assets/images/Order Done.png'),
+              image: AssetImage(Appimage.orderDone),
             ),
 
             borderRadius: const BorderRadius.only(
@@ -155,7 +156,7 @@ class _SizeSelectorSheetState extends State<_SizeSelectorSheet> {
                   SizedBox(height: 140.h),
                   Text(
                     textDirection: TextDirection.rtl,
-                    'تمت عملية الشراء بنجاح 🎉',
+                   Appstring.orderSuccessTitle,
                     style: TextStyle(
                       fontFamily: Appstring.fontfamily,
                       fontSize: 17.sp,
@@ -166,7 +167,7 @@ class _SizeSelectorSheetState extends State<_SizeSelectorSheet> {
                   Text(
                     textAlign: TextAlign.center,
                     textDirection: TextDirection.rtl,
-                    'يسعدنا انضمامك لعملائنا المميزين راقب بريدك، \nفالهدايا والعروض الخاصة بانتظارك',
+                   Appstring.orderSuccessMessage,
                     style: TextStyle(
                       fontFamily: Appstring.fontfamily,
                       fontSize: 13.sp,
@@ -175,7 +176,7 @@ class _SizeSelectorSheetState extends State<_SizeSelectorSheet> {
                   ),
                   SizedBox(height: 10.h),
                   Custombutton(
-                    text: 'تسوق منتجات اخري',
+                    text: Appstring.shopMoreProducts,
                     onPressed: () {},
                     color: appcolors.primarycolor,
                     backgroundColor: appcolors.buttoncoloronboarding,
@@ -183,7 +184,7 @@ class _SizeSelectorSheetState extends State<_SizeSelectorSheet> {
                   ),
                   SizedBox(height: 6.h),
                   Custombutton(
-                    text: 'الذهاب للرئيسية',
+                    text: Appstring.goToHome,
                     onPressed: () {},
                     color: appcolors.black,
                     backgroundColor: appcolors.borderColor,

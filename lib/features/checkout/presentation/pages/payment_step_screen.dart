@@ -10,24 +10,24 @@ import 'package:glasses/features/checkout/presentation/cubit/checkout_cubit.dart
 
 class PaymentStepScreen extends StatelessWidget {
   final List<PaymentMethod> paymentMethods = [
-    PaymentMethod(
-      type: PaymentMethodType.klarna,
-      title: 'Klarna',
-      subtitle: '4 دفعات مجانية بقيمة 20.50 د.ج',
-    ),
-    PaymentMethod(
-      type: PaymentMethodType.afterpay,
-      title: 'Afterpay',
-      subtitle: '4 دفعات مجانية بقيمة 20.50 د.ج',
-    ),
-    PaymentMethod(type: PaymentMethodType.paypal, title: 'PayPal'),
+   PaymentMethod(
+    type: PaymentMethodType.klarna,
+    title: Appstring.klarna,
+    subtitle: Appstring.fourFreePayments,
+  ),
+  PaymentMethod(
+    type: PaymentMethodType.afterpay,
+    title: Appstring.afterpay,
+    subtitle: Appstring.fourFreePayments,
+  ),
+  PaymentMethod(type: PaymentMethodType.paypal, title: Appstring.paypal),
   ];
-  final List<PaymentMethod> paymentMethodall = [
-    PaymentMethod(
-      type: PaymentMethodType.card,
-      title: 'بطاقة الائتمان / بطاقة الخصم',
-    ),
-  ];
+ final List<PaymentMethod> paymentMethodall = [
+  PaymentMethod(
+    type: PaymentMethodType.card,
+    title: Appstring.creditDebitCard,
+  ),
+];
 
   PaymentStepScreen({super.key});
 
@@ -42,14 +42,14 @@ class PaymentStepScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Text(
-                'طرق الدفع المتاحة',
-                style: TextStyle(
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: Appstring.fontfamily,
-                ),
-              ),
+             Text(
+  Appstring.availablePaymentMethods,
+  style: TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.bold,
+    fontFamily: Appstring.fontfamily,
+  ),
+),
               SizedBox(height: 20.h),
               ...paymentMethodall.map((method) {
                 final isSelected =
@@ -277,7 +277,7 @@ class PaymentStepScreen extends StatelessWidget {
                 color: Color(0xffD7FFEB),
               ),
               Text(
-                'afterpay',
+                Appstring.afterpay,
                 style: TextStyle(
                   fontSize: 12,
                   color: Color(0xffD7FFEB),
@@ -310,14 +310,14 @@ class PaymentStepScreen extends StatelessWidget {
         ),
         SizedBox(width: 8.w),
         Text(
-          'أضف بطاقة جديدة',
-          style: TextStyle(
-            fontSize: 14.sp,
-            color: appcolors.graylinethrough,
-            fontFamily: Appstring.fontfamily,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
+  Appstring.addNewCard,
+  style: TextStyle(
+    fontSize: 14.sp,
+    color: appcolors.graylinethrough,
+    fontFamily: Appstring.fontfamily,
+    fontWeight: FontWeight.w600,
+  ),
+),
       ],
     );
   }

@@ -7,28 +7,28 @@ import 'package:glasses/features/checkout/data/models/ShippingMethod.dart';
 import 'package:glasses/features/checkout/presentation/cubit/checkout_cubit.dart';
 
 class ShippingStepScreen extends StatelessWidget {
-  final List<ShippingMethod> shippingMethods = [
-    ShippingMethod(
-      id: '1',
-      duration: '14-18 يوم',
-      description: 'شحن المعتاد',
-      price: 5.00,
-    ),
-    ShippingMethod(
-      id: '2',
-      duration: '14-7 يوم',
-      description: 'شحن متقدم',
-      price: 5.50,
-      note: '4 أيام أسرع',
-    ),
-    ShippingMethod(
-      id: '3',
-      duration: '9-5 يوم',
-      description: 'البريد السريع للأعمال',
-      price: 6.00,
-      note: '',
-    ),
-  ];
+final List<ShippingMethod> shippingMethods = [
+  ShippingMethod(
+    id: '1',
+    duration: Appstring.duration14to18Days,
+    description: Appstring.standardShipping,
+    price: 5.00,
+  ),
+  ShippingMethod(
+    id: '2',
+    duration: Appstring.duration7to14Days,
+    description: Appstring.advancedShipping,
+    price: 5.50,
+    note: Appstring.fourDaysFaster,
+  ),
+  ShippingMethod(
+    id: '3',
+    duration: Appstring.duration5to9Days,
+    description: Appstring.businessExpressMail,
+    price: 6.00,
+    note: '',
+  ),
+];
 
   ShippingStepScreen({super.key});
 
@@ -43,14 +43,14 @@ class ShippingStepScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Text(
-                'طرق الشحن المتاحة',
-                style: TextStyle(
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: Appstring.fontfamily,
-                ),
-              ),
+            Text(
+  Appstring.availableShippingMethods,
+  style: TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.bold,
+    fontFamily: Appstring.fontfamily,
+  ),
+),
               SizedBox(height: 20.h),
               ...shippingMethods.map((method) {
                 final isSelected =
@@ -199,14 +199,13 @@ class ShippingStepScreen extends StatelessWidget {
                     SizedBox(width: 8.w),
                     Expanded(
                       child: Text(
-                        'يرجى كتابة عنوانك الفعلي، حيث لا يمكن تسليم الطُّرود إلى صناديق بريد',
-
-                        style: TextStyle(
-                          fontSize: 12.sp,
-                          color: Colors.grey[700],
-                        ),
-                        textAlign: TextAlign.right,
-                      ),
+  Appstring.poBoxWarning,
+  style: TextStyle(
+    fontSize: 12.sp,
+    color: Colors.grey[700],
+  ),
+  textAlign: TextAlign.right,
+),
                     ),
                   ],
                 ),
@@ -273,47 +272,49 @@ class ShippingStepScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text(
-                  'خدمة الأعمال السريعة',
-                  style: TextStyle(
-                    fontSize: 14.sp,
-                    fontFamily: Appstring.fontfamily,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+             Text(
+  Appstring.expressBusinessService,
+  style: TextStyle(
+    fontSize: 14.sp,
+    fontFamily: Appstring.fontfamily,
+    fontWeight: FontWeight.bold,
+  ),
+),
                 SizedBox(height: 4.h),
-                RichText(
-                                text: TextSpan(
-                                  text: 'مقابل',
-                                  style: TextStyle(
-                                    color: appcolors.black2,
-                                    fontSize: 13,
-                                    fontFamily: Appstring.fontfamily,
-                                  ),
-                                  children: [
-                                    TextSpan(
-                                      text:'29.80 د.ع ',
-                                      style: TextStyle(
-                                        fontSize: 13,
-                                        color: appcolors.buttoncoloronboarding,
-                                        fontFamily: Appstring.fontfamily,
-                                      ),
-                                    ),
-                                    TextSpan(
-                                  text: 'سنويًا',
-                                  style: TextStyle(
-                                    color: appcolors.black2,
-                                    fontSize: 13,
-                                    fontFamily: Appstring.fontfamily,
-                                  ),)
-                                  ],
-                                ),
-                              ),
-                Text(
-                  'قبل تعبئتي قد تستمتع بسنة محاسبية عند الشراء بالنصر 29د.ج',
-                  style: TextStyle(fontSize: 10.sp, color: Colors.grey[600]),
-                  textAlign: TextAlign.right,
-                ),
+               RichText(
+  text: TextSpan(
+    text: Appstring.for29_80Annually,
+    style: TextStyle(
+      color: appcolors.black2,
+      fontSize: 13,
+      fontFamily: Appstring.fontfamily,
+    ),
+    children: [
+      TextSpan(
+        text: Appstring.price29_80,
+        style: TextStyle(
+          fontSize: 13,
+          color: appcolors.buttoncoloronboarding,
+          fontFamily: Appstring.fontfamily,
+        ),
+      ),
+      TextSpan(
+        text: Appstring.annually,
+        style: TextStyle(
+          color: appcolors.black2,
+          fontSize: 13,
+          fontFamily: Appstring.fontfamily,
+        ),
+      )
+    ],
+  ),
+),
+                
+Text(
+  Appstring.expressServiceDescription,
+  style: TextStyle(fontSize: 10.sp, color: Colors.grey[600]),
+  textAlign: TextAlign.right,
+),
               ],
             ),
           ),

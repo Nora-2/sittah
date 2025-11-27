@@ -29,7 +29,7 @@ class AddressStepScreenState extends State<AddressStepScreen> {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Text(
-            'الحقول المطلوبة',
+           Appstring.requiredFields,
             style: TextStyle(
               fontSize: 18.sp,
               fontWeight: FontWeight.bold,
@@ -39,38 +39,38 @@ class AddressStepScreenState extends State<AddressStepScreen> {
           SizedBox(height: 24.h),
           _buildTextField(
             controller: _fullNameController,
-            label: 'الاسم بالكامل',
-            hint: 'ادخل اسمك بالكامل',
+            label: Appstring.fullName,
+            hint:  Appstring.enterFullName,
             isRequired: true,
           ),
           SizedBox(height: 16.h),
           _buildTextField(
             controller: _phoneController,
-            label: 'رقم الهاتف',
-            hint: 'ادخل رقم الهاتف',
+            label:  Appstring.phoneNumber,
+            hint:  Appstring.enterPhoneNumber,
             isRequired: true,
             keyboardType: TextInputType.phone,
           ),
           SizedBox(height: 16.h),
           _buildDropdown(
-            label: 'المدينة',
+            label: Appstring.city,
             value: _selectedCity,
-            hint: 'ادخل مدينتك',
+            hint:  Appstring.enterCity,
             isRequired: true,
             onChanged: (value) => setState(() => _selectedCity = value),
           ),
           SizedBox(height: 16.h),
           _buildTextField(
             controller: _addressController,
-            label: 'العنوان بالكامل',
-            hint: 'ادخل العنوان بالكامل',
+            label:  Appstring.fullAddress,
+            hint:  Appstring.enterFullAddress,
             isRequired: true,
           ),
           SizedBox(height: 16.h),
           _buildTextField(
             controller: _apartmentController,
-            label: 'شقة، جناح، إلخ (اختياري)',
-            hint: 'ادخل رقم المنزل',
+            label:  Appstring.apartmentOptional,
+            hint:  Appstring.enterHouseNumber,
             isRequired: false,
           ),
           SizedBox(height: 20.h),
@@ -78,7 +78,7 @@ class AddressStepScreenState extends State<AddressStepScreen> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Text(
-                'تعيين كعنوان أساسي',
+               Appstring.setAsDefaultAddress,
                 style: TextStyle(fontSize: 14.sp,fontFamily: Appstring.fontfamily),
               ),
               SizedBox(width: 8.w),
@@ -128,28 +128,28 @@ void saveAddressToCubit() {
 bool validateFields(BuildContext context) {
   if (_fullNameController.text.trim().isEmpty) {
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('يرجى إدخال الاسم بالكامل')),
+      const SnackBar(content: Text(Appstring.pleaseEnterFullName,)),
     );
     return false;
   }
   
   if (_phoneController.text.trim().isEmpty) {
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('يرجى إدخال رقم الهاتف')),
+      const SnackBar(content: Text(Appstring.pleaseEnterPhoneNumber,)),
     );
     return false;
   }
   
   if (_selectedCity == null) {
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('يرجى اختيار المدينة')),
+      const SnackBar(content: Text(Appstring.pleaseSelectCity,)),
     );
     return false;
   }
   
   if (_addressController.text.trim().isEmpty) {
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('يرجى إدخال العنوان بالكامل')),
+      const SnackBar(content: Text(Appstring.pleaseEnterFullAddress,)),
     );
     return false;
   }
@@ -255,7 +255,7 @@ bool validateFields(BuildContext context) {
                   child:  Icon(Icons.keyboard_arrow_down,color:Colors.grey[400] ,size: 30.sp,),
                 ),
                 onChanged: onChanged,
-                items: ['القاهرة', 'الإسكندرية', 'الجيزة']
+                items: [Appstring.cairo, Appstring.alexandria, Appstring.giza,]
                     .map((city) => DropdownMenuItem(
                           value: city,
                           child: Align(

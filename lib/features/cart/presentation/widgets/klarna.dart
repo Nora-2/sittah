@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
 import 'package:glasses/core/utils/appicons/app_icons.dart';
+import 'package:glasses/core/utils/appstring/app_string.dart';
 
 class klarna extends StatelessWidget {
   const klarna({super.key});
@@ -15,7 +16,7 @@ class klarna extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Text(
-            '4 أقساط بدون فوائد بقيمة 5.73 د.ج مع',
+           Appstring.fourFreePayments,
             style: TextStyle(fontSize: 11.sp, color: Colors.grey[600]),
             textAlign: TextAlign.center,
           ),
@@ -35,7 +36,7 @@ class klarna extends StatelessWidget {
                   height: 12,
                 ),
                 Text(
-                  'afterpay',
+                  Appstring.afterpay,
                   style: TextStyle(
                     fontSize: 12,
                     color: appcolors.black,

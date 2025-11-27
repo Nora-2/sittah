@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
+import 'package:glasses/core/utils/appstring/app_string.dart';
 import 'package:glasses/features/cart/data/models/productmodel.dart';
 import 'package:glasses/features/cart/presentation/cubit/cart_cubit.dart';
 import 'package:glasses/features/cart/presentation/widgets/cart_item.dart';
@@ -31,31 +32,42 @@ class _SizeSelectorSheet extends StatefulWidget {
 
 class _SizeSelectorSheetState extends State<_SizeSelectorSheet> {
   List items = [
-    CartItem(
-      product: Product(
-        id: '1',
-        name: 'نظارات ويستيل',
-        image: '👓',
-        price: 500.0,
-        options: ['الأسود', 'جاحب الضوء الأزرق', 'نظارات غير طبية'],
-      ),
-      selectedOption1: 'الأسود',
-      selectedOption2: 'جاحب الضوء الأزرق',
-      selectedOption3: 'نظارات غير طبية',
-    ),
+    // Replace product data with:
 
-    CartItem(
-      product: Product(
-        id: '2',
-        name: 'نظارات ويستيل',
-        image: '👓',
-        price: 500.0,
-        options: ['الأسود', 'جاحب الضوء الأزرق', 'نظارات غير طبية'],
-      ),
-      selectedOption1: 'الأسود',
-      selectedOption2: 'جاحب الضوء الأزرق',
-      selectedOption3: 'نظارات غير طبية',
+  CartItem(
+    product: Product(
+      id: '1',
+      name: Appstring.westleyGlasses,
+      image: '👓',
+      price: 500.0,
+      options: [
+        Appstring.blackColor, 
+        Appstring.blueLightBlocking2, 
+        Appstring.nonMedicalGlasses
+      ],
     ),
+    selectedOption1: Appstring.blackColor,
+    selectedOption2: Appstring.blueLightBlocking2,
+    selectedOption3: Appstring.nonMedicalGlasses,
+  ),
+
+  CartItem(
+    product: Product(
+      id: '2',
+      name: Appstring.westleyGlasses,
+      image: '👓',
+      price: 500.0,
+      options: [
+        Appstring.blackColor, 
+        Appstring.blueLightBlocking2, 
+        Appstring.nonMedicalGlasses
+      ],
+    ),
+    selectedOption1: Appstring.blackColor,
+    selectedOption2: Appstring.blueLightBlocking2,
+    selectedOption3: Appstring.nonMedicalGlasses,
+  ),
+
   ];
   @override
   Widget build(BuildContext context) {

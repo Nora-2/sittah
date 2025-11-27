@@ -53,7 +53,7 @@ class CartScreen extends StatelessWidget {
                       ),
                       Expanded(
                         child: Text(
-                          'سلة المشتريات',
+                         Appstring.shoppingCart,
                           style: TextStyle(
                             fontFamily: Appstring.fontfamily,
                             fontSize: 17.sp,
@@ -84,7 +84,7 @@ class CartScreen extends StatelessWidget {
                               Row(
                                 children: [
                                   Text(
-                                    'المنتجات',
+                                   Appstring.products,
                                     style: TextStyle(
                                       fontSize: 16.sp,
                                       fontWeight: FontWeight.w600,
@@ -121,7 +121,7 @@ class CartScreen extends StatelessWidget {
                               Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 16.w),
                                 child: Text(
-                                  'منتجات أخرى قد تثير اهتمامك',
+                                 Appstring.otherProductsYouMightLike,
                                   style: TextStyle(
                                     fontSize: 16.sp,
                                     fontWeight: FontWeight.bold,
@@ -142,7 +142,7 @@ class CartScreen extends StatelessWidget {
                                       SizedBox(
                                         width: 180.w, // ← العرض المطلوب للبطاقة
                                         child: const SuggestedProductCard(
-                                          name: 'إليجانس',
+                                          name:Appstring.elegance,
                                           price: 5.0,
                                           image: '👓',
                                         ),
@@ -151,7 +151,7 @@ class CartScreen extends StatelessWidget {
                                       SizedBox(
                                         width: 180.w,
                                         child: const SuggestedProductCard(
-                                          name: 'إليجانس',
+                                          name: Appstring.elegance,
                                           price: 5.0,
                                           image: '👓',
                                         ),
@@ -160,7 +160,7 @@ class CartScreen extends StatelessWidget {
                                       SizedBox(
                                         width: 180.w,
                                         child: const SuggestedProductCard(
-                                          name: 'إليجانس',
+                                          name: Appstring.elegance,
                                           price: 5.0,
                                           image: '👓',
                                         ),
@@ -178,7 +178,7 @@ class CartScreen extends StatelessWidget {
                               Directionality(
                                 textDirection: TextDirection.ltr,
                                 child: Custombutton(
-                                  text: 'إكمال عملية الشراء',
+                                  text:Appstring.completeCheckout ,
                                   onPressed: () {
                                     Navigator.pushNamed(
                                       context,

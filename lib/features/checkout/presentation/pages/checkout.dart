@@ -124,11 +124,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           Row(
             textDirection: TextDirection.rtl,
             children: [
-              _buildStepTitle(step: 0, currentStep: currentStep, title: 'عنوان الشحن'),
+              _buildStepTitle(step: 0, currentStep: currentStep, title: Appstring.shippingAddress,),
               Expanded(child: Container()),
-              _buildStepTitle(step: 1, currentStep: currentStep, title: 'طريقة الشحن'),
+              _buildStepTitle(step: 1, currentStep: currentStep, title:Appstring.shippingMethod,),
               Expanded(child: Container()),
-              _buildStepTitle(step: 2, currentStep: currentStep, title: 'طريقة الدفع'),
+              _buildStepTitle(step: 2, currentStep: currentStep, title: Appstring.paymentMethod,),
             ],
           ),
         ],
@@ -220,7 +220,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
         cubit.proceedToShipping(state.address!);
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('يرجى إكمال بيانات العنوان')),
+          const SnackBar(content: Text(Appstring.pleaseCompleteAddress)),
         );
       }
     } else if (state is CheckoutShippingStep) {
@@ -228,17 +228,17 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
         cubit.proceedToPayment();
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('يرجى اختيار طريقة الشحن')),
+          const SnackBar(content: Text(Appstring.pleaseSelectShippingMethod)),
         );
       }
     } else if (state is CheckoutPaymentStep) {
       if (state.paymentMethod != null) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('جاري معالجة الدفع...')),
+          const SnackBar(content: Text(Appstring.processingPayment)),
         );
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('يرجى اختيار طريقة الدفع')),
+          const SnackBar(content: Text(Appstring.pleaseSelectPaymentMethod)),
         );
       }
     }

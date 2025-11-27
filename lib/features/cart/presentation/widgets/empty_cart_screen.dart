@@ -24,7 +24,7 @@ class EmptyCartWidget extends StatelessWidget {
                 Image.asset(Appimage.emptycart),
                 SizedBox(height: 24.h),
                 Text(
-                  'سلتك فارغة حالياً :(',
+                Appstring.emptyCartNow,
                   style: TextStyle(
                     fontSize: 18.sp,
                     color: appcolors.black,
@@ -34,7 +34,7 @@ class EmptyCartWidget extends StatelessWidget {
                 ),
                 SizedBox(height: 10.h),
                 Text(
-                  'ضف منتجاتك المفضلة الآن . واستمتع بالخصومات \nوالهدايا التي نقدمها لعملائنا الكرام',
+                 Appstring.emptyCartAddProduct,
                   style: TextStyle(
                     fontSize: 12.sp,
                     color: Colors.grey[600],
@@ -48,7 +48,7 @@ class EmptyCartWidget extends StatelessWidget {
                 Directionality(
                   textDirection: TextDirection.ltr,
                   child: Custombutton(
-                    text: 'تسوق المنتجات',
+                    text: Appstring.shopProducts,
                     onPressed: () {},
                     icon: AppIcons.shoppingBag,
                     color: appcolors.primarycolor,
