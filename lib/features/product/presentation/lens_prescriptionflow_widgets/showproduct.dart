@@ -200,7 +200,7 @@ class _SizeSelectorSheetState extends State<_SizeSelectorSheet> {
                                   color: appcolors.primarycolor,
                                   backgroundColor:
                                       appcolors.buttoncoloronboarding,
-                                  icon: AppIcons.shoppingcart,
+                                  icon: AppIcons.shoppingCart,
                                 ),
                                 Spacer(),
                                 Text(

@@ -98,7 +98,7 @@ class PriceSummary extends StatelessWidget {
                           onPressed:onPressed,
                           color: appcolors.primarycolor,
                           backgroundColor: appcolors.buttoncoloronboarding,
-                          icon: AppIcons.shoppingcart,
+                          icon: AppIcons.shoppingCart,
                         ),
                   // Responsive width
                 ],

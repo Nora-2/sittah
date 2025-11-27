@@ -37,19 +37,19 @@ abstract class Constants {
     NotificationModel(
       title: 'نظاراتك المفضلة عليها خصم 30٪ النهارده بس!',
       time: 'منذ 4 دقائق',
-      icon: AppIcons.receiptdiscount,
+      icon: AppIcons.receiptDiscount,
   
     ),
     NotificationModel(
       title: 'خصم إضافي عند استخدام الكود: VISION10',
       time: 'منذ 3 ساعات',
-      icon:  AppIcons.hotprice,
+      icon:  AppIcons.hotPrice,
  
     ),
     NotificationModel(
       title: 'طلبك في الطريق إليك 🚚',
       time: 'منذ 1 يوم',
-      icon:  AppIcons.deliverytracking,
+      icon:  AppIcons.deliveryTracking,
     
     ),
     NotificationModel(

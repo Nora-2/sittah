@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:glasses/core/routing/routes.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
 import 'package:glasses/core/utils/appicons/app_icons.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
@@ -31,7 +32,12 @@ class SearchBarWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SvgPicture.asset(AppIcons.search),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, Routes.search);
+            },
+            child: SvgPicture.asset(AppIcons.search),
+          ),
           SizedBox(width: 4.w),
 
           Text(

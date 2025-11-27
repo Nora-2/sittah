@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
+import 'package:glasses/core/utils/appicons/app_icons.dart';
+import 'package:glasses/core/utils/appimage/app_images.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
 class lensimage extends StatelessWidget {
   const lensimage({
@@ -15,7 +17,7 @@ class lensimage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
         children: [
             SizedBox(height: 10.h),
-          Image.asset('assets/images/lems2.png',width: 300.w,height: 200.h,fit: BoxFit.fill,),
+          Image.asset(Appimage.lems2 ,width: 300.w,height: 200.h,fit: BoxFit.fill,),
             SizedBox(height: 10.h),
           Text('ارفع صورة الوصفة الطبية', style: TextStyle(
                       color: appcolors.black,
@@ -46,7 +48,7 @@ class lensimage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SvgPicture.asset('assets/images/camera.svg'),
+                  SvgPicture.asset(  AppIcons.camera,),
                   SizedBox(width: 7.w),
                   Text(
                   'صور الوصفة',

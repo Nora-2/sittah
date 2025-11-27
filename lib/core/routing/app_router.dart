@@ -8,6 +8,10 @@ import 'package:glasses/features/authantication/presentation/pages/auth_screen.d
 import 'package:glasses/features/authantication/presentation/widgets/new_password.dart';
 import 'package:glasses/features/authantication/presentation/widgets/otp_password.dart';
 import 'package:glasses/features/authantication/presentation/widgets/password.dart';
+import 'package:glasses/features/cart/presentation/cubit/cart_cubit.dart';
+import 'package:glasses/features/cart/presentation/pages/cartscreen.dart';
+import 'package:glasses/features/checkout/presentation/cubit/checkout_cubit.dart';
+import 'package:glasses/features/checkout/presentation/pages/checkout.dart';
 import 'package:glasses/features/home/presentation/pages/notification_list_screen.dart';
 import 'package:glasses/features/home/presentation/widgets/one_category_view.dart';
 import 'package:glasses/features/onboarding/presentation/cubit/onboarding_cubit.dart';
@@ -15,7 +19,11 @@ import 'package:glasses/features/onboarding/presentation/pages/on_boarding_scree
 import 'package:glasses/features/onboarding/presentation/pages/signin_signup.dart';
 import 'package:glasses/features/product/presentation/pages/Lens_Prescription_Order_Flow.dart';
 import 'package:glasses/features/product/presentation/pages/frame_choose.dart';
+import 'package:glasses/features/product/presentation/pages/product_details_screen.dart';
 import 'package:glasses/features/product/presentation/widgets/tryit.dart';
+import 'package:glasses/features/search/presentation/cubit/search_cubit.dart';
+import 'package:glasses/features/search/presentation/pages/search.dart';
+import 'package:glasses/features/spalsh/presentation/pages/spalshscreen.dart';
 
 class AppRouter {
   
@@ -23,6 +31,10 @@ class AppRouter {
   Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.splash:
+        return MaterialPageRoute(
+          builder: (_) => SplashScreen()
+        );
+        case Routes.lensTypeScreen:
         return MaterialPageRoute(
           builder: (_) => const LensTypeScreen(stepNumber: 1,), 
         );
@@ -50,14 +62,23 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const NotificationListScreen(), 
         );
-      case Routes.layout:
+                case Routes.productdetailesscreen:
         return MaterialPageRoute(
-          builder: (_) => const MainLayout (), 
+          builder: (_) => const ProductDetailsScreen(), 
+        );
+      case Routes.layout:
+       return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) =>
+                CartCubit()..loadDemoData(), // Create a new cubit for onboarding
+            child: const MainLayout(),
+          ),
         );
         case Routes.layoutgust:
         return MaterialPageRoute(
           builder: (_) => const GuestLayout (), 
         );
+        
       case Routes.onboarding:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
@@ -65,6 +86,29 @@ class AppRouter {
                 OnboardingCubit(), // Create a new cubit for onboarding
             child: const OnboardingScreen(),
           ),
+        );
+        case Routes.checkout:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => CheckoutCubit(),
+            child: const CheckoutScreen(),
+          ),
+        );
+           case Routes.search:
+        return MaterialPageRoute(
+          builder: (_) =>  BlocProvider(
+            create: (context) => SearchCubit(),
+            child: const SearchScreen(),
+          ),
+        );
+         case Routes.cart:
+        return MaterialPageRoute(
+          builder: (_) =>BlocProvider(
+          create: (context) => CartCubit(),
+           
+          child: const CartScreen(),
+          
+          )
         );
          case Routes.auth:
         return MaterialPageRoute(

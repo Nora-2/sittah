@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glasses/core/routing/routes.dart';
 import 'package:glasses/core/routing/app_router.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             initialRoute: Routes.splash, 
             onGenerateRoute: appRouter.generateRoute, 
+       
             theme: ThemeData(fontFamily: Appstring.fontfamily),
           ),
         );

@@ -61,7 +61,7 @@ class _ArabicFormSectionState extends State<ArabicFormSection> {
               ),
             ),
 
-            SvgPicture.asset(AppIcons.questionmark, color: appcolors.grey66),
+            SvgPicture.asset(AppIcons.questionMark, color: appcolors.grey66),
 
             Spacer(),
             TextButton.icon(

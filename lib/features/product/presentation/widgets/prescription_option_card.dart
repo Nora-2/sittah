@@ -76,7 +76,7 @@ class _PrescriptionOptionCardState extends State<PrescriptionOptionCard> {
                     ),
                     child: Center(
                       child: SvgPicture.asset(
-                        AppIcons.frameonly,
+                        AppIcons.frameOnly,
                         color: appcolors.black,
                       ),
                     ),

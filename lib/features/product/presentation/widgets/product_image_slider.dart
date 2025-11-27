@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:glasses/core/routing/routes.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
+import 'package:glasses/core/utils/appicons/app_icons.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
 import 'package:glasses/core/utils/widgets/my_flutter_app_icons.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -157,7 +158,7 @@ class _ProductImageSliderState extends State<ProductImageSlider> {
                         ),
                         SizedBox(width: 5.w),
                         SvgPicture.asset(
-                          'assets/images/try.svg',
+                         AppIcons.tryIt,
                           width: 18.w,
                           height: 18.h,
                         ),

@@ -181,7 +181,7 @@ class _GlassesProductScreenState extends State<GlassesProductScreen> {
                           onPressed: () {},
                           color: appcolors.black,
                           backgroundColor: appcolors.background,
-                          icon: AppIcons.glassframe
+                          icon: AppIcons.glassFrame
                         ),
 
                         // Responsive width

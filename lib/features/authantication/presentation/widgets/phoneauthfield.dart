@@ -79,59 +79,53 @@ class Phoneauthwidget extends StatelessWidget {
           ),
         ),
 
-        Expanded(
-          child: TextFormField(
-            textDirection: TextDirection.ltr,
-            textAlign: TextAlign.end,
-            textAlignVertical: TextAlignVertical.center,
-            controller: controller,
-            obscureText: false,
+       Expanded(
+  child: SizedBox(
+    height: 42.h,  // SAME HEIGHT AS DROPDOWN CONTAINER
+    child: TextFormField(
+      textDirection: TextDirection.ltr,
+      textAlign: TextAlign.end,
+      textAlignVertical: TextAlignVertical.center,
+      controller: controller,
+      keyboardType: TextInputType.phone,
 
-            keyboardType: TextInputType.phone,
-            validator: (v) {
-              if (v == null || v.isEmpty) {
-                return Appstring.signupPhoneEmptyError;
-              }
-              String digitsOnly = v.replaceAll(RegExp(r'\D'), '');
-              if (digitsOnly.length < 9 || digitsOnly.length > 10) {
-                return Appstring.signupPhoneEmptyError;
-              }
-              return null;
-            },
-            cursorColor: appcolors.buttoncoloronboarding,
-            decoration: InputDecoration(
-              hintText: Appstring.enterPhone,
-              hintStyle: TextStyle(color: appcolors.graylinethrough),
+      // Remove extra paddings
+      decoration: InputDecoration(
+        contentPadding: EdgeInsets.zero, 
+        hintText: Appstring.enterPhone,
+        hintStyle: TextStyle(color: appcolors.graylinethrough),
 
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(12.r),
-                  bottomLeft: Radius.circular(12.r),
-                ),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(12.r),
-                  bottomLeft: Radius.circular(12.r),
-                ),
-                borderSide: BorderSide(
-                  color: appcolors.textfieldborder,
-                  width: 1,
-                ),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(12.r),
-                  bottomLeft: Radius.circular(12.r),
-                ),
-                borderSide: BorderSide(
-                  color: appcolors.buttoncoloronboarding,
-                  width: 1,
-                ),
-              ),
-            ),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(12.r),
+            bottomLeft: Radius.circular(12.r),
           ),
         ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(12.r),
+            bottomLeft: Radius.circular(12.r),
+          ),
+          borderSide: BorderSide(
+            color: appcolors.textfieldborder,
+            width: 1,
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(12.r),
+            bottomLeft: Radius.circular(12.r),
+          ),
+          borderSide: BorderSide(
+            color: appcolors.buttoncoloronboarding,
+            width: 1,
+          ),
+        ),
+      ),
+    ),
+  ),
+),
+
       ],
     );
   }

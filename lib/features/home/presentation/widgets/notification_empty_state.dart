@@ -45,7 +45,7 @@ class NotificationEmptyState extends StatelessWidget {
               onPressed: () {},
               color: appcolors.primarycolor,
               backgroundColor: appcolors.buttoncoloronboarding,
-              icon: AppIcons.shoppingbag,
+              icon: AppIcons.shoppingBag,
             ),
           ],
         ),

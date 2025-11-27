@@ -75,7 +75,7 @@ class BottomAddToCartBar extends StatelessWidget {
                     },
                     color: appcolors.black,
                     backgroundColor: appcolors.textGrey.withOpacity(.15),
-                    icon:AppIcons.glassframe,
+                    icon:AppIcons.glassFrame,
                   ),
                   Spacer(), // Responsive width
                   AuthButton(

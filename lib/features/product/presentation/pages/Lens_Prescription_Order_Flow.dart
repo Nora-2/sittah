@@ -85,7 +85,7 @@ class _LensTypeScreenState extends State<LensTypeScreen> {
                         ),
                         SizedBox(width: ScreenUtils.setWidth(8)),
                         SvgPicture.asset(
-                          AppIcons.questionmark,
+                          AppIcons.questionMark,
 
                           color: appcolors.grey66,
                         ),

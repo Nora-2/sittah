@@ -136,7 +136,7 @@ class NewPasswordScreen extends StatelessWidget {
                               ),
                             );
                           },
-                          icon: AppIcons.archivetick,
+                          icon: AppIcons.archiveTick,
                         ),
                       ],
                     ),

@@ -28,7 +28,7 @@ class lensmanual extends StatelessWidget {
               ),
             ),
             SizedBox(width: ScreenUtils.setWidth(8)),
-            SvgPicture.asset(AppIcons.questionmark, color: appcolors.grey66),
+            SvgPicture.asset(AppIcons.questionMark, color: appcolors.grey66),
           ],
         ),
         SizedBox(height: 5.h),

@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
       extendBodyBehindAppBar: true,
       body: Scaffold(
         body: Image.asset(
-          Appimage.splach,
+          Appimage.splash,
           width: double.infinity,
           height: double.infinity,
           fit: BoxFit.cover,

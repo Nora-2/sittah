@@ -86,7 +86,7 @@ class _PrescriptionStepScreenState extends State<PrescriptionStepScreen> {
                         ),
                         SizedBox(width: ScreenUtils.setWidth(8)),
                            SvgPicture.asset(
-                         AppIcons.questionmark,
+                         AppIcons.questionMark,
                           
                           color: appcolors.grey66,
                         ),

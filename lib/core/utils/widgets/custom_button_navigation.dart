@@ -33,7 +33,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
             isActive: selectedIndex == 0,
           ),
           _buildNavItem(
-            icon: AppIcons.shoppingcartcheck,
+            icon: AppIcons.shoppingCartCheck,
             label: Appstring.nav2,
             index: 1,
             isActive: selectedIndex == 1,

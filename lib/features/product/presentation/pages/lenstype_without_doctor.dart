@@ -89,7 +89,7 @@ class _LenstypewithoutdoctorScreenState
                             ),
                             SizedBox(width: ScreenUtils.setWidth(8)),
                             SvgPicture.asset(
-                              AppIcons.questionmark,
+                              AppIcons.questionMark,
                               color: appcolors.grey66,
                             ),
                           ],

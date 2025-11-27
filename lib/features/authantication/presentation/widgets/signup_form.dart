@@ -149,7 +149,7 @@ class _SignupFormState extends State<SignupForm> {
 
                     Navigator.pushReplacementNamed(context, Routes.layout);
                   },
-                  icon: AppIcons.shoppingcart,
+                  icon: AppIcons.shoppingCart,
                 ),
               );
             },

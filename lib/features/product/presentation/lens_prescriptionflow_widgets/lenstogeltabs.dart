@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
+import 'package:glasses/core/utils/appicons/app_icons.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
 
 class lensTabs extends StatelessWidget {
@@ -47,7 +48,7 @@ class lensTabs extends StatelessWidget {
                   children: [
                     //change the icon
                     SvgPicture.asset(
-                      'assets/images/camera.svg',
+                     AppIcons.camera,
                       color: isimage ? appcolors.whicolor : appcolors.black2,
                     ),
 
@@ -83,7 +84,7 @@ class lensTabs extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SvgPicture.asset(
-                      'assets/images/touch-interaction-03.svg',
+                    AppIcons.manual,
                       color: !isimage ? appcolors.whicolor : appcolors.black2,
                     ),
                     SizedBox(width: 8.w),

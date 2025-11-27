@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
+import 'package:glasses/core/utils/appicons/app_icons.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
+import 'package:glasses/features/cart/presentation/widgets/klarna.dart';
 
 class ProductInfoSection extends StatelessWidget {
   const ProductInfoSection({super.key});
@@ -10,7 +12,7 @@ class ProductInfoSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(16.w), // Responsive padding
+      padding: EdgeInsets.all(8.w), // Responsive padding
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -60,7 +62,7 @@ class ProductInfoSection extends StatelessWidget {
           SizedBox(height: 16.h), // Responsive height
           _buildDiscountTag(),
           SizedBox(height: 8.h), // Responsive height
-          _buildKlarnaInstallment(),
+         klarna()
         ],
       ),
     );
@@ -68,8 +70,9 @@ class ProductInfoSection extends StatelessWidget {
 
   Widget _buildDiscountTag() {
     return Container(
+      width: 290.w,
       padding: EdgeInsets.symmetric(
-        horizontal: 4.w,
+      horizontal:4.w ,
         vertical: 4.h,
       ), // Responsive padding
       decoration: BoxDecoration(
@@ -79,7 +82,7 @@ class ProductInfoSection extends StatelessWidget {
       child: Row(
         children: [
           SvgPicture.asset(
-            'assets/images/discount-shape.svg',
+            AppIcons.discount,
             color: appcolors.buttoncoloronboarding,
           ),
           SizedBox(width: 2.w),
@@ -93,26 +96,6 @@ class ProductInfoSection extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-
-  Widget _buildKlarnaInstallment() {
-    return Row(
-      children: [
-        // Image.asset(
-        //   AppIcons.klarnaLogo, // Use AppIcons
-        //   height: 20.h, // Responsive height
-        // ),
-        SizedBox(width: 8.w), // Responsive width
-        Text(
-          Appstring.installmentText,
-          style: TextStyle(
-            color: appcolors.textGrey,
-            fontSize: 12.sp,
-            fontFamily: Appstring.fontfamily,
-          ), // Responsive font size
-        ),
-      ],
     );
   }
 }
