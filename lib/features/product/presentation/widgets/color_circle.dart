@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
-import 'package:glasses/core/utils/screenutils.dart';
 
 class ColorSelector extends StatelessWidget {
   final List<Color> colors;
@@ -21,7 +21,7 @@ class ColorSelector extends StatelessWidget {
       children: List.generate(
         colors.length,
         (index) => Padding(
-          padding: EdgeInsets.only(right: ScreenUtils.setWidth(8)),
+          padding: EdgeInsets.only(right: 8.w),
           child: _ColorCircle(
             color: colors[index],
             isSelected: selectedIndex == index,
@@ -49,8 +49,8 @@ class _ColorCircle extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: ScreenUtils.setWidth(24),
-        height: ScreenUtils.setWidth(24),
+        width:24.w,
+        height: 24.w,
         decoration: BoxDecoration(
           color: color,
           shape: BoxShape.circle,

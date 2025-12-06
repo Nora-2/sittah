@@ -14,7 +14,7 @@ class SearchLoading extends SearchState {}
 class SearchEmpty extends SearchState {}
 
 class SearchSuccess extends SearchState {
-  final List<Product> products;
+  final List<Productsearch> products;
   final List<String> categories;
   final List<String> popularSearches;
 

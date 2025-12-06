@@ -1,8 +1,7 @@
 // widgets/product_card.dart
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
-import 'package:glasses/core/utils/screenutils.dart';
-import 'package:glasses/core/utils/textstyle/textstyle.dart';
 
 class ProductCard extends StatelessWidget {
   final String imageUrl;
@@ -27,10 +26,10 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(ScreenUtils.padding),
+      padding: EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: appcolors.cardBackground,
-        borderRadius: BorderRadius.circular(ScreenUtils.setWidth(12)),
+        borderRadius: BorderRadius.circular(12),
         border: Border.all(color: appcolors.border),
       ),
       child: Column(
@@ -38,52 +37,54 @@ class ProductCard extends StatelessWidget {
         children: [
           // Product Image
           SizedBox(
-            height: ScreenUtils.setHeight(120),
+            height: 120.h,
             child: Image.asset(
               imageUrl,
               fit: BoxFit.contain,
             ),
           ),
-          SizedBox(height: ScreenUtils.setHeight(12)),
+          SizedBox(height: 12.h),
           // Title
           Text(
             title,
-            style: AppTextStyles.subheading,
+            style: TextStyle(
+              fontSize: 16.sp,
+              fontWeight: FontWeight.bold,),
             textAlign: TextAlign.center,
           ),
-          SizedBox(height: ScreenUtils.setHeight(4)),
+          SizedBox(height: 8.h),
           // Subtitle
           Text(
-            subtitle,
-            style: AppTextStyles.caption,
+            subtitle
+            ,
             textAlign: TextAlign.center,
           ),
-          SizedBox(height: ScreenUtils.setHeight(12)),
+          SizedBox(height: 12.h),
           // Prices
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 'ج.م ${originalPrice.toStringAsFixed(2)}',
-                style: AppTextStyles.caption.copyWith(
+                style: TextStyle(
                   decoration: TextDecoration.lineThrough,
                 ),
               ),
-              SizedBox(width: ScreenUtils.setWidth(8)),
+              SizedBox(width:8.w),
               Text(
                 'ج.م ${discountedPrice.toStringAsFixed(2)}',
-                style: AppTextStyles.price.copyWith(
+                style: TextStyle(
                   color: appcolors.success,
                 ),
               ),
             ],
           ),
-          SizedBox(height: ScreenUtils.setHeight(4)),
+          SizedBox(height: 4.h),
           Text(
             'ج.م ${finalPrice.toStringAsFixed(2)}',
-            style: AppTextStyles.caption,
+            
           ),
-          SizedBox(height: ScreenUtils.setHeight(12)),
+          SizedBox(height: 12.h),
           // Add to Cart Button
           SizedBox(
             width: double.infinity,
@@ -92,15 +93,18 @@ class ProductCard extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 backgroundColor: appcolors.primary,
                 padding: EdgeInsets.symmetric(
-                  vertical: ScreenUtils.setHeight(12),
-                ),
+                  vertical: 12.h),
+                
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(ScreenUtils.setWidth(8)),
+                  borderRadius: BorderRadius.circular(8.w,)
                 ),
               ),
               child: Text(
                 'عربة التسوق',
-                style: AppTextStyles.button,
+                style: TextStyle(
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),

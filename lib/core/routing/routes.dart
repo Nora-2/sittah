@@ -19,4 +19,13 @@ class Routes {
   static const String productdetailesscreen = '/productdetailsscreen';
   static const String checkout = '/checkout';
   static const String search = '/search';
+  static const String reward = '/reward';
+   static const String favourite = '/favourite';
+  static const String coupon = '/coupon';
+    static const String order = '/order';
+
+  static const String address = '/address';
+  static const String emptycards = '/emptycards';
+    static const String tickets = '/tickets';
+    static const String prescriptionprofile = '/prescriptionprofile';
 }

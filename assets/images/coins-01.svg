@@ -1,0 +1,25 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M5.333 50.667C6.319 53.799 10.955 55.386 16 56H29.333C35.224 56 40 51.225 40 45.334V10.667H5.333V50.667Z" fill="white"/>
+  <ellipse cx="22.666" cy="10.667" rx="17.333" ry="5.333" fill="white"/>
+
+  <path d="M41.333 58.667C50.906 58.667 58.667 56.04 58.667 52.8V29.333H24V52.8C24 56.04 31.76 58.667 41.333 58.667Z" fill="white"/>
+  <ellipse cx="41.333" cy="29.333" rx="17.333" ry="5.333" fill="white"/>
+
+  <ellipse cx="41.333" cy="29.333" rx="17.333" ry="5.333" stroke="#0B4B54" stroke-width="4"/>
+
+  <path d="M58.667 41.333C58.667 44.279 50.906 46.667 41.333 46.667C31.76 46.667 24 44.279 24 41.333" 
+        stroke="#0B4B54" stroke-width="4"/>
+
+  <path d="M58.667 29.333V52.8C58.667 56.04 50.906 58.667 41.333 58.667C31.76 58.667 24 56.04 24 52.8V29.333" 
+        stroke="#0B4B54" stroke-width="4"/>
+
+  <ellipse cx="22.666" cy="10.667" rx="17.333" ry="5.333" stroke="#0B4B54" stroke-width="4"/>
+
+  <path d="M16 29.333C10.955 28.719 6.319 27.132 5.333 24M16 42.667C10.955 42.053 6.319 40.465 5.333 37.333" 
+        stroke="#0B4B54" stroke-width="4" stroke-linecap="round"/>
+
+  <path d="M16 56C10.955 55.386 6.319 53.799 5.333 50.667V10.667" 
+        stroke="#0B4B54" stroke-width="4" stroke-linecap="round"/>
+
+  <path d="M40 16V10.667" stroke="#0B4B54" stroke-width="4" stroke-linecap="round"/>
+</svg>

@@ -5,7 +5,6 @@ import 'package:glasses/core/constants.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
 import 'package:glasses/core/utils/appicons/app_icons.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
-import 'package:glasses/core/utils/screenutils.dart';
 import 'package:glasses/features/product/presentation/widgets/discount_badge.dart';
 
 class PrescriptionOptionCard extends StatefulWidget {
@@ -54,7 +53,7 @@ class _PrescriptionOptionCardState extends State<PrescriptionOptionCard> {
               height: 100.h,
               decoration: BoxDecoration(
                 color: appcolors.whicolor,
-                borderRadius: BorderRadius.circular(ScreenUtils.setWidth(12)),
+                borderRadius: BorderRadius.circular(12.r),
                 border: Border.all(
                   color: widget.isSelected
                       ? appcolors.buttoncoloronboarding
@@ -70,8 +69,8 @@ class _PrescriptionOptionCardState extends State<PrescriptionOptionCard> {
                     decoration: BoxDecoration(
                       color: appcolors.graylinethrough.withOpacity(.2),
                       borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(ScreenUtils.setWidth(12)),
-                        bottomRight: Radius.circular(ScreenUtils.setWidth(12)),
+                        topRight: Radius.circular(12.r),
+                        bottomRight: Radius.circular(12.r),
                       ),
                     ),
                     child: Center(
@@ -113,8 +112,8 @@ class _PrescriptionOptionCardState extends State<PrescriptionOptionCard> {
                   ),
                   Spacer(),
                   Container(
-                    width: ScreenUtils.setWidth(24),
-                    height: ScreenUtils.setWidth(24),
+                    width: 24.w,
+                    height: 24.w,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(
@@ -130,7 +129,7 @@ class _PrescriptionOptionCardState extends State<PrescriptionOptionCard> {
                     child: widget.isSelected
                         ? Icon(
                             Icons.check,
-                            size: ScreenUtils.setWidth(16),
+                            size:16.w,
                             color: appcolors.primarycolor,
                           )
                         : null,

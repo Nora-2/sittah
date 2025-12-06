@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:glasses/core/routing/routes.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
 import 'package:glasses/core/utils/appicons/app_icons.dart';
 import 'package:glasses/core/utils/appimage/app_images.dart';
@@ -62,17 +63,17 @@ class AccountScreen extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 5.h),
       child: Column(
         children: [
-          SizedBox(height: 30.h),
+          SizedBox(height: 20.h),
           _buildHeader(context, user),
           SizedBox(height: 20.h),
 
-          _buildStatsContainer(user),
+          _buildStatsContainer(user, context),
           SizedBox(height: 20.h),
 
           _buildBanner(),
           SizedBox(height: 25.h),
 
-          _buildSectionHeader("طلباتي (0)"),
+          _buildSectionHeader("طلباتي (0)", context),
           SizedBox(height: 15.h),
           _buildOrdersRow(),
           SizedBox(height: 25.h),
@@ -84,16 +85,22 @@ class AccountScreen extends StatelessWidget {
                   "شارك واربح",
                   "شارك زملائك",
                   Color(0xFFF9FFE5),
-                 Appimage.share,
+                  Appimage.share,
                 ),
               ), // Yellowish
               SizedBox(width: 10.w),
               Expanded(
-                child: _buildPromoCard(
-                  "متجر المكافآت",
-                  "تسوق الآن",
-                  const Color(0xFFE8FAFC),
-                  Appimage.presentShop,
+                child: GestureDetector(
+                  onTap: () {
+                    // Navigate to Rewards Screen
+                    Navigator.pushNamed(context, Routes.reward);
+                  },
+                  child: _buildPromoCard(
+                    "متجر المكافآت",
+                    "تسوق الآن",
+                    const Color(0xFFE8FAFC),
+                    Appimage.presentShop,
+                  ),
                 ),
               ), // Blueish
             ],
@@ -101,9 +108,9 @@ class AccountScreen extends StatelessWidget {
           SizedBox(height: 25.h),
 
           // --- Services Section ---
-          _buildSectionHeader("خدماتي"),
+          _buildSectionHeader("خدماتي", context),
           SizedBox(height: 20.h),
-          _buildServicesRow(),
+          _buildServicesRow(context),
           SizedBox(height: 80.h),
         ],
       ),
@@ -188,7 +195,7 @@ class AccountScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildStatsContainer(UserProfile user) {
+  Widget _buildStatsContainer(UserProfile user, BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 12.h),
 
@@ -199,39 +206,62 @@ class AccountScreen extends StatelessWidget {
             "السلة",
             user.cartItems.toString(),
             AppIcons.bagTick,
+            () {
+              Navigator.pushNamed(context, Routes.cart);
+            },
           ),
           _buildVerticalLine(),
-          _buildStatItem("المفضلة", user.favorites.toString(), AppIcons.heart),
+          _buildStatItem(
+            "المفضلة",
+            user.favorites.toString(),
+            AppIcons.heart,
+            () {
+              Navigator.pushNamed(context, Routes.favourite);
+            },
+          ),
           _buildVerticalLine(),
           _buildStatItem(
             "القسائم",
             user.vouchers.toString(),
             AppIcons.discount,
+            () {
+              Navigator.pushNamed(context, Routes.coupon);
+            },
           ),
           _buildVerticalLine(),
-          _buildStatItem("النقاط", user.points.toString(), AppIcons.blend),
+          _buildStatItem("النقاط", user.points.toString(), AppIcons.blend, () {
+            Navigator.pushNamed(context, Routes.reward);
+          }),
         ],
       ),
     );
   }
 
-  Widget _buildStatItem(String label, String value, String icon) {
+  Widget _buildStatItem(
+    String label,
+    String value,
+    String icon,
+    void Function()? onTap,
+  ) {
     return Column(
       children: [
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              label,
-              style: TextStyle(
-                fontSize: 12.sp,
-                color: appcolors.buttoncoloronboarding,
-                fontWeight: FontWeight.bold,
+        GestureDetector(
+          onTap: onTap,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                label,
+                style: TextStyle(
+                  fontSize: 12.sp,
+                  color: appcolors.buttoncoloronboarding,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            SizedBox(width: 4.w),
-            SvgPicture.asset(icon, color: appcolors.buttoncoloronboarding),
-          ],
+              SizedBox(width: 4.w),
+              SvgPicture.asset(icon, color: appcolors.buttoncoloronboarding),
+            ],
+          ),
         ),
         SizedBox(height: 6.h),
         Text(
@@ -249,7 +279,7 @@ class AccountScreen extends StatelessWidget {
     return Container(
       width: double.infinity,
 
-      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
       decoration: BoxDecoration(
         color: Color(0xff06292D), // Dark background
         borderRadius: BorderRadius.circular(12.r),
@@ -295,18 +325,23 @@ class AccountScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSectionHeader(String title) {
+  Widget _buildSectionHeader(String title,BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Row(
-          children: [
-            Icon(MyFlutterApp.arrow_left, size: 20.sp, color: Colors.grey),
-            Text(
-              "عرض الكل",
-              style: TextStyle(color: Colors.grey, fontSize: 12.sp),
-            ),
-          ],
+        GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, Routes.order);
+          },
+          child: Row(
+            children: [
+              Icon(MyFlutterApp.arrow_left, size: 20.sp, color: Colors.grey),
+              Text(
+                "عرض الكل",
+                style: TextStyle(color: Colors.grey, fontSize: 12.sp),
+              ),
+            ],
+          ),
         ),
         Text(
           title,
@@ -334,15 +369,21 @@ class AccountScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildServicesRow() {
+  Widget _buildServicesRow(BuildContext context) {
     return Row(
       textDirection: TextDirection.rtl,
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        _buildImageBox(Appimage.medicine, "الوصفات الطبية"),
+        GestureDetector( onTap: () {
+          Navigator.pushNamed(context, Routes.prescriptionprofile);
+        }, child: _buildImageBox(Appimage.medicine, "الوصفات الطبية")),
         _buildImageBox(Appimage.rating, "التقييمات"),
-        _buildImageBox(Appimage.titles, "العناوين"),
-        _buildImageBox(Appimage.tickets, "التذاكر"),
+        GestureDetector(onTap: () {
+          Navigator.pushNamed(context, Routes.address);
+        }, child: _buildImageBox(Appimage.titles, "العناوين")),
+        GestureDetector(onTap: () {
+          Navigator.pushNamed(context, Routes.tickets);
+        }, child: _buildImageBox(Appimage.tickets, "التذاكر")),
       ],
     );
   }

@@ -71,27 +71,38 @@ class _SizeSelectorSheetState extends State<_SizeSelectorSheet> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          Text('وصفة طبية' ,style: TextStyle(
-                          fontFamily: Appstring.fontfamily,
-                          color: appcolors.black,
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w500,
-                        ),),
-                          Text('نظارات شمسية غير طبية',style: TextStyle(
-                          fontFamily: Appstring.fontfamily,
-                          color: appcolors.graylinethrough,
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w500,
-                        ),),
+                          Text(
+                            Appstring.medicalPrescription,
+                            style: TextStyle(
+                              fontFamily: Appstring.fontfamily,
+                              color: appcolors.black,
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+
+                          Text(
+                            Appstring.nonMedicalSunglasses,
+                            style: TextStyle(
+                              fontFamily: Appstring.fontfamily,
+                              color: appcolors.graylinethrough,
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
                         ],
                       ),
                       Spacer(),
-                      Text('00.00 د.ع',textDirection: TextDirection.rtl, style: TextStyle(
+                      Text(
+                        '00.00 د.ع',
+                        textDirection: TextDirection.rtl,
+                        style: TextStyle(
                           fontFamily: Appstring.fontfamily,
                           color: appcolors.buttoncoloronboarding,
                           fontSize: 15.sp,
                           fontWeight: FontWeight.bold,
-                        ),),
+                        ),
+                      ),
                     ],
                   ),
 
@@ -101,22 +112,31 @@ class _SizeSelectorSheetState extends State<_SizeSelectorSheet> {
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [ Text('عدسة' ,style: TextStyle(
-                          fontFamily: Appstring.fontfamily,
-                          color: appcolors.black,
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w500,
-                        ),),
-                          Text('ملون - رمادي داكن',style: TextStyle(
-                          fontFamily: Appstring.fontfamily,
-                          color: appcolors.graylinethrough,
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w500,
-                        ),),],
+                        children: [
+                          Text(
+                            Appstring.lens,
+                            style: TextStyle(
+                              fontFamily: Appstring.fontfamily,
+                              color: appcolors.black,
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+
+                          Text(
+                            Appstring.darkGrayLens,
+                            style: TextStyle(
+                              fontFamily: Appstring.fontfamily,
+                              color: appcolors.graylinethrough,
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
                       ),
                       Spacer(),
                       Text(
-                        '40.00 د.ع',
+                        Appstring.lensPrice,
                         textDirection: TextDirection.rtl,
                         style: TextStyle(
                           fontFamily: Appstring.fontfamily,
@@ -155,7 +175,7 @@ class _SizeSelectorSheetState extends State<_SizeSelectorSheet> {
                               textDirection: TextDirection.rtl,
                               children: [
                                 Custombutton(
-                                  text: 'عربة التسوق',
+                                  text: Appstring.addToCart,
                                   onPressed: () {
                                     Navigator.pushNamed(
                                       context,
@@ -167,12 +187,13 @@ class _SizeSelectorSheetState extends State<_SizeSelectorSheet> {
                                       appcolors.buttoncoloronboarding,
                                   icon: AppIcons.shoppingCart,
                                 ),
+
                                 Spacer(),
                                 Text(
+                                  Appstring.totalPrice,
                                   textDirection: TextDirection.rtl,
-                                  '500 د.ع', // Dynamically update this
                                   style: TextStyle(
-                                    fontSize: 18.sp, // Responsive font size
+                                    fontSize: 18.sp,
                                     fontWeight: FontWeight.w800,
                                     fontFamily: Appstring.fontfamily,
                                     color: appcolors.buttoncoloronboarding,

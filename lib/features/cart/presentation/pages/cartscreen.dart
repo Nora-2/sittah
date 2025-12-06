@@ -109,9 +109,12 @@ class CartScreen extends StatelessWidget {
                                 physics: const NeverScrollableScrollPhysics(),
                                 itemCount: state.items.length,
                                 itemBuilder: (context, index) {
-                                  return CartItemWidget(
-                                    item: state.items[index],
-                                    index: index,
+                                  return Padding(
+                                    padding: const EdgeInsets.only(bottom:8.0),
+                                    child: CartItemWidget(
+                                      item: state.items[index],
+                                      index: index,
+                                    ),
                                   );
                                 },
                               ),

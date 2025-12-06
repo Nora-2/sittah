@@ -332,5 +332,22 @@ class Appstring {
   static const String emptyCartTitle = 'سلتك فارغة حالياً :(';
   static const String emptyCartDescription = 'ضف منتجاتك المفضلة الآن . واستمتع بالخصومات \nوالهدايا التي نقدمها لعملائنا الكرام';
   static const String shopProducts = 'تسوق المنتجات';
+    static const String medicalPrescription = 'وصفة طبية';
+  static const String priceZero = '00.00 د.ع';
+
+  static const String lens = 'عدسة';
+  static const String darkGrayLens = 'ملون - رمادي داكن';
+  static const String lensPrice = '40.00 د.ع';
+
+  static const String addToCart = 'عربة التسوق';
+  static const String totalPrice = '500 د.ع';
   
+  static const String blueLightLens = 'حاجب الضوء الازرق';
+  
+
+  static const String coating = 'الطلاء';
+  static const String blueLightCoating = 'حاجب الضوء الازرق';
+  static const String coatingPrice = '100.00 د.ع';
+
+  static const String totalLensPrice = '640 د.ع';
 }

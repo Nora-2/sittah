@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
 import 'package:glasses/core/utils/appicons/app_icons.dart';
-import 'package:glasses/core/utils/screenutils.dart';
 
 class ArabicFormSection extends StatefulWidget {
   const ArabicFormSection({super.key});
@@ -51,7 +51,7 @@ class _ArabicFormSectionState extends State<ArabicFormSection> {
           textDirection: TextDirection.rtl,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            SizedBox(width: ScreenUtils.setWidth(12)),
+            SizedBox(width:12.w),
             const Text(
               '  منشور',
               style: TextStyle(

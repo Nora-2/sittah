@@ -29,14 +29,22 @@ class appcolors {
   static Color red = Colors.red;
   static const Color primary = Color(
     0xFF0D47A1,
-  ); // Example primary color (dark blue)
-  static const Color accent = Color(0xFF1E88E5); // Example accent color (blue)
-  static const Color background = Color(0xFFF5F5F5); // Light grey background
+  );
+   
+  static const background = Color(0xFFF8F9FA);
+  static const greenBadgeBg = Color(0xFFD4F4DD);
+  static const greenBadgeText = Color(0xFF16A34A);
+  static const yellowBadgeBg = Color(0xFFFEF3C7);
+  static const yellowBadgeText = Color(0xFFCA8A04);
+  static const textMain = Color(0xFF1F2937);
+ 
+  static const borderColor = Color(0xFFE5E7EB);
+   // Example primary color (dark blue)
+  static const Color accent = Color(0xFF1E88E5); 
   static const Color textBlack = Color(0xFF212121);
   static const Color textGrey = Color(0xFF757575);
   static const Color greenDiscount = Color(0xFFE8FAFC);
   static const Color klarnaPink = Color(0xFFFC568D);
-  static const Color borderColor = Color(0xFFE0E0E0);
   static const Color lightBlue = Color(0xFFE3F2FD);
   static const Color darkGreen = Color(0xFF1B5E20);
   static const Color cardBackground = Color(0xFFf2f2f2);

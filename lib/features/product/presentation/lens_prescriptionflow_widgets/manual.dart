@@ -5,8 +5,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
 import 'package:glasses/core/utils/appicons/app_icons.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
-import 'package:glasses/core/utils/screenutils.dart';
-import 'package:glasses/core/utils/textstyle/textstyle.dart';
 import 'package:glasses/features/product/presentation/lens_prescriptionflow_widgets/bottompartinmanual.dart';
 import 'package:glasses/features/product/presentation/lens_prescriptionflow_widgets/pdproperity.dart';
 import 'package:glasses/features/product/presentation/lens_prescriptionflow_widgets/tablelens.dart';
@@ -23,11 +21,12 @@ class lensmanual extends StatelessWidget {
           children: [
             Text(
               'المسافة الحدقية',
-              style: AppTextStyles.heading.copyWith(
+              style: TextStyle(
+                fontSize: 16,
                 fontFamily: Appstring.fontfamily,
               ),
             ),
-            SizedBox(width: ScreenUtils.setWidth(8)),
+            SizedBox(width:8.w),
             SvgPicture.asset(AppIcons.questionMark, color: appcolors.grey66),
           ],
         ),

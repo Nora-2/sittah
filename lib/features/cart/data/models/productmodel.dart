@@ -1,11 +1,11 @@
-class Product {
+class Productcart {
   final String id;
   final String name;
   final String image;
   final double price;
   final List<String> options;
 
-  Product({
+  Productcart({
     required this.id,
     required this.name,
     required this.image,
@@ -15,7 +15,7 @@ class Product {
 }
 
 class CartItem {
-  final Product product;
+  final Productcart product;
   int quantity;
   final String selectedOption1;
   final String selectedOption2;

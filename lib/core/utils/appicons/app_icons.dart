@@ -76,4 +76,11 @@ class AppIcons {
   static const String dinerclub = 'assets/images/DinersClub.svg';
     static const String dicover = 'assets/images/Discover.svg';
     static const String moneytick = 'assets/images/money-tick.svg';
+    static const String addlocation = 'assets/images/location-add.svg';
+      static const String location = 'assets/images/location.svg';
+      static const String call = 'assets/images/call.svg';
+       static const String edit = 'assets/images/edit-2.svg';
+      static const String bag2 = 'assets/images/bag-2.svg';
+          static const String coin = 'assets/images/coins-01.svg';
+      static const String heartfill = 'assets/images/Vector (Stroke).svg';
 }

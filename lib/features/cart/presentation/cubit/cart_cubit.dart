@@ -43,7 +43,7 @@ void updateQuantity(int index, int quantity) {
 
   void loadDemoData() {
     addItem(CartItem(
-      product: Product(
+      product: Productcart(
         id: '1',
         name: 'نظارات ويستيل',
         image: '👓',
@@ -56,7 +56,7 @@ void updateQuantity(int index, int quantity) {
     ));
 
     addItem(CartItem(
-      product: Product(
+      product: Productcart(
         id: '2',
         name: 'نظارات ويستيل',
         image: '👓',

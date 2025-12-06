@@ -13,7 +13,7 @@ void showCustomDialogproductlens(BuildContext context) {
     isScrollControlled: true,
     backgroundColor: Colors.transparent,
     builder: (context) {
-      return _SizeSelectorSheet();
+      return const _SizeSelectorSheet();
     },
   );
 }
@@ -65,59 +65,79 @@ class _SizeSelectorSheetState extends State<_SizeSelectorSheet> {
 
                   SizedBox(height: 14.h),
 
+                  /// ===================== FIRST ROW ======================
                   Row(
                     textDirection: TextDirection.rtl,
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          Text('وصفة طبية' ,style: TextStyle(
-                          fontFamily: Appstring.fontfamily,
-                          color: appcolors.black,
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w500,
-                        ),),
-                          Text('نظارات شمسية غير طبية',style: TextStyle(
-                          fontFamily: Appstring.fontfamily,
-                          color: appcolors.graylinethrough,
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w500,
-                        ),),
+                          Text(
+                            Appstring.medicalPrescription,
+                            style: TextStyle(
+                              fontFamily: Appstring.fontfamily,
+                              color: appcolors.black,
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          Text(
+                            Appstring.nonMedicalSunglasses,
+                            style: TextStyle(
+                              fontFamily: Appstring.fontfamily,
+                              color: appcolors.graylinethrough,
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
                         ],
                       ),
-                      Spacer(),
-                      Text('00.00 د.ع',textDirection: TextDirection.rtl, style: TextStyle(
+                      const Spacer(),
+                      Text(
+                        Appstring.priceZero,
+                        textDirection: TextDirection.rtl,
+                        style: TextStyle(
                           fontFamily: Appstring.fontfamily,
                           color: appcolors.buttoncoloronboarding,
                           fontSize: 15.sp,
                           fontWeight: FontWeight.bold,
-                        ),),
+                        ),
+                      ),
                     ],
                   ),
 
                   SizedBox(height: 12.h),
+
+                  /// ===================== LENS ROW ======================
                   Row(
                     textDirection: TextDirection.rtl,
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [ Text('عدسة' ,style: TextStyle(
-                          fontFamily: Appstring.fontfamily,
-                          color: appcolors.black,
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w500,
-                        ),),
-                          Text('حاجب الضوء الازرق',style: TextStyle(
-                          fontFamily: Appstring.fontfamily,
-                          color: appcolors.graylinethrough,
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w500,
-                        ),),],
+                        children: [
+                          Text(
+                            Appstring.lens,
+                            style: TextStyle(
+                              fontFamily: Appstring.fontfamily,
+                              color: appcolors.black,
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          Text(
+                            Appstring.blueLightLens,
+                            style: TextStyle(
+                              fontFamily: Appstring.fontfamily,
+                              color: appcolors.graylinethrough,
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
                       ),
-                      
-                      Spacer(),
+                      const Spacer(),
                       Text(
-                        '40.00 د.ع',
+                        Appstring.lensPrice,
                         textDirection: TextDirection.rtl,
                         style: TextStyle(
                           fontFamily: Appstring.fontfamily,
@@ -128,30 +148,39 @@ class _SizeSelectorSheetState extends State<_SizeSelectorSheet> {
                       ),
                     ],
                   ),
+
                   SizedBox(height: 12.h),
-                
+
+                  /// ===================== COATING ROW ======================
                   Row(
                     textDirection: TextDirection.rtl,
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [ Text('الطلاء' ,style: TextStyle(
-                          fontFamily: Appstring.fontfamily,
-                          color: appcolors.black,
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w500,
-                        ),),
-                          Text('حاجب الضوء الازرق',style: TextStyle(
-                          fontFamily: Appstring.fontfamily,
-                          color: appcolors.graylinethrough,
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w500,
-                        ),),],
+                        children: [
+                          Text(
+                            Appstring.coating,
+                            style: TextStyle(
+                              fontFamily: Appstring.fontfamily,
+                              color: appcolors.black,
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          Text(
+                            Appstring.blueLightCoating,
+                            style: TextStyle(
+                              fontFamily: Appstring.fontfamily,
+                              color: appcolors.graylinethrough,
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
                       ),
-                      
-                      Spacer(),
+                      const Spacer(),
                       Text(
-                        '100.00 د.ع',
+                        Appstring.coatingPrice,
                         textDirection: TextDirection.rtl,
                         style: TextStyle(
                           fontFamily: Appstring.fontfamily,
@@ -162,7 +191,10 @@ class _SizeSelectorSheetState extends State<_SizeSelectorSheet> {
                       ),
                     ],
                   ),
-                     SizedBox(height: 12.h),
+
+                  SizedBox(height: 12.h),
+
+                  /// ===================== CART SECTION ======================
                   Directionality(
                     textDirection: TextDirection.ltr,
                     child: Container(
@@ -171,52 +203,50 @@ class _SizeSelectorSheetState extends State<_SizeSelectorSheet> {
                         boxShadow: [
                           BoxShadow(
                             color: Colors.black.withOpacity(0.1),
-                            spreadRadius: 1.r, // Responsive spread radius
-                            blurRadius: 10.r, // Responsive blur radius
-                            offset: Offset(0, -3.h), // Responsive offset
+                            spreadRadius: 1.r,
+                            blurRadius: 10.r,
+                            offset: Offset(0, -3.h),
                           ),
                         ],
                       ),
                       padding: EdgeInsets.symmetric(
                         horizontal: 4.w,
                         vertical: 4.h,
-                      ), // Responsive padding
-                      child: Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Row(
-                              textDirection: TextDirection.rtl,
-                              children: [
-                                Custombutton(
-                                  text: 'عربة التسوق',
-                                  onPressed: () {
-                                    Navigator.pushNamed(
-                                      context,
-                                      Routes.framechoose,
-                                    );
-                                  },
-                                  color: appcolors.primarycolor,
-                                  backgroundColor:
-                                      appcolors.buttoncoloronboarding,
-                                  icon: AppIcons.shoppingCart,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Row(
+                            textDirection: TextDirection.rtl,
+                            children: [
+                              Custombutton(
+                                text: Appstring.addToCart,
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                    context,
+                                    Routes.framechoose,
+                                  );
+                                },
+                                color: appcolors.primarycolor,
+                                backgroundColor:
+                                    appcolors.buttoncoloronboarding,
+                                icon: AppIcons.shoppingCart,
+                              ),
+                              const Spacer(),
+                              Text(
+                                Appstring.totalLensPrice,
+                                textDirection: TextDirection.rtl,
+                                style: TextStyle(
+                                  fontSize: 18.sp,
+                                  fontWeight: FontWeight.w800,
+                                  fontFamily: Appstring.fontfamily,
+                                  color: appcolors.buttoncoloronboarding,
                                 ),
-                                Spacer(),
-                                Text(
-                                  textDirection: TextDirection.rtl,
-                                  '640 د.ع', // Dynamically update this
-                                  style: TextStyle(
-                                    fontSize: 18.sp, // Responsive font size
-                                    fontWeight: FontWeight.w800,
-                                    fontFamily: Appstring.fontfamily,
-                                    color: appcolors.buttoncoloronboarding,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ),

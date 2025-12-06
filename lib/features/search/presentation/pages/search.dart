@@ -196,7 +196,7 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 
   Widget _buildDefaultState(SearchState state) {
-    final List<Product> products = state is SearchSuccess ? state.products : [];
+    final List<Productsearch> products = state is SearchSuccess ? state.products : [];
 
     return SingleChildScrollView(
       child: Column(
@@ -265,7 +265,7 @@ class _SearchScreenState extends State<SearchScreen> {
     );
   }
 
-  Widget _buildProductGrid(List<Product> products) {
+  Widget _buildProductGrid(List<Productsearch> products) {
     return SizedBox(
       height: 120.h,
       child: ListView.builder(

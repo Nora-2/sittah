@@ -4,8 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
 import 'package:glasses/core/utils/appicons/app_icons.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
-import 'package:glasses/core/utils/screenutils.dart';
-import 'package:glasses/core/utils/textstyle/textstyle.dart';
 import 'package:glasses/features/product/presentation/lens_prescriptionflow_widgets/image.dart';
 import 'package:glasses/features/product/presentation/lens_prescriptionflow_widgets/lenstogeltabs.dart';
 import 'package:glasses/features/product/presentation/lens_prescriptionflow_widgets/manual.dart';
@@ -33,7 +31,7 @@ class _LensType2ScreenState extends State<LensType2Screen> {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtils.init(context);
+
 
     return Scaffold(
       backgroundColor: appcolors.whicolor,
@@ -65,7 +63,7 @@ class _LensType2ScreenState extends State<LensType2Screen> {
             Container(
               color: Colors.white,
               padding: EdgeInsets.symmetric(
-                vertical: ScreenUtils.setHeight(12),
+                vertical: 12.h,
               ),
               child: StepIndicator(
                 currentStep: widget.stepNumber,
@@ -75,7 +73,7 @@ class _LensType2ScreenState extends State<LensType2Screen> {
             // Content
             Expanded(
               child: SingleChildScrollView(
-                padding: EdgeInsets.all(ScreenUtils.padding),
+                padding: EdgeInsets.all(16.w),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -85,18 +83,18 @@ class _LensType2ScreenState extends State<LensType2Screen> {
                       children: [
                         Text(
                           'ادخل وصفتك الطبية',
-                          style: AppTextStyles.heading.copyWith(
+                          style: TextStyle( 
                             fontFamily: Appstring.fontfamily,
                           ),
                         ),
-                        SizedBox(width: ScreenUtils.setWidth(8)),
+                        SizedBox(width: 8.w),
                         SvgPicture.asset(
                           AppIcons.questionMark,
                           color: appcolors.grey66,
                         ),
                       ],
                     ),
-                    SizedBox(height: ScreenUtils.setHeight(16)),
+                    SizedBox(height: 16.h),
 
                     // Lens Tabs
                     lensTabs(

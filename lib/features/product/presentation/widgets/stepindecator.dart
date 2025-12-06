@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
-import 'package:glasses/core/utils/screenutils.dart';
-import 'package:glasses/core/utils/textstyle/textstyle.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 class StepIndicator extends StatelessWidget {
@@ -28,13 +26,13 @@ class StepIndicator extends StatelessWidget {
           Text(
             textDirection: TextDirection.rtl,
             '$currentStep من $totalSteps',
-            style: AppTextStyles.caption.copyWith(
+            style: TextStyle(
               color: appcolors.black,
               fontFamily: Appstring.fontfamily,
-              fontSize: ScreenUtils.setFontSize(14),
+              fontSize:14.sp,
             ),
           ),
-          SizedBox(height: ScreenUtils.setHeight(8)),
+          SizedBox(height:8.h),
           // Progress bar
           StepProgressIndicator(
             progressDirection:TextDirection.rtl,

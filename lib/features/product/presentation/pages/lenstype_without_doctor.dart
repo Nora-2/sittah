@@ -4,8 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
 import 'package:glasses/core/utils/appicons/app_icons.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
-import 'package:glasses/core/utils/screenutils.dart';
-import 'package:glasses/core/utils/textstyle/textstyle.dart';
 import 'package:glasses/features/product/presentation/pages/pricesummarylens.dart';
 import 'package:glasses/features/product/presentation/widgets/stepindecator.dart';
 import '../widgets/prescription_option_card.dart';
@@ -26,7 +24,7 @@ class _LenstypewithoutdoctorScreenState
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtils.init(context);
+
 
     return Scaffold(
       backgroundColor: appcolors.whicolor,
@@ -62,7 +60,7 @@ class _LenstypewithoutdoctorScreenState
             Container(
               color: Colors.white,
               padding: EdgeInsets.symmetric(
-                vertical: ScreenUtils.setHeight(12),
+                vertical: 12.h,
               ),
               child: StepIndicator(
                 currentStep: widget.stepNumber,
@@ -83,18 +81,18 @@ class _LenstypewithoutdoctorScreenState
                           children: [
                             Text(
                               widget.stepNumber == 2 ? 'الطلاء' : 'نوع العدسة',
-                              style: AppTextStyles.heading.copyWith(
+                              style: TextStyle(
                                 fontFamily: Appstring.fontfamily,
                               ),
                             ),
-                            SizedBox(width: ScreenUtils.setWidth(8)),
+                            SizedBox(width: 8.w ),
                             SvgPicture.asset(
                               AppIcons.questionMark,
                               color: appcolors.grey66,
                             ),
                           ],
                         ),
-                        SizedBox(height: ScreenUtils.setHeight(16)),
+                        SizedBox(height: 16.h),
                         
                         // Options list
                         ...(_buildOptions()),

@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glasses/core/constants.dart';
 import 'package:glasses/core/utils/appcolors/app_colors.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
-import 'package:glasses/core/utils/screenutils.dart';
 import 'package:glasses/core/utils/widgets/my_flutter_app_icons.dart';
 
 class lensOptionCard extends StatefulWidget {
@@ -48,7 +47,7 @@ class _lensOptionCardState extends State<lensOptionCard> {
           height: 70.h,
           decoration: BoxDecoration(
             color: appcolors.whicolor,
-            borderRadius: BorderRadius.circular(ScreenUtils.setWidth(12)),
+            borderRadius: BorderRadius.circular(12.r),
            border:Border.all(width: 1,color:appcolors.borderColor)
           ),
           child: Row(
@@ -60,8 +59,8 @@ class _lensOptionCardState extends State<lensOptionCard> {
                 decoration: BoxDecoration(
                   image: DecorationImage(image: AssetImage(widget.image),fit: BoxFit.fill),
                   borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(ScreenUtils.setWidth(12)),
-                    bottomRight: Radius.circular(ScreenUtils.setWidth(12)),
+                    topRight: Radius.circular(12.r),
+                    bottomRight: Radius.circular(12.r),
                   ),
                 ),
               ),

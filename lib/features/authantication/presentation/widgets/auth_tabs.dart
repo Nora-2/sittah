@@ -20,7 +20,7 @@ class AuthTabs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50.h,
+      height: 35.h,
       decoration: BoxDecoration(
         color: appcolors.whicolor, // background for inactive tabs
         borderRadius: BorderRadius.circular(30.r),

@@ -35,7 +35,7 @@ class _SizeSelectorSheetState extends State<_SizeSelectorSheet> {
     // Replace product data with:
 
   CartItem(
-    product: Product(
+    product: Productcart(
       id: '1',
       name: Appstring.westleyGlasses,
       image: '👓',
@@ -52,7 +52,7 @@ class _SizeSelectorSheetState extends State<_SizeSelectorSheet> {
   ),
 
   CartItem(
-    product: Product(
+    product: Productcart(
       id: '2',
       name: Appstring.westleyGlasses,
       image: '👓',

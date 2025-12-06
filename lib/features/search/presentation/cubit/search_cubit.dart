@@ -46,11 +46,11 @@ class SearchCubit extends Cubit<SearchState> {
   }
 
   // Mock data
-  final List<Product> _mockProducts = [
-    Product(name: 'فيوجن', price: '400 ج.م', image:Appimage.productBlue),
-    Product(name: 'ويستلي', price: '700 ج.م',image:Appimage.productBrown),
-    Product(name: 'إيليجانس', price: '800 ج.م', image:Appimage.productBlue),
-    Product(name: 'فانتوم', price: '600 ج.م', image:Appimage.productBrown),
+  final List<Productsearch> _mockProducts = [
+    Productsearch(name: 'فيوجن', price: '400 ج.م', image:Appimage.productBlue),
+    Productsearch(name: 'ويستلي', price: '700 ج.م',image:Appimage.productBrown),
+    Productsearch(name: 'إيليجانس', price: '800 ج.م', image:Appimage.productBlue),
+    Productsearch(name: 'فانتوم', price: '600 ج.م', image:Appimage.productBrown),
   ];
 
   final List<String> _mockCategories = [

@@ -1,8 +1,8 @@
 
-class Product {
+class Productsearch {
   final String name;
   final String price;
   final String image;
 
-  Product({required this.name, required this.price, required this.image});
+  Productsearch({required this.name, required this.price, required this.image});
 }

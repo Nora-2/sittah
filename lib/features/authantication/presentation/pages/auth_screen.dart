@@ -60,7 +60,7 @@ class AuthScreen extends StatelessWidget {
                           onTapLogin: cubit.toggleMode,
                           onTapSignup: cubit.toggleMode,
                         ),
-                        SizedBox(height: height * 0.03),
+                        SizedBox(height: height * 0.02),
                         cubit.isLogin
                             ? LoginForm(cubit: cubit)
                             : SignupForm(cubit: cubit),
