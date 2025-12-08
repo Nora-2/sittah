@@ -105,9 +105,9 @@ class RewardsScreen extends StatelessWidget {
                               },
                               builder: (context, state) {
                                 if (state is! RewardLoaded) {
-                                  return const Center(
+                                  return  Center(
                                     child: CircularProgressIndicator(
-                                      color: Color(0xFF0F3C46),
+                                      color:appcolors.buttoncoloronboarding,
                                     ),
                                   );
                                 }
@@ -235,14 +235,14 @@ class RewardsScreen extends StatelessWidget {
                         "سعر صرف الطلب 10 نقاط = 1 د.ع",
                         style: TextStyle(
                           fontSize: 12.sp,
-                          color: Color(0xff4D4D4D),
+                          color: appcolors.reward,
                         ),
                       ),
                       Text(
                         "سعر صرف في متجر المكافآت 5 نقاط = 1 د.ع",
                         style: TextStyle(
                           fontSize: 12.sp,
-                          color: Color(0xff4D4D4D),
+                          color: appcolors.reward,
                         ),
                       ),
                     ],
@@ -369,7 +369,7 @@ class RewardsScreen extends StatelessWidget {
                   Text(
                     "${product.pointsCost} نقاط",
                     style: TextStyle(
-                      color: const Color(0xFF0F3C46),
+                      color: appcolors.pointcost,
                       fontWeight: FontWeight.bold,
                       fontSize: 12.sp,
                     ),

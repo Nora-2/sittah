@@ -22,57 +22,57 @@ class CartScreen extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         extendBodyBehindAppBar: true,
-        body: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                appcolors.gradient1,
-                appcolors.gradient2,
-                appcolors.whicolor,
-                appcolors.whicolor,
-                appcolors.whicolor,
-              ],
-              begin: Alignment.topRight,
-              end: Alignment.bottomRight,
+        body: SingleChildScrollView(
+          child: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  appcolors.gradient1,
+                  appcolors.gradient2,
+                  appcolors.whicolor,
+                  appcolors.whicolor,
+                  appcolors.whicolor,
+                ],
+                begin: Alignment.topRight,
+                end: Alignment.bottomRight,
+              ),
             ),
-          ),
-          child: SafeArea(
-            child: Stack(
-              children: [
-                Container(
-                  height: 100.h,
-                  padding: EdgeInsets.symmetric(horizontal: 8.w),
-                  alignment: Alignment.center,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      IconButton(
-                        icon: Icon(Icons.arrow_back_ios, size: 18.sp),
-                        color: appcolors.black,
-                        onPressed: () {},
-                      ),
-                      Expanded(
-                        child: Text(
-                         Appstring.shoppingCart,
-                          style: TextStyle(
-                            fontFamily: Appstring.fontfamily,
-                            fontSize: 17.sp,
-                            color: appcolors.black,
-                            fontWeight: FontWeight.w600,
+            child: SafeArea(
+              child: Stack(
+                children: [
+                  Container(
+                    height: 100.h,
+                    padding: EdgeInsets.symmetric(horizontal: 8.w),
+                    alignment: Alignment.center,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        IconButton(
+                          icon: Icon(Icons.arrow_back_ios, size: 18.sp),
+                          color: appcolors.black,
+                          onPressed: () {},
+                        ),
+                        Expanded(
+                          child: Text(
+                           Appstring.shoppingCart,
+                            style: TextStyle(
+                              fontFamily: Appstring.fontfamily,
+                              fontSize: 17.sp,
+                              color: appcolors.black,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                         ),
-                      ),
-                      // balance right spacing
-                    ],
+                        // balance right spacing
+                      ],
+                    ),
                   ),
-                ),
-                BlocBuilder<CartCubit, CartState>(
-                  builder: (context, state) {
-                    if (state.items.isEmpty) {
-                      return const EmptyCartWidget();
-                    }
-                    return SingleChildScrollView(
-                      child: Padding(
+                  BlocBuilder<CartCubit, CartState>(
+                    builder: (context, state) {
+                      if (state.items.isEmpty) {
+                        return const EmptyCartWidget();
+                      }
+                      return Padding(
                         padding: EdgeInsets.only(top: 80.h),
                         child: Container(
                           color: appcolors.whicolor,
@@ -96,7 +96,7 @@ class CartScreen extends StatelessWidget {
                                     ('( ${state.items.length} )'),
                                     style: TextStyle(
                                       fontSize: 16.sp,
-
+                      
                                       color: appcolors.graylinethrough,
                                       fontFamily: Appstring.fontfamily,
                                     ),
@@ -118,9 +118,9 @@ class CartScreen extends StatelessWidget {
                                   );
                                 },
                               ),
-
+                      
                               SizedBox(height: 20.h),
-
+                      
                               Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 16.w),
                                 child: Text(
@@ -132,9 +132,9 @@ class CartScreen extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                 ),
                               ),
-
+                      
                               SizedBox(height: 16.h),
-
+                      
                               Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 4.w),
                                 child: SizedBox(
@@ -172,11 +172,11 @@ class CartScreen extends StatelessWidget {
                                   ),
                                 ),
                               ),
-
+                      
                                OrderSummaryWidget(color: const Color.fromARGB(157, 242, 242, 242),),
-
+                      
                               SizedBox(height: 20.h),
-
+                      
                               // Checkout Button
                               Directionality(
                                 textDirection: TextDirection.ltr,
@@ -195,17 +195,17 @@ class CartScreen extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(height: 10.h),
-
+                      
                               // Payment Options
                               klarna(),
                             ],
                           ),
                         ),
-                      ),
-                    );
-                  },
-                ),
-              ],
+                      );
+                    },
+                  ),
+                ],
+              ),
             ),
           ),
         ),

@@ -71,21 +71,21 @@ class _OtpPasswordScreenState extends State<OtpPasswordScreen> {
         builder: (context, state) {
           final cubit = context.read<AuthanticationCubit>();
 
-          return Stack(
-            children: [
-              // Background
-              Passback(
-                title: Appstring.otptitle,
-                subTitel: Appstring.otpsubTitel,
-              ),
-
-              // Scrollable form container
-              SingleChildScrollView(
-                child: Padding(
+          return SingleChildScrollView(
+            child: Stack(
+              children: [
+                // Background
+                Passback(
+                  title: Appstring.otptitle,
+                  subTitel: Appstring.otpsubTitel,
+                ),
+            
+                // Scrollable form container
+                Padding(
                   padding: EdgeInsets.only(top: height * 0.23),
                   child: Container(
                     width: double.infinity,
-                    height: height * 1.08,
+                 
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     decoration: BoxDecoration(
                       color: appcolors.whicolor,
@@ -96,7 +96,7 @@ class _OtpPasswordScreenState extends State<OtpPasswordScreen> {
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
-
+                
                       children: [
                         SizedBox(height: 10.h),
                         Image.asset(
@@ -104,7 +104,7 @@ class _OtpPasswordScreenState extends State<OtpPasswordScreen> {
                           height: 120.h,
                           fit: BoxFit.fill,
                         ),
-
+                
                         Directionality(
                           textDirection: TextDirection.rtl,
                           child: PinCodeTextField(
@@ -131,7 +131,7 @@ class _OtpPasswordScreenState extends State<OtpPasswordScreen> {
                               fieldWidth: 40.w,
                               activeFillColor: appcolors.whicolor,
                               inactiveFillColor: appcolors.whicolor,
-
+                
                               selectedFillColor: appcolors.whicolor,
                               inactiveColor: Colors.grey.shade300,
                               selectedColor: appcolors.black,
@@ -154,7 +154,7 @@ class _OtpPasswordScreenState extends State<OtpPasswordScreen> {
                             },
                           ),
                         ),
-
+                
                         if (hasError)
                           Padding(
                             padding: EdgeInsets.only(top: 8.h),
@@ -166,7 +166,7 @@ class _OtpPasswordScreenState extends State<OtpPasswordScreen> {
                               ),
                             ),
                           ),
-
+                
                         SizedBox(
                           height: 10.h,
                         ), // Added some space after OTP input
@@ -191,9 +191,9 @@ class _OtpPasswordScreenState extends State<OtpPasswordScreen> {
                             );
                           },
                         ),
-
+                
                         SizedBox(height: 12.h),
-
+                
                         // Resend Button
                         BlocBuilder<AuthanticationCubit, AuthanticationState>(
                           builder: (context, state) {
@@ -224,11 +224,14 @@ class _OtpPasswordScreenState extends State<OtpPasswordScreen> {
                             );
                           },
                         ),
-
+                
                         SizedBox(height: 200.h),
                         Custombutton(
                           text: 'ارسال',
+                          color: appcolors.primarycolor,
+                          backgroundColor: appcolors.buttoncoloronboarding,
                           onPressed: currentText.length == 6
+                          
                               ? () {
                                   cubit.verifyOtp(currentText);
                                   Navigator.pushNamed(
@@ -239,14 +242,14 @@ class _OtpPasswordScreenState extends State<OtpPasswordScreen> {
                               : null,
                           icon: AppIcons.educare,
                         ),
-
+                
                         SizedBox(height: 20.h),
                       ],
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           );
         },
       ),

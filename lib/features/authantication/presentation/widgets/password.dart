@@ -36,17 +36,17 @@ class PasswordScreen extends StatelessWidget {
         builder: (context, state) {
           final cubit = context.read<AuthanticationCubit>();
 
-          return Stack(
-            children: [
-              // Background
-              Passback(
-                title: Appstring.forgetpasstitel,
-                subTitel: Appstring.forgetpasssubtitel,
-              ),
-
-              // Scrollable form container
-              SingleChildScrollView(
-                child: Padding(
+          return SingleChildScrollView(
+            child: Stack(
+              children: [
+                
+                Passback(
+                  title: Appstring.forgetpasstitel,
+                  subTitel: Appstring.forgetpasssubtitel,
+                ),
+            
+                
+                Padding(
                   padding: EdgeInsets.only(top: height * 0.23),
                   child: Container(
                     width: double.infinity,
@@ -92,8 +92,8 @@ class PasswordScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           );
         },
       ),

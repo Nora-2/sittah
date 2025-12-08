@@ -146,7 +146,7 @@ class _AddressListScreenState extends State<AddressListScreen> {
       {
         "title": "المنزل",
         "tag": "اساسي",
-        "tagColor": Color(0xffE8FAFC),
+        "tagColor": appcolors.promocodepoint,
         "tagTextColor": appcolors.buttoncoloronboarding,
         "address": "30 شارع مصطفى حامد - شبرا مصر - القاهرة - الشقة الثانية",
         "phone": "+20 01155856594"
@@ -154,8 +154,8 @@ class _AddressListScreenState extends State<AddressListScreen> {
       {
         "title": "العمل",
         "tag": "فرعي",
-        "tagColor": Color(0xffF9FFE5), // Lime color
-        "tagTextColor": Color(0xff506600),
+        "tagColor": appcolors.promocodeshare, // Lime color
+        "tagTextColor": appcolors.tagTextColor,
         "address": "30 شارع مصطفى حامد - شبرا مصر - القاهرة - الشقة الثانية",
         "phone": "+20 01155856594"
       }
@@ -214,7 +214,7 @@ class _AddressListScreenState extends State<AddressListScreen> {
           future: fetchAddresses(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Center(child: CircularProgressIndicator(color: Color(0xFF004D4D)));
+              return  Center(child: CircularProgressIndicator(color: appcolors.buttoncoloronboarding));
             }
             
             if (!snapshot.hasData || snapshot.data!.isEmpty) {
@@ -389,7 +389,7 @@ hintTextDirection: TextDirection.rtl,
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
-          borderSide: const BorderSide(color: Color(0xFF004D4D)),
+          borderSide:  BorderSide(color: appcolors.buttoncoloronboarding),
         ),
       ),
     );

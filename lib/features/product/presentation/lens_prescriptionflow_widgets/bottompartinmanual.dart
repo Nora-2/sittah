@@ -140,7 +140,7 @@ class _ArabicFormSectionState extends State<ArabicFormSection> {
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
                   borderSide: const BorderSide(
-                    color: Color(0xFF0D7C66),
+                    color: appcolors.bottompartmanual,
                     width: 1.5,
                   ),
                 ),

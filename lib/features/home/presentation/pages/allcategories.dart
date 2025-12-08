@@ -20,52 +20,52 @@ class _AllCtegoriesScreenState extends State<AllCtegoriesScreen> {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         extendBodyBehindAppBar: true,
-        body: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                appcolors.gradient1,
-                appcolors.gradient2,
-                appcolors.whicolor,
-                appcolors.whicolor,
-                appcolors.whicolor,
-              ],
-              begin: Alignment.topRight,
-              end: Alignment.bottomRight,
+        body: SingleChildScrollView(
+          child: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  appcolors.gradient1,
+                  appcolors.gradient2,
+                  appcolors.whicolor,
+                  appcolors.whicolor,
+                  appcolors.whicolor,
+                ],
+                begin: Alignment.topRight,
+                end: Alignment.bottomRight,
+              ),
             ),
-          ),
-          child: SafeArea(
-            child: Stack(
-              children: [
-                Container(
-                  height: 100.h,
-                  padding: EdgeInsets.symmetric(horizontal: 16.w),
-                  alignment: Alignment.center,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      IconButton(
-                        icon: Icon(Icons.arrow_back_ios, size: 18.sp),
-                        color: appcolors.black,
-                        onPressed: () {},
-                      ),
-                      Expanded(
-                        child: Text(
-                          Appstring.allcategories,
-                          style: TextStyle(
-                            fontFamily: Appstring.fontfamily,
-                            fontSize: 17.sp,
-                            color: appcolors.black,
-                            fontWeight: FontWeight.w600,
+            child: SafeArea(
+              child: Stack(
+                children: [
+                  Container(
+                    height: 100.h,
+                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                    alignment: Alignment.center,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        IconButton(
+                          icon: Icon(Icons.arrow_back_ios, size: 18.sp),
+                          color: appcolors.black,
+                          onPressed: () {},
+                        ),
+                        Expanded(
+                          child: Text(
+                            Appstring.allcategories,
+                            style: TextStyle(
+                              fontFamily: Appstring.fontfamily,
+                              fontSize: 17.sp,
+                              color: appcolors.black,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                         ),
-                      ),
-                      SizedBox(width: 48.w), // balance right spacing
-                    ],
+                        SizedBox(width: 48.w), // balance right spacing
+                      ],
+                    ),
                   ),
-                ),
-                SingleChildScrollView(
-                  child: Padding(
+                  Padding(
                     padding: EdgeInsets.only(top: height * 0.1),
                     child: Container(
                       width: double.infinity,
@@ -79,15 +79,15 @@ class _AllCtegoriesScreenState extends State<AllCtegoriesScreen> {
                         children: [
                           SizedBox(height: 10.h),
                           const SearchBarWidget(),
-
+                            
                           SizedBox(height: 10.h),
                           CategoryGrid(),
                         ],
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

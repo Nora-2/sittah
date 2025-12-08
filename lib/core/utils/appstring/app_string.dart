@@ -350,4 +350,8 @@ class Appstring {
   static const String coatingPrice = '100.00 د.ع';
 
   static const String totalLensPrice = '640 د.ع';
+
+  static const String currentpassword = 'كلمة المرور الحالية';
+  static const String enternewpass = "ادخل كلمة المرور الحالية";
+
 }

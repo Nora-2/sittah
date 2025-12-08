@@ -24,7 +24,7 @@ class HomeHeaderGeust extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 22.r,
-            backgroundColor: Color(0xffCCCCCC),
+            backgroundColor: appcolors.slider,
             child: Icon(
               MyFlutterApp.profile_circle,
               color: appcolors.whicolor,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:glasses/core/utils/appcolors/app_colors.dart';
 
 class CouponToggleSwitch extends StatelessWidget {
   final int selectedIndex;
@@ -60,7 +61,7 @@ class CouponToggleSwitch extends StatelessWidget {
         duration: const Duration(milliseconds: 200),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: isSelected ? const Color(0xFF1B4B5A) : Colors.transparent,
+          color: isSelected ? appcolors.buttoncoloronboarding : Colors.transparent,
           borderRadius: BorderRadius.circular(25.r),
         ),
         child: Text(

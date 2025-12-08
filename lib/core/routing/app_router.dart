@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:glasses/core/routing/routes.dart';
 import 'package:glasses/core/utils/widgets/geustlayout.dart';
 import 'package:glasses/core/utils/widgets/mainlayout.dart';
+import 'package:glasses/features/account/presentation/pages/change_currancy.dart';
+import 'package:glasses/features/account/presentation/pages/change_password.dart';
 import 'package:glasses/features/account/presentation/widgets/prescription.dart';
 import 'package:glasses/features/address/presentation/pages/address.dart';
 import 'package:glasses/features/address/presentation/pages/empty_card_screen.dart';
@@ -47,24 +49,24 @@ class AppRouter {
         );
       case Routes.login:
         return MaterialPageRoute(builder: (_) => const Signin_Signup());
+
+          case Routes.changeCurrencyScreen:
+        return MaterialPageRoute(builder: (_) =>  ChangeCurrencyScreen());
+          case Routes.changePasswordScreen:
+        return MaterialPageRoute(builder: (_) => const ChangePasswordScreen());
       case Routes.category:
         return MaterialPageRoute(builder: (_) => const CustomCategoryScreen());
       case Routes.prescription:
         return MaterialPageRoute(
           builder: (_) => PrescriptionStepScreen(stepNumber: 1),
         );
-           case Routes.tickets:
-        return MaterialPageRoute(
-          builder: (_) => EmptyCardsScreen(),
-        );
-              case Routes.prescriptionprofile:
-        return MaterialPageRoute(
-          builder: (_) => PrescriptionScreen(),
-        );
-             case Routes.address:
-        return MaterialPageRoute(
-          builder: (_) => AddressListScreen(),
-        );
+      case Routes.tickets:
+        return MaterialPageRoute(builder: (_) => EmptyCardsScreen());
+
+      case Routes.prescriptionprofile:
+        return MaterialPageRoute(builder: (_) => PrescriptionScreen());
+      case Routes.address:
+        return MaterialPageRoute(builder: (_) => AddressListScreen());
       case Routes.framechoose:
         return MaterialPageRoute(
           builder: (_) => PrescriptionStepScreen(stepNumber: 2),

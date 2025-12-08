@@ -76,24 +76,24 @@ class ChangePasswordScreen extends StatelessWidget {
                             return Column(
                               children: [
                                 _buildPasswordField(
-                                  label: "كلمة المرور الحالية",
-                                  hint: "ادخل كلمة المرور الحالية",
+                                  label: Appstring.currentpassword,
+                                  hint: Appstring.enternewpass,
                                   isVisible: state.isCurrentVisible,
                                   onToggle: () => context.read<ChangePasswordCubit>().toggleCurrentVisibility(),
                                 ),
                                 SizedBox(height: 20.h),
 
                                 _buildPasswordField(
-                                  label: "كلمة المرور الجديدة",
-                                  hint: "ادخل كلمة المرور الجديدة",
+                                  label: Appstring.newPasswordLabel,
+                                  hint: Appstring.newPasswordHint,
                                   isVisible: state.isNewVisible,
                                   onToggle: () => context.read<ChangePasswordCubit>().toggleNewVisibility(),
                                 ),
                                 SizedBox(height: 20.h),
 
                                 _buildPasswordField(
-                                  label: "تأكيد كلمة المرور",
-                                  hint: "ادخل كلمة المرور الجديدة مرة اخرى",
+                                  label: Appstring.confirmPasswordLabel,
+                                  hint: Appstring.confirmPasswordHint,
                                   isVisible: state.isConfirmVisible,
                                   onToggle: () => context.read<ChangePasswordCubit>().toggleConfirmVisibility(),
                                 ),
@@ -129,7 +129,7 @@ Custombutton(text: 'تغيير كلمة المرور', onPressed: (){}, icon: Ap
       children: [
         Text(
           label,
-          style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold, color: const Color(0xFF555555)),
+          style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold, color:  appcolors.buildpass),
         ),
         SizedBox(height: 8.h),
         TextField(

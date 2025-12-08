@@ -78,7 +78,7 @@ class _SizeSelectorSheetState extends State<_SizeSelectorSheet> {
                       fontSize: 14,
                  
                       fontFamily: Appstring.fontfamily,
-                      color: Color(0xff999999)
+                      color: appcolors.graylinethrough
                     ),
                   ),
                   SizedBox(height: 20.h),
@@ -87,7 +87,7 @@ class _SizeSelectorSheetState extends State<_SizeSelectorSheet> {
                     onPressed: () {},
                     icon: AppIcons.backSquare,
                     color: appcolors.whicolor,
-                    backgroundColor: Color(0xffFF3838),
+                    backgroundColor: appcolors.deleteaccount,
                   ),
                   SizedBox(height: 10.h),
                   Custombutton(
@@ -95,7 +95,7 @@ class _SizeSelectorSheetState extends State<_SizeSelectorSheet> {
                     onPressed: () {},
                     icon: AppIcons.trash,
                     color: appcolors.black,
-                    backgroundColor: Color(0xffF2F2F2),
+                    backgroundColor: appcolors.carshilight,
                   ),
                 ],
               ),

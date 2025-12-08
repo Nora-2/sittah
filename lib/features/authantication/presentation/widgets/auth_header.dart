@@ -15,7 +15,7 @@ class AuthHeader extends StatelessWidget {
       padding: EdgeInsets.all(8.sp),
       child: Column(
         children: [
-          SizedBox(height: 40.h),
+          SizedBox(height: 30.h),
           Row(
             textDirection: TextDirection.rtl,
             children: [
@@ -36,7 +36,7 @@ class AuthHeader extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 18.h),
+          SizedBox(height: 10.h),
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.center,

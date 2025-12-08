@@ -100,7 +100,7 @@ appcolors.gradient2,
                             width: 70.w,
                             height: 70.w,
                             decoration: BoxDecoration(
-                              color: const Color(0xFFF3F4F6),
+                              color: appcolors.divider,
                               borderRadius: BorderRadius.circular(10.r),
                             ),
                             child:Image.asset(  Appimage.productBrown,fit: BoxFit.contain,),
@@ -172,7 +172,7 @@ appcolors.gradient2,
                   Container(
                     padding: EdgeInsets.all(12.w),
                     decoration: BoxDecoration(
-                      color: Color(0xffF9FFE5),
+                      color: appcolors.promocodeshare,
                       borderRadius: BorderRadius.circular(12.r),
                     ),
                     child: Row(
@@ -188,7 +188,7 @@ appcolors.gradient2,
                           "لقد حصلت على 6 نقاط من هذا الطلب",
                           style: TextStyle(
                             fontFamily: Appstring.fontfamily,
-                            color: Color(0xff506600),
+                            color: appcolors.tagTextColor,
                             fontWeight: FontWeight.bold,
                             fontSize: 13.sp,
                           ),

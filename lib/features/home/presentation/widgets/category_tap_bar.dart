@@ -42,7 +42,7 @@ class CategoryTapBar extends StatelessWidget {
                     border: Border.all(
                       color: selectedIndex == index
                           ? appcolors.graylinethrough.withOpacity(.01)
-                          : const Color(0xFFD6D6D6),
+                          : appcolors.categorytapbar,
                     ),
                   ),
                   child: Text(

@@ -23,7 +23,7 @@ class NotificationItem extends StatelessWidget {
       background: Container(
         margin: const EdgeInsets.only(bottom: 12),
         decoration: BoxDecoration(
-          color: const Color(0xFFFFEBEE),
+          color: appcolors.notificationcolor,
           borderRadius: BorderRadius.circular(12),
         ),
         alignment: Alignment.centerRight,

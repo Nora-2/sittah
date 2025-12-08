@@ -252,7 +252,7 @@ class PaymentStepScreen extends StatelessWidget {
         return Container(
           padding: EdgeInsets.all(15),
           decoration: BoxDecoration(
-            color: Color(0xffFEB4C7),
+            color: appcolors.klarnaPinkpay,
             borderRadius: BorderRadius.circular(10),
           ),
           child: SvgPicture.asset(
@@ -274,13 +274,13 @@ class PaymentStepScreen extends StatelessWidget {
                 AppIcons.vector,
                 width: 12,
                 height: 12,
-                color: Color(0xffD7FFEB),
+                color: appcolors.afterpay,
               ),
               Text(
                 Appstring.afterpay,
                 style: TextStyle(
                   fontSize: 12,
-                  color: Color(0xffD7FFEB),
+                  color: appcolors.afterpay,
                   fontWeight: FontWeight.bold,
                 ),
               ),

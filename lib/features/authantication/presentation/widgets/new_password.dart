@@ -40,21 +40,21 @@ class NewPasswordScreen extends StatelessWidget {
         builder: (context, state) {
           final cubit = context.read<AuthanticationCubit>();
 
-          return Stack(
-            children: [
-              // Background
-              Passback(
-                title: Appstring.enterNewPasswordTitle,
-                subTitel: Appstring.createEasyPasswordSubtitle,
-              ),
-
-              // Scrollable form container
-              SingleChildScrollView(
-                child: Padding(
+          return SingleChildScrollView(
+            child: Stack(
+              children: [
+                // Background
+                Passback(
+                  title: Appstring.enterNewPasswordTitle,
+                  subTitel: Appstring.createEasyPasswordSubtitle,
+                ),
+            
+                // Scrollable form container
+                Padding(
                   padding: EdgeInsets.only(top: height * 0.23),
                   child: Container(
                     width: double.infinity,
-                    height: height * 1.08,
+                
                     padding: const EdgeInsets.symmetric(
                       horizontal: 20,
                       vertical: 25,
@@ -109,7 +109,7 @@ class NewPasswordScreen extends StatelessWidget {
                               text: Appstring.login,
                               onPressed: () {
                                 Navigator.of(context).pop();
-
+                
                                 Navigator.pushReplacementNamed(
                                   context,
                                   Routes.auth,
@@ -124,7 +124,7 @@ class NewPasswordScreen extends StatelessWidget {
                                 text: Appstring.login,
                                 onPressed: () {
                                   Navigator.of(context).pop();
-
+                
                                   Navigator.pushReplacementNamed(
                                     context,
                                     Routes.auth,
@@ -142,8 +142,8 @@ class NewPasswordScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           );
         },
       ),

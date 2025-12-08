@@ -212,7 +212,7 @@ class _CouponsScreenState extends State<CouponsScreen> {
           child: Container(
             width: double.infinity,
             height: double.infinity,
-            color: const Color(0xffF2F2F2).withOpacity(0.6),
+            color:  appcolors.cardBackground.withOpacity(0.6),
           ),
         ),
       ],

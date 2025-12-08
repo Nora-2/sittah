@@ -6,9 +6,10 @@ import 'package:glasses/core/utils/appimage/app_images.dart';
 import 'package:glasses/core/utils/appstring/app_string.dart';
 import 'package:glasses/core/utils/widgets/my_flutter_app_icons.dart';
 
+// ignore: must_be_immutable
 class OfferSlider extends StatelessWidget {
-  const OfferSlider({super.key});
-
+  OfferSlider({super.key, this.onCategoryTap});
+  VoidCallback? onCategoryTap;
   @override
   Widget build(BuildContext context) {
     return CarouselSlider(
@@ -70,7 +71,9 @@ class OfferSlider extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(left: 80.r, right: 5.r),
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          onCategoryTap;
+                        },
                         child: Container(
                           decoration: BoxDecoration(
                             color: appcolors.whicolor,

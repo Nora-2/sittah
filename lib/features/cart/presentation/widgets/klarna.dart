@@ -25,7 +25,7 @@ class klarna extends StatelessWidget {
           Container(
             padding: EdgeInsets.all(6),
             decoration: BoxDecoration(
-              color: Color(0xffB2FCE4),
+              color: appcolors.klerna,
               borderRadius: BorderRadius.circular(25),
             ),
             child: Row(

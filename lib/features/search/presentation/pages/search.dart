@@ -152,9 +152,9 @@ class _SearchScreenState extends State<SearchScreen> {
             decoration: InputDecoration(
               hintText: Appstring.searchtext,
               hintStyle: TextStyle(
-                color: Color(0xffB3B3B3).withOpacity(.6),
+                color: appcolors.graytestonboard.withOpacity(.6),
                 fontSize: 13.sp,
-                fontFamily: 'Montserrat',
+                fontFamily: Appstring.fontfamily,
               ),
               prefixIcon: IconButton(
                 icon: SvgPicture.asset(AppIcons.search),
@@ -223,7 +223,7 @@ class _SearchScreenState extends State<SearchScreen> {
             margin: EdgeInsets.symmetric(vertical: 16),
             padding: EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Color(0xffE8FAFC),
+              color: appcolors.greenDiscount,
               borderRadius: BorderRadius.circular(25.r),
               border: Border.all(color: appcolors.buttoncoloronboarding),
             ),

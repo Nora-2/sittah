@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:glasses/core/utils/appcolors/app_colors.dart';
 
 class DailyCheckInScrollableWidget extends StatelessWidget {
   const DailyCheckInScrollableWidget({Key? key}) : super(key: key);
@@ -59,7 +60,7 @@ class DailyCheckInScrollableWidget extends StatelessWidget {
                         child: Switch(
                           value: false, 
                           onChanged: (v) {},
-                          activeColor: const Color(0xFF0F3C46),
+                          activeColor: appcolors.pointcost,
                           inactiveThumbColor: Colors.white,
                           inactiveTrackColor: Colors.grey.shade300,
                         ),
@@ -113,7 +114,7 @@ class DailyCheckInScrollableWidget extends StatelessWidget {
     // Colors
     final Color activeBgColor = const Color(0xFFD6F55D); // Lime Green
     final Color defaultBgColor = Colors.white;
-    final Color darkTextColor = const Color(0xFF0F3C46);
+    final Color darkTextColor = appcolors.pointcost;
     
     return Container(
       width: 55.w, // Wider card since it scrolls

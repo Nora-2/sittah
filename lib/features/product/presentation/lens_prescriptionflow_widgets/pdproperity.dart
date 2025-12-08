@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:glasses/core/utils/appcolors/app_colors.dart';
 
 class PDSelector extends StatefulWidget {
   const PDSelector({super.key});
@@ -77,7 +78,7 @@ class _PDSelectorState extends State<PDSelector> {
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
-                          color: Color(0xFF0066CC),
+                          color: appcolors.pdsave,
                         ),
                       ),
                     ),

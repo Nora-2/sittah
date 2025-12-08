@@ -116,10 +116,10 @@ class _SizeSelectorSheetState extends State<_SizeSelectorSheet> {
         duration: const Duration(milliseconds: 200),
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10),
         decoration: BoxDecoration(
-          color: isSelected ? Color(0xffE8FAFC) : Colors.grey[100],
+          color: isSelected ? appcolors.greenDiscount : Colors.grey[100],
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
-            color: isSelected ? Color(0xffE8FAFC) : appcolors.textfieldborder,
+            color: isSelected ? appcolors.greenDiscount : appcolors.textfieldborder,
             width: 1.5,
           ),
         ),

@@ -17,29 +17,28 @@ class HomeGeustScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
 
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              appcolors.gradient1, // light green
-              appcolors.gradient2,
-              appcolors.whicolor,
-              appcolors.whicolor,
-              appcolors.whicolor,
-              appcolors.whicolor,
-              appcolors.whicolor,
-            ],
-            begin: Alignment.topRight,
-            end: Alignment.bottomRight,
+      body: SingleChildScrollView(
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                appcolors.gradient1, // light green
+                appcolors.gradient2,
+                appcolors.whicolor,
+                appcolors.whicolor,
+                appcolors.whicolor,
+                appcolors.whicolor,
+                appcolors.whicolor,
+              ],
+              begin: Alignment.topRight,
+              end: Alignment.bottomRight,
+            ),
+            borderRadius: BorderRadius.only(
+              bottomRight: Radius.circular(25.r),
+              bottomLeft: Radius.circular(25.r),
+            ),
           ),
-          borderRadius: BorderRadius.only(
-            bottomRight: Radius.circular(25.r),
-            bottomLeft: Radius.circular(25.r),
-          ),
-        ),
-        child: SafeArea(
-          child: SingleChildScrollView(
-            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 12.h),
+          child: SafeArea(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
@@ -53,7 +52,7 @@ class HomeGeustScreen extends StatelessWidget {
                   onTap: () {},
                 ),
                 SizedBox(height: 8.h),
-                const OfferSlider(),
+                 OfferSlider(),
                 SizedBox(height: 20.h),
                 Text(
                   Appstring.sectionheadercategory,

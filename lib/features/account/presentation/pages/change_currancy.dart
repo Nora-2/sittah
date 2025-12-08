@@ -18,9 +18,9 @@ class ChangeCurrencyScreen extends StatelessWidget {
   ChangeCurrencyScreen({super.key});
 
   final List<CurrencyModel> currencies = [
-    CurrencyModel(0, "د.ع",Appimage.flag1 ),
+    CurrencyModel(0, "د.ع", Appimage.flag1),
     CurrencyModel(1, "ريال سعودي", Appimage.flag2),
-    CurrencyModel(2, "EUR",Appimage.flag3),
+    CurrencyModel(2, "EUR", Appimage.flag3),
     CurrencyModel(3, "AUD", Appimage.flag4),
     CurrencyModel(4, "CAD", Appimage.flag5),
   ];

@@ -119,7 +119,7 @@ final List<ShippingMethod> shippingMethods = [
                               vertical: 4.h,
                             ),
                             decoration: BoxDecoration(
-                              color: Color(0xFFD7FFEB).withOpacity(.2),
+                              color: appcolors.afterpay.withOpacity(.2),
                               borderRadius: BorderRadius.circular(4.r),
                             ),
                             child: Text(
@@ -128,7 +128,7 @@ final List<ShippingMethod> shippingMethods = [
                               style: TextStyle(
                                 fontFamily: Appstring.fontfamily,
                                 fontSize: 10.sp,
-                                color: Color(0xff11A75C),
+                                color: appcolors.shippingoption,
                               ),
                             ),
                           ),

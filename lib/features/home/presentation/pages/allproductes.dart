@@ -23,35 +23,35 @@ class _AllproductsScreenState extends State<AllproductsScreen> {
       textDirection: TextDirection.ltr,
       child: Scaffold(
         extendBodyBehindAppBar: true,
-        body: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                appcolors.gradient1,
-                appcolors.gradient2,
-                appcolors.whicolor,
-                appcolors.whicolor,
-                appcolors.whicolor,
-              ],
-              begin: Alignment.topRight,
-              end: Alignment.bottomRight,
+        body: SingleChildScrollView(
+          child: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  appcolors.gradient1,
+                  appcolors.gradient2,
+                  appcolors.whicolor,
+                  appcolors.whicolor,
+                  appcolors.whicolor,
+                ],
+                begin: Alignment.topRight,
+                end: Alignment.bottomRight,
+              ),
             ),
-          ),
-          child: SafeArea(
-            child: Stack(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(top: 75.h), // below header
-                  child: Container(
-                    color: appcolors.whicolor,
-                    child: SingleChildScrollView(
+            child: SafeArea(
+              child: Stack(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(top: 75.h), // below header
+                    child: Container(
+                      color: appcolors.whicolor,
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 8.w),
                         child: Column(
                           children: [
                             SizedBox(height: 10.h),
                             const SearchBarWidget(),
-
+                      
                             SizedBox(height: 10.h),
                             CategoryTapBar(
                               selectedIndex: selectedTab,
@@ -84,39 +84,39 @@ class _AllproductsScreenState extends State<AllproductsScreen> {
                       ),
                     ),
                   ),
-                ),
-
-                SizedBox(
-                  height: 100.h,
-
-                  child: Row(
-                    textDirection: TextDirection.ltr,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        "($items ${Appstring.item})",
-                        style: TextStyle(
-                          fontFamily: Appstring.fontfamily,
-                          fontSize: 12.sp,
-                          color: appcolors.grayviewall,
-                          fontWeight: FontWeight.w600,
+          
+                  SizedBox(
+                    height: 100.h,
+          
+                    child: Row(
+                      textDirection: TextDirection.ltr,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          "($items ${Appstring.item})",
+                          style: TextStyle(
+                            fontFamily: Appstring.fontfamily,
+                            fontSize: 12.sp,
+                            color: appcolors.grayviewall,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
-                      ),
-                      SizedBox(width: 4),
-                      Text(
-                        Appstring.products,
-                        style: TextStyle(
-                          fontFamily: Appstring.fontfamily,
-                          fontSize: 17.sp,
-                          color: appcolors.black,
-                          fontWeight: FontWeight.w600,
+                        SizedBox(width: 4),
+                        Text(
+                          Appstring.products,
+                          style: TextStyle(
+                            fontFamily: Appstring.fontfamily,
+                            fontSize: 17.sp,
+                            color: appcolors.black,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
-                      ),
-                      SizedBox(width: 8.w), // balance right spacing
-                    ],
+                        SizedBox(width: 8.w), // balance right spacing
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

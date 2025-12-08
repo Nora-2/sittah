@@ -87,11 +87,19 @@ class HomeHeader extends StatelessWidget {
           Row(
             textDirection: TextDirection.rtl,
             children: [
+                InkWell(
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    Routes.favourite
+                  );
+                },
+                child:
               CircleAvatar(
                 radius: 20.r,
                 backgroundColor: appcolors.whicolor,
                 child: Icon(MyFlutterApp.heart, color: Colors.black, size: 24),
-              ),
+              ),),
               SizedBox(width: 10.w),
               InkWell(
                 onTap: () {

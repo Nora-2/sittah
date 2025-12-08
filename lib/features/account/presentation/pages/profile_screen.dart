@@ -21,36 +21,35 @@ class AccountScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => ProfileCubit()..fetchProfileData(),
       child: Scaffold(
+        backgroundColor: appcolors.whicolor,
         extendBodyBehindAppBar: true,
-        body: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                appcolors.gradient1,
-                appcolors.gradient2,
-                appcolors.whicolor,
-                appcolors.whicolor,
-                appcolors.whicolor,
-                appcolors.whicolor,
-              ],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
+        body: SingleChildScrollView(
+          child: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  appcolors.gradient1,
+                  appcolors.gradient2,
+                  appcolors.whicolor,
+                  appcolors.whicolor,
+                  appcolors.whicolor,
+                  appcolors.whicolor,
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
             ),
-          ),
-          child: SafeArea(
-            child: BlocBuilder<ProfileCubit, ProfileState>(
-              builder: (context, state) {
-                if (state is ProfileLoading) {
-                  return const Center(
-                    child: CircularProgressIndicator(color: Color(0xFF1B3D46)),
-                  );
-                } else if (state is ProfileError) {
-                  return Center(child: Text(state.message));
-                } else if (state is ProfileLoaded) {
-                  return _buildProfileContent(context, state.user);
-                }
-                return const SizedBox();
-              },
+            child: SafeArea(
+              child: BlocBuilder<ProfileCubit, ProfileState>(
+                builder: (context, state) {
+                  if (state is ProfileError) {
+                    return Center(child: Text(state.message));
+                  } else if (state is ProfileLoaded) {
+                    return _buildProfileContent(context, state.user);
+                  }
+                  return const SizedBox();
+                },
+              ),
             ),
           ),
         ),
@@ -59,7 +58,7 @@ class AccountScreen extends StatelessWidget {
   }
 
   Widget _buildProfileContent(BuildContext context, UserProfile user) {
-    return SingleChildScrollView(
+    return Padding(
       padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 5.h),
       child: Column(
         children: [
@@ -84,7 +83,7 @@ class AccountScreen extends StatelessWidget {
                 child: _buildPromoCard(
                   "شارك واربح",
                   "شارك زملائك",
-                  Color(0xFFF9FFE5),
+                  appcolors.promocodeshare,
                   Appimage.share,
                 ),
               ), // Yellowish
@@ -98,7 +97,7 @@ class AccountScreen extends StatelessWidget {
                   child: _buildPromoCard(
                     "متجر المكافآت",
                     "تسوق الآن",
-                    const Color(0xFFE8FAFC),
+                    appcolors.promocodepoint,
                     Appimage.presentShop,
                   ),
                 ),
@@ -111,7 +110,7 @@ class AccountScreen extends StatelessWidget {
           _buildSectionHeader("خدماتي", context),
           SizedBox(height: 20.h),
           _buildServicesRow(context),
-          SizedBox(height: 80.h),
+          SizedBox(height: 40.h),
         ],
       ),
     );
@@ -175,7 +174,7 @@ class AccountScreen extends StatelessWidget {
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w500,
                   fontFamily: Appstring.fontfamily,
-                  color: Color(0xff283300),
+                  color: appcolors.growthpoints,
                 ),
               ),
             ),
@@ -281,7 +280,7 @@ class AccountScreen extends StatelessWidget {
 
       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
       decoration: BoxDecoration(
-        color: Color(0xff06292D), // Dark background
+        color: appcolors.accountbanner, // Dark background
         borderRadius: BorderRadius.circular(12.r),
       ),
       child: Row(

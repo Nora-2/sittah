@@ -28,4 +28,7 @@ class Routes {
   static const String emptycards = '/emptycards';
     static const String tickets = '/tickets';
     static const String prescriptionprofile = '/prescriptionprofile';
+     static const String changePasswordScreen = '/ChangePasswordScreen';
+      static const String changeCurrencyScreen = '/ChangeCurrencyScreen';
+  
 }

@@ -258,7 +258,7 @@ class _OrderListItemState extends State<_OrderListItem> {
 
           Padding(
             padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 12.w),
-            child: const Divider(thickness: 1, color: Color(0xFFF3F4F6)),
+            child: const Divider(thickness: 1, color: appcolors.divider),
           ),
           if (_isExpanded) ...[
             Row(
