@@ -76,13 +76,21 @@ class HomeHeaderGeust extends StatelessWidget {
           Row(
             textDirection: TextDirection.rtl,
             children: [
-              CircleAvatar(
-                radius: 20.r,
-                backgroundColor: appcolors.whicolor,
-                child: Icon(
-                  MyFlutterApp.heart,
-                  color: appcolors.black,
-                  size: 24,
+              InkWell(
+              onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    Routes.favourite
+                  );
+                },
+                child: CircleAvatar(
+                  radius: 20.r,
+                  backgroundColor: appcolors.whicolor,
+                  child: Icon(
+                    MyFlutterApp.heart,
+                    color: appcolors.black,
+                    size: 24,
+                  ),
                 ),
               ),
               SizedBox(width: 10.w),

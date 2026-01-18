@@ -11,8 +11,8 @@ import 'package:glasses/features/home/presentation/widgets/product_card.dart';
 
 class HomeMainScreen extends StatelessWidget {
   final VoidCallback onCategoryTap;
-
-  const HomeMainScreen({super.key, required this.onCategoryTap});
+ final VoidCallback onproduvtTap;
+  const HomeMainScreen({super.key, required this.onCategoryTap,required this.onproduvtTap});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +55,7 @@ class HomeMainScreen extends StatelessWidget {
                     onTap: () {},
                   ),
                   SizedBox(height: 8.h),
-                   OfferSlider(onCategoryTap:onCategoryTap ,),
+                   OfferSlider( onproducttab:onproduvtTap,),
                   SizedBox(height: 20.h),
                   SectionHeader(
                     title: Appstring.sectionheadercategory,

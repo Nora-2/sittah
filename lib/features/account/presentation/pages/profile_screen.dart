@@ -12,61 +12,85 @@ import 'package:glasses/features/account/data/models/userprofile.dart';
 import 'package:glasses/features/account/presentation/cubit/account_cubit.dart';
 import 'package:glasses/features/account/presentation/pages/setting.dart';
 
-class AccountScreen extends StatelessWidget {
+class AccountScreen extends StatefulWidget {
   const AccountScreen({super.key});
 
   @override
+  State<AccountScreen> createState() => _AccountScreenState();
+}
+
+class _AccountScreenState extends State<AccountScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // تأكد من استدعاء الدالة هنا
+    context.read<ProfileCubit>().fetchProfileData();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    // Providing Cubit locally for this screen
-    return BlocProvider(
-      create: (context) => ProfileCubit()..fetchProfileData(),
-      child: Scaffold(
-        backgroundColor: appcolors.whicolor,
-        extendBodyBehindAppBar: true,
-        body: SingleChildScrollView(
-          child: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  appcolors.gradient1,
-                  appcolors.gradient2,
-                  appcolors.whicolor,
-                  appcolors.whicolor,
-                  appcolors.whicolor,
-                  appcolors.whicolor,
-                ],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
-            ),
-            child: SafeArea(
-              child: BlocBuilder<ProfileCubit, ProfileState>(
-                builder: (context, state) {
-                  if (state is ProfileError) {
-                    return Center(child: Text(state.message));
-                  } else if (state is ProfileLoaded) {
-                    return _buildProfileContent(context, state.user);
-                  }
-                  return const SizedBox();
-                },
-              ),
+    return Scaffold(
+      backgroundColor: appcolors.whicolor,
+      extendBodyBehindAppBar: true,
+      body: SingleChildScrollView(
+        // جعل الشاشة قابلة للتمرير فوراً
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                appcolors.gradient1,
+                appcolors.gradient2,
+                appcolors.whicolor,
+                appcolors.whicolor,
+              ],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
             ),
           ),
+          child: SafeArea(child: _buildProfileContent(context)),
         ),
       ),
     );
   }
 
-  Widget _buildProfileContent(BuildContext context, UserProfile user) {
+  Widget _buildHeaderWithLogic() {
+    return BlocBuilder<ProfileCubit, ProfileState>(
+      builder: (context, state) {
+        if (state is ProfileLoaded) {
+          return _buildHeader(context, state.user); // عرض الهيدر بالبيانات
+        } else if (state is ProfileError) {
+          return Text("خطأ في التحميل");
+        } else {
+          // حالة التحميل: يمكنك عرض ProgressIndicator صغير أو Shimmer
+          return const Center(child: CircularProgressIndicator());
+        }
+      },
+    );
+  }
+
+  Widget _buildStatsWithLogic() {
+    return BlocBuilder<ProfileCubit, ProfileState>(
+      builder: (context, state) {
+        if (state is ProfileLoaded) {
+          return _buildStatsContainer(state.user, context);
+        } else {
+          // عرض هيكل فارغ أو نقاط أثناء التحميل
+          return const SizedBox(height: 50, child: Center(child: Text("...")));
+        }
+      },
+    );
+  }
+
+  Widget _buildProfileContent(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 5.h),
       child: Column(
         children: [
           SizedBox(height: 20.h),
-          _buildHeader(context, user),
+          _buildHeaderWithLogic(),
           SizedBox(height: 20.h),
 
-          _buildStatsContainer(user, context),
+          _buildStatsWithLogic(),
           SizedBox(height: 20.h),
 
           _buildBanner(),
@@ -324,7 +348,7 @@ class AccountScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSectionHeader(String title,BuildContext context) {
+  Widget _buildSectionHeader(String title, BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -373,16 +397,25 @@ class AccountScreen extends StatelessWidget {
       textDirection: TextDirection.rtl,
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        GestureDetector( onTap: () {
-          Navigator.pushNamed(context, Routes.prescriptionprofile);
-        }, child: _buildImageBox(Appimage.medicine, "الوصفات الطبية")),
+        GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, Routes.prescriptionprofile);
+          },
+          child: _buildImageBox(Appimage.medicine, "الوصفات الطبية"),
+        ),
         _buildImageBox(Appimage.rating, "التقييمات"),
-        GestureDetector(onTap: () {
-          Navigator.pushNamed(context, Routes.address);
-        }, child: _buildImageBox(Appimage.titles, "العناوين")),
-        GestureDetector(onTap: () {
-          Navigator.pushNamed(context, Routes.tickets);
-        }, child: _buildImageBox(Appimage.tickets, "التذاكر")),
+        GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, Routes.address);
+          },
+          child: _buildImageBox(Appimage.titles, "العناوين"),
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, Routes.tickets);
+          },
+          child: _buildImageBox(Appimage.tickets, "التذاكر"),
+        ),
       ],
     );
   }

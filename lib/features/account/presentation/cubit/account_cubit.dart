@@ -1,5 +1,5 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:glasses/features/account/data/models/userprofile.dart';
 
 part 'account_state.dart';
@@ -7,14 +7,14 @@ part 'account_state.dart';
 class ProfileCubit extends Cubit<ProfileState> {
   ProfileCubit() : super(ProfileInitial());
 
-  // Simulate API Call
   Future<void> fetchProfileData() async {
-    emit(ProfileLoading());
-    try {
-      // Simulate network delay
-      await Future.delayed(const Duration(seconds: 2));
+    emit(ProfileLoading()); // show spinner immediately
+    print('🟡 fetchProfileData START');
 
-      // Mock Data
+    try {
+      // simulate API delay
+      await Future.delayed(const Duration(milliseconds: 500));
+
       final user = UserProfile(
         name: "عبدالله ذكرالله",
         initials: "ع.ذ",
@@ -27,10 +27,9 @@ class ProfileCubit extends Cubit<ProfileState> {
         cartItems: 2,
       );
 
-      emit(ProfileLoaded(user));
+      emit(ProfileLoaded(user)); // send user data to UI
     } catch (e) {
       emit(ProfileError("فشل تحميل البيانات"));
     }
   }
 }
-

@@ -3,8 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:glasses/core/routing/routes.dart';
 import 'package:glasses/core/utils/widgets/geustlayout.dart';
 import 'package:glasses/core/utils/widgets/mainlayout.dart';
+import 'package:glasses/features/account/presentation/cubit/account_cubit.dart';
 import 'package:glasses/features/account/presentation/pages/change_currancy.dart';
 import 'package:glasses/features/account/presentation/pages/change_password.dart';
+import 'package:glasses/features/account/presentation/pages/profile_screen.dart';
 import 'package:glasses/features/account/presentation/widgets/prescription.dart';
 import 'package:glasses/features/address/presentation/pages/address.dart';
 import 'package:glasses/features/address/presentation/pages/empty_card_screen.dart';
@@ -50,9 +52,9 @@ class AppRouter {
       case Routes.login:
         return MaterialPageRoute(builder: (_) => const Signin_Signup());
 
-          case Routes.changeCurrencyScreen:
-        return MaterialPageRoute(builder: (_) =>  ChangeCurrencyScreen());
-          case Routes.changePasswordScreen:
+      case Routes.changeCurrencyScreen:
+        return MaterialPageRoute(builder: (_) => ChangeCurrencyScreen());
+      case Routes.changePasswordScreen:
         return MaterialPageRoute(builder: (_) => const ChangePasswordScreen());
       case Routes.category:
         return MaterialPageRoute(builder: (_) => const CustomCategoryScreen());
@@ -81,15 +83,35 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const ProductDetailsScreen());
       case Routes.layout:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) =>
-                CartCubit()
-                  ..loadDemoData(), // Create a new cubit for onboarding
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(create: (_) => CartCubit()..loadDemoData()),
+              BlocProvider(create: (_) => ProfileCubit()..fetchProfileData()),
+              // لو عندك Cubits تانية ممكن تضيفيهم هنا
+            ],
             child: const MainLayout(),
           ),
         );
+
+      case Routes.profile:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (_) => ProfileCubit()..fetchProfileData(),
+            child: const AccountScreen(),
+          ),
+        ); // Create a new cubit for onboarding
+
       case Routes.layoutgust:
-        return MaterialPageRoute(builder: (_) => const GuestLayout());
+        return MaterialPageRoute(
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(create: (_) => CartCubit()..loadDemoData()),
+              BlocProvider(create: (_) => ProfileCubit()..fetchProfileData()),
+              // لو عندك Cubits تانية ممكن تضيفيهم هنا
+            ],
+            child: const GuestLayout(),
+          ),
+        );
 
       case Routes.onboarding:
         return MaterialPageRoute(

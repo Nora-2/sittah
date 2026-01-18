@@ -10,8 +10,8 @@ import 'package:glasses/features/home/presentation/widgets/home_header_geust.dar
 import 'package:glasses/features/home/presentation/widgets/product_card.dart';
 
 class HomeGeustScreen extends StatelessWidget {
-  const HomeGeustScreen({super.key});
-
+  const HomeGeustScreen({super.key,required this.onproducttab});
+    final VoidCallback onproducttab;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,51 +39,54 @@ class HomeGeustScreen extends StatelessWidget {
             ),
           ),
           child: SafeArea(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                SizedBox(height: 20.h),
-                const HomeHeaderGeust(), // space for search bar overlay
-                SizedBox(height: 20.h),
-                const SearchBarWidget(),
-                SizedBox(height: 8.h),
-                SectionHeader(
-                  title: Appstring.sectionheaderoffer,
-                  onTap: () {},
-                ),
-                SizedBox(height: 8.h),
-                 OfferSlider(),
-                SizedBox(height: 20.h),
-                Text(
-                  Appstring.sectionheadercategory,
-                  style: TextStyle(
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: Appstring.fontfamily,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  SizedBox(height: 20.h),
+                  const HomeHeaderGeust(), // space for search bar overlay
+                  SizedBox(height: 20.h),
+                  const SearchBarWidget(),
+                  SizedBox(height: 8.h),
+                  SectionHeader(
+                    title: Appstring.sectionheaderoffer,
+                    onTap: () {},
                   ),
-                ),
-                SizedBox(height: 8.h),
-                const CategoryList(),
-                SizedBox(height: 20.h),
-                SectionHeader(
-                  title: Appstring.sectionheadertopsales,
-                  onTap: () {},
-                ),
-                SizedBox(height: 10.h),
-                GridView.builder(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: 4,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 10.w,
-                    mainAxisSpacing: 10.h,
-                    childAspectRatio: 0.66,
+                  SizedBox(height: 8.h),
+                   OfferSlider(onproducttab:onproducttab ,),
+                  SizedBox(height: 20.h),
+                  Text(
+                    Appstring.sectionheadercategory,
+                    style: TextStyle(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: Appstring.fontfamily,
+                    ),
                   ),
-                  itemBuilder: (context, index) => const ProductCard(),
-                ),
-                SizedBox(height: 30.h),
-              ],
+                  SizedBox(height: 8.h),
+                  const CategoryList(),
+                  SizedBox(height: 20.h),
+                  SectionHeader(
+                    title: Appstring.sectionheadertopsales,
+                    onTap: () {},
+                  ),
+                  SizedBox(height: 10.h),
+                  GridView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: 4,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 10.w,
+                      mainAxisSpacing: 10.h,
+                      childAspectRatio: 0.66,
+                    ),
+                    itemBuilder: (context, index) => const ProductCard(),
+                  ),
+                  SizedBox(height: 30.h),
+                ],
+              ),
             ),
           ),
         ),

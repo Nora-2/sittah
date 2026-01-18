@@ -26,7 +26,9 @@ class SectionHeader extends StatelessWidget {
           ),
         ),
         GestureDetector(
-          onTap: onTap,
+          onTap: () {
+            onTap();
+          },
           child: Row(
             textDirection: TextDirection.rtl,
             children: [
